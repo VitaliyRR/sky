@@ -220,11 +220,6 @@ $programs = array(
                 </article>
             </div>
 
-            <div class="contact-note reveal">
-                <span>Офис</span>
-                <p>350049, г. Краснодар, ул. Монтажников, д. 1/4</p>
-                <a class="button button--dark" href="https://cluster.skysend.ru/" target="_blank" rel="noopener">Войти в систему <?php echo skysend_icon('arrow'); ?></a>
-            </div>
         </div>
     </section>
 </main>

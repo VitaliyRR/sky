@@ -775,28 +775,6 @@ details[open] .program-plus svg {
     height: 19px;
 }
 
-.contact-note {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 24px;
-    border-top: 1px solid rgb(255 255 255 / 32%);
-    padding-top: 30px;
-}
-
-.contact-note > span {
-    color: #bdd1ff;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-}
-
-.contact-note p {
-    margin: 0;
-}
-
 .site-footer {
     background: var(--ink);
     color: #a6b3c5;
@@ -1079,14 +1057,6 @@ details[open] .program-plus svg {
 
     .program-detail {
         padding: 0 16px 30px 62px;
-    }
-
-    .contact-note {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-note .button {
-        width: 100%;
     }
 
     .footer-line {

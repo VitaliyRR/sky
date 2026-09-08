@@ -155,13 +155,6 @@ function skysend_meta_tags(): void
         'name' => 'SkySend',
         'url' => $canonical,
         'description' => $description,
-        'address' => array(
-            '@type' => 'PostalAddress',
-            'postalCode' => '350049',
-            'addressLocality' => 'Краснодар',
-            'streetAddress' => 'ул. Монтажников, д. 1/4',
-            'addressCountry' => 'RU',
-        ),
         'contactPoint' => array(
             '@type' => 'ContactPoint',
             'telephone' => $phone,
