@@ -17,19 +17,19 @@
 }
 
 :root {
-    --ink: #061226;
-    --ink-soft: #0b1c36;
-    --blue: #166cff;
-    --blue-dark: #0a4ccb;
-    --cyan: #61dbff;
+    --ink: #071426;
+    --ink-soft: #10243d;
+    --blue: #0b63f6;
+    --blue-dark: #084bb9;
+    --cyan: #55d7ff;
     --orange: #ff714b;
-    --paper: #f4f7fb;
+    --paper: #f3f6fa;
     --white: #ffffff;
-    --text: #09172c;
-    --muted: #627087;
-    --line: #ccd7e5;
-    --line-dark: #263851;
-    --radius: 14px;
+    --text: #0b1b31;
+    --muted: #5b6b81;
+    --line: #d6dee8;
+    --line-dark: #273a54;
+    --radius: 8px;
 }
 
 *,
@@ -132,23 +132,24 @@ svg {
     top: 0;
     right: 0;
     left: 0;
-    color: white;
+    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    color: var(--text);
     transition: background-color 180ms ease, border-color 180ms ease;
 }
 
 .site-header.is-scrolled,
 .site-header.is-open {
-    border-bottom: 1px solid var(--line-dark);
-    background: var(--ink);
+    border-bottom-color: var(--line);
+    background: var(--white);
 }
 
 .header-inner {
     display: grid;
-    grid-template-columns: 122px 1fr auto;
-    min-height: 88px;
+    grid-template-columns: 146px 1fr auto;
+    min-height: 82px;
     align-items: center;
-    gap: 34px;
-    border-bottom: 1px solid rgb(255 255 255 / 20%);
+    gap: 40px;
 }
 
 .is-scrolled .header-inner,
@@ -158,16 +159,14 @@ svg {
 
 .brand {
     display: flex;
-    width: 116px;
-    height: 56px;
+    width: 136px;
+    height: 66px;
     align-items: center;
-    overflow: hidden;
-    border-radius: 7px;
-    background: white;
+    background: transparent;
 }
 
 .brand img {
-    width: 100%;
+    width: 132px;
     height: auto;
 }
 
@@ -179,7 +178,7 @@ svg {
 
 .main-nav a,
 .header-phone {
-    color: rgb(255 255 255 / 76%);
+    color: var(--muted);
     font-size: 0.875rem;
     font-weight: 700;
     transition: color 160ms ease;
@@ -187,7 +186,7 @@ svg {
 
 .main-nav a:hover,
 .header-phone:hover {
-    color: white;
+    color: var(--blue);
 }
 
 .header-actions {
@@ -207,7 +206,7 @@ svg {
     justify-content: center;
     gap: 10px;
     border: 1px solid transparent;
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 0 22px;
     font-size: 0.93rem;
     font-weight: 780;
@@ -216,7 +215,7 @@ svg {
 }
 
 .button:hover {
-    transform: translateY(-2px);
+    transform: none;
 }
 
 .button svg {
@@ -231,14 +230,14 @@ svg {
 }
 
 .button--line {
-    border-color: rgb(255 255 255 / 44%);
-    color: white;
+    border-color: var(--blue);
+    color: var(--blue);
 }
 
 .button--line:hover {
-    border-color: white;
-    background: white;
-    color: var(--ink);
+    border-color: var(--blue);
+    background: var(--blue);
+    color: white;
 }
 
 .button--blue {
@@ -261,7 +260,7 @@ svg {
 
 .hero-slider {
     position: relative;
-    min-height: 760px;
+    min-height: 780px;
     overflow: hidden;
     background: var(--ink);
     color: white;
@@ -289,13 +288,13 @@ svg {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgb(2 11 25 / 52%);
+    background: rgb(2 11 25 / 58%);
 }
 
 .hero-overlay::after {
     position: absolute;
     inset: 0 42% 0 0;
-    background: rgb(3 12 28 / 82%);
+    background: rgb(3 12 28 / 84%);
     content: '';
 }
 
@@ -303,11 +302,11 @@ svg {
     position: relative;
     z-index: 2;
     display: flex;
-    min-height: 760px;
+    min-height: 780px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 76px;
+    padding-top: 116px;
 }
 
 .hero-content .eyebrow,
@@ -354,14 +353,15 @@ svg {
 
 .slider-dots {
     display: flex;
-    gap: 8px;
+    gap: 18px;
 }
 
 .slider-dots button {
-    min-width: 66px;
-    height: 42px;
-    border: 1px solid rgb(255 255 255 / 26%);
-    border-radius: 8px;
+    min-width: 48px;
+    height: 38px;
+    border: 0;
+    border-bottom: 2px solid rgb(255 255 255 / 24%);
+    border-radius: 0;
     background: transparent;
     color: rgb(255 255 255 / 58%);
     cursor: pointer;
@@ -371,8 +371,8 @@ svg {
 
 .slider-dots button.is-active {
     border-color: var(--cyan);
-    background: var(--cyan);
-    color: var(--ink);
+    background: transparent;
+    color: var(--cyan);
 }
 
 .slider-toggle {
@@ -383,7 +383,7 @@ svg {
     justify-content: center;
     gap: 4px;
     border: 1px solid rgb(255 255 255 / 28%);
-    border-radius: 50%;
+    border-radius: 6px;
     background: transparent;
     cursor: pointer;
 }
@@ -415,8 +415,10 @@ svg {
     display: grid;
     grid-template-columns: 0.34fr 1fr;
     gap: 52px;
-    margin-bottom: 54px;
+    margin-bottom: 50px;
     align-items: start;
+    border-top: 1px solid var(--line);
+    padding-top: 24px;
 }
 
 .section-heading h2,
@@ -443,25 +445,23 @@ svg {
 .solution-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--line);
-    border-left: 1px solid var(--line);
+    gap: 16px;
 }
 
 .solution-card {
     position: relative;
     min-height: 310px;
-    border-right: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
     background: white;
     padding: 30px;
     transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
 }
 
 .solution-card:hover {
-    z-index: 2;
     border-color: var(--blue);
-    background: #edf4ff;
-    transform: translateY(-3px);
+    background: white;
+    transform: none;
 }
 
 .solution-icon {
@@ -469,8 +469,9 @@ svg {
     width: 50px;
     height: 50px;
     place-items: center;
-    border-radius: 50%;
-    background: #e5efff;
+    border: 1px solid #b9d2fa;
+    border-radius: 8px;
+    background: #f1f6ff;
     color: var(--blue);
 }
 
@@ -510,7 +511,7 @@ svg {
     height: 38px;
     place-items: center;
     border: 1px solid var(--line);
-    border-radius: 50%;
+    border-radius: 6px;
     color: var(--blue);
 }
 
@@ -526,7 +527,8 @@ svg {
 }
 
 .benefits {
-    background: var(--ink);
+    border-top: 6px solid var(--blue);
+    background: #0a192d;
     color: white;
 }
 
@@ -573,7 +575,8 @@ svg {
     width: 48px;
     height: 48px;
     place-items: center;
-    border-radius: 50%;
+    border: 1px solid var(--line-dark);
+    border-radius: 8px;
     background: var(--ink-soft);
     color: var(--cyan);
 }
@@ -608,7 +611,7 @@ svg {
     height: 38px;
     place-items: center;
     border: 1px solid var(--line-dark);
-    border-radius: 50%;
+    border-radius: 6px;
     color: #8da0bb;
 }
 
@@ -635,15 +638,22 @@ details[open] .program-plus svg {
 }
 
 .programs {
-    background: white;
+    background: var(--paper);
 }
 
 .program-list {
-    border-top: 1px solid var(--line);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
 }
 
 .program-item {
+    background: white;
     border-bottom: 1px solid var(--line);
+}
+
+.program-item:last-child {
+    border-bottom: 0;
 }
 
 .program-item[open] {
@@ -710,7 +720,8 @@ details[open] .program-plus svg {
 }
 
 .contacts {
-    background: var(--blue);
+    border-top: 6px solid var(--blue);
+    background: var(--ink);
     color: white;
 }
 
@@ -721,7 +732,7 @@ details[open] .program-plus svg {
 }
 
 .contacts-intro .section-kicker {
-    color: #bcefff;
+    color: var(--cyan);
 }
 
 .contacts-intro > p:not(.section-kicker) {
@@ -776,6 +787,7 @@ details[open] .program-plus svg {
 }
 
 .site-footer {
+    border-top: 1px solid var(--line-dark);
     background: var(--ink);
     color: #a6b3c5;
 }
@@ -822,7 +834,7 @@ details[open] .program-plus svg {
 
 @media (max-width: 1040px) {
     .header-inner {
-        grid-template-columns: 116px 1fr;
+        grid-template-columns: 136px 1fr;
     }
 
     .main-nav {
@@ -868,20 +880,24 @@ details[open] .program-plus svg {
     }
 
     .site-header {
-        background: var(--ink);
+        background: var(--white);
     }
 
     .header-inner {
         position: relative;
-        grid-template-columns: 98px 1fr auto;
-        min-height: 76px;
+        grid-template-columns: 108px 1fr auto;
+        min-height: 74px;
         gap: 14px;
         border-bottom: 0;
     }
 
     .brand {
-        width: 96px;
-        height: 48px;
+        width: 108px;
+        height: 56px;
+    }
+
+    .brand img {
+        width: 104px;
     }
 
     .header-phone {
@@ -907,16 +923,16 @@ details[open] .program-plus svg {
         align-items: center;
         justify-content: center;
         gap: 7px;
-        border: 1px solid var(--line-dark);
-        border-radius: 50%;
-        background: transparent;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
         cursor: pointer;
     }
 
     .menu-toggle > span:not(.screen-reader-text) {
         width: 17px;
         height: 1px;
-        background: white;
+        background: var(--ink);
         transition: transform 160ms ease;
     }
 
@@ -930,14 +946,15 @@ details[open] .program-plus svg {
 
     .main-nav {
         position: absolute;
-        top: 76px;
+        top: 74px;
         right: -16px;
         left: -16px;
         display: none;
         flex-direction: column;
         gap: 0;
-        border-top: 1px solid var(--line-dark);
-        background: var(--ink);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
         padding: 12px 16px 22px;
     }
 
@@ -946,7 +963,8 @@ details[open] .program-plus svg {
     }
 
     .main-nav a {
-        border-bottom: 1px solid var(--line-dark);
+        border-bottom: 1px solid var(--line);
+        color: var(--text);
         padding: 16px 4px;
         font-size: 1rem;
     }
@@ -1073,12 +1091,17 @@ details[open] .program-plus svg {
 
 @media (max-width: 420px) {
     .header-inner {
-        grid-template-columns: 88px 1fr auto;
+        grid-template-columns: 96px 1fr auto;
+        gap: 10px;
     }
 
     .brand {
-        width: 84px;
-        height: 44px;
+        width: 96px;
+        height: 50px;
+    }
+
+    .brand img {
+        width: 92px;
     }
 
     .button--small {
