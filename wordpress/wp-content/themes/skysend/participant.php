@@ -79,13 +79,19 @@ get_header();
                 <h2><?php echo esc_html($participant['offer_title']); ?></h2>
                 <p><?php echo esc_html($participant['offer_text']); ?></p>
             </div>
-            <div class="participant-offer__map reveal" aria-label="Состав решения">
-                <span class="participant-offer__core"><?php echo skysend_icon($participant['icon']); ?><b>SkySend</b></span>
-                <?php foreach ($participant['offer_items'] as $index => $item) : ?>
-                    <span class="participant-offer__item participant-offer__item--<?php echo esc_attr((string) ($index + 1)); ?>">
-                        <strong><?php echo esc_html($item); ?></strong>
-                    </span>
-                <?php endforeach; ?>
+            <div class="participant-offer__list reveal" aria-label="<?php echo esc_attr($participant['offer_list_title']); ?>">
+                <div class="participant-offer__list-heading">
+                    <span class="participant-offer__list-icon" aria-hidden="true"><?php echo skysend_icon($participant['icon']); ?></span>
+                    <strong><?php echo esc_html($participant['offer_list_title']); ?></strong>
+                </div>
+                <div role="list">
+                    <?php foreach ($participant['offer_items'] as $index => $item) : ?>
+                        <div class="participant-offer__item" role="listitem">
+                            <span><?php echo esc_html(str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT)); ?></span>
+                            <strong><?php echo esc_html($item); ?></strong>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>

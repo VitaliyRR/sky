@@ -13,8 +13,8 @@ $capabilities = array(
     array(
         'tone' => 'ink',
         'icon' => 'percent',
-        'metric' => 'Условия',
-        'label' => 'для партнёров',
+        'metric' => 'Нет',
+        'label' => 'скрытых комиссий',
         'title' => 'Высокое вознаграждение',
         'text' => 'Система SkySend полностью автоматизирована, поэтому затраты на её обслуживание снижены, а партнёрам предоставляется повышенное вознаграждение.',
     ),
@@ -118,10 +118,6 @@ $capabilities = array(
                 <?php foreach ($participants as $slug => $participant) : ?>
                     <a class="participant-card participant-card--<?php echo esc_attr($participant['tone']); ?> reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
                         <span class="participant-art">
-                            <span class="participant-art__line participant-art__line--one"></span>
-                            <span class="participant-art__line participant-art__line--two"></span>
-                            <span class="participant-art__node participant-art__node--one"></span>
-                            <span class="participant-art__node participant-art__node--two"></span>
                             <span class="participant-art__core"><?php echo skysend_icon($participant['icon']); ?></span>
                             <span class="participant-art__metric">
                                 <strong><?php echo esc_html($participant['card_metric']); ?></strong>
@@ -156,10 +152,9 @@ $capabilities = array(
                         <h3><?php echo esc_html($capability['title']); ?></h3>
                         <p><?php echo esc_html($capability['text']); ?></p>
                     </div>
-                    <div class="capability-graphic">
+                    <div class="capability-graphic" aria-label="<?php echo esc_attr($capability['metric'] . ' — ' . $capability['label']); ?>">
                         <span class="capability-graphic__icon"><?php echo skysend_icon($capability['icon']); ?></span>
-                        <span class="capability-graphic__orbit capability-graphic__orbit--one"></span>
-                        <span class="capability-graphic__orbit capability-graphic__orbit--two"></span>
+                        <span class="capability-graphic__caption">Ключевой факт</span>
                         <strong><?php echo esc_html($capability['metric']); ?></strong>
                         <small><?php echo esc_html($capability['label']); ?></small>
                     </div>

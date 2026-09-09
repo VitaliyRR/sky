@@ -159,6 +159,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Возможности для платёжных агентов',
             'offer_text' => 'Система SkySend предлагает перевести действующие терминалы, организовать операторские точки и использовать ПО ALLVEND.',
+            'offer_list_title' => 'Что доступно агентам',
             'offer_items' => array('Перевести терминалы', 'Операторские точки', 'ПО ALLVEND'),
         ),
         'providers' => array(
@@ -185,6 +186,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Подключение к SkySend',
             'offer_text' => 'Провайдерам доступны сеть приёма платежей, бесплатное подключение и автоматизация отчётности.',
+            'offer_list_title' => 'Что доступно провайдерам',
             'offer_items' => array('Кнопка оплаты услуг', 'Защита данных', 'Автоматизация отчётности'),
         ),
         'suppliers' => array(
@@ -211,6 +213,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Проект SkyMarket',
             'offer_text' => 'SkyMarket обеспечивает загрузку справочника товаров, формирование и оплату заказов на терминалах SkySend.',
+            'offer_list_title' => 'Работа со SkyMarket',
             'offer_items' => array('Справочник товаров', 'Работа через кабинет', 'Интеграция по XML'),
         ),
         'advertisers' => array(
@@ -237,6 +240,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Виды рекламы',
             'offer_text' => 'При проведении рекламной кампании оплачивается фактически осуществлённая реклама, а эффективность контролируется по статистике трансляций.',
+            'offer_list_title' => 'Форматы рекламы',
             'offer_items' => array('Видеореклама', 'Реклама на чеках', 'Онлайн SMS-рассылка'),
         ),
         'representatives' => array(
@@ -263,6 +267,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Направления работы в регионе',
             'offer_text' => 'Система предлагает представителям организацию кассы в регионе, подключение партнёров и освоение направлений SkySend.',
+            'offer_list_title' => 'Направления в регионе',
             'offer_items' => array('Касса в регионе', 'Подключение партнёров', 'Освоение направлений'),
         ),
         'gateways' => array(
@@ -289,6 +294,7 @@ function skysend_participants(): array
             ),
             'offer_title' => 'Организация приёма платежей',
             'offer_text' => 'Технические специалисты консультируют по интеграции XML-протокола, запускают XML-точку и тестируют проведение платежей.',
+            'offer_list_title' => 'Этапы подключения',
             'offer_items' => array('Интеграция XML-протокола', 'Запуск XML-точки', 'Тестирование платежей'),
         ),
     );

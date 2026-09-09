@@ -1240,47 +1240,23 @@ details[open] .program-plus svg {
 }
 
 .participant-art {
-    position: relative;
-    display: block;
-    min-height: 226px;
-    overflow: hidden;
-    background:
-        linear-gradient(135deg, rgb(255 255 255 / 60%), transparent 54%),
-        var(--card-soft);
-}
-
-.participant-art::before,
-.participant-art::after {
-    position: absolute;
-    border: 1px solid color-mix(in srgb, var(--card-accent) 28%, transparent);
-    border-radius: 50%;
-    content: '';
-}
-
-.participant-art::before {
-    width: 250px;
-    height: 250px;
-    top: -132px;
-    right: -70px;
-}
-
-.participant-art::after {
-    width: 130px;
-    height: 130px;
-    bottom: -72px;
-    left: -36px;
+    display: flex;
+    min-height: 196px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 18%, var(--line));
+    background: var(--card-soft);
+    padding: 30px;
 }
 
 .participant-art__core {
-    position: absolute;
-    z-index: 2;
-    top: 34px;
-    left: 30px;
     display: grid;
     width: 68px;
     height: 68px;
+    flex: 0 0 68px;
     place-items: center;
-    border-radius: 50%;
+    border-radius: 14px;
     background: var(--card-accent);
     color: var(--white);
 }
@@ -1291,10 +1267,6 @@ details[open] .program-plus svg {
 }
 
 .participant-art__metric {
-    position: absolute;
-    z-index: 2;
-    right: 28px;
-    bottom: 27px;
     display: flex;
     max-width: 174px;
     flex-direction: column;
@@ -1316,48 +1288,6 @@ details[open] .program-plus svg {
     font-size: 0.73rem;
     font-weight: 740;
     line-height: 1.35;
-}
-
-.participant-art__line {
-    position: absolute;
-    z-index: 1;
-    height: 1px;
-    transform-origin: left center;
-    background: color-mix(in srgb, var(--card-accent) 38%, transparent);
-}
-
-.participant-art__line--one {
-    width: 156px;
-    top: 68px;
-    left: 86px;
-    transform: rotate(19deg);
-}
-
-.participant-art__line--two {
-    width: 124px;
-    top: 121px;
-    left: 82px;
-    transform: rotate(-13deg);
-}
-
-.participant-art__node {
-    position: absolute;
-    z-index: 2;
-    width: 13px;
-    height: 13px;
-    border: 3px solid var(--card-soft);
-    border-radius: 50%;
-    background: var(--card-accent);
-}
-
-.participant-art__node--one {
-    top: 107px;
-    left: 229px;
-}
-
-.participant-art__node--two {
-    top: 88px;
-    left: 191px;
 }
 
 .participant-card__copy {
@@ -1511,27 +1441,28 @@ details[open] .program-plus svg {
 }
 
 .capability-graphic {
-    position: relative;
-    display: grid;
+    display: flex;
     width: min(390px, 100%);
-    aspect-ratio: 1;
-    place-content: center;
+    min-height: 320px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     justify-self: center;
-    border: 1px solid color-mix(in srgb, var(--band-accent) 34%, transparent);
-    border-radius: 50%;
-    text-align: center;
+    border: 1px solid color-mix(in srgb, var(--band-accent) 36%, transparent);
+    border-left: 4px solid var(--band-accent);
+    border-radius: 16px;
+    background: rgb(255 255 255 / 7%);
+    padding: 38px;
+    text-align: left;
 }
 
 .capability-graphic__icon {
-    position: absolute;
-    top: 12%;
-    left: 50%;
     display: grid;
     width: 62px;
     height: 62px;
     place-items: center;
-    transform: translateX(-50%);
-    border-radius: 50%;
+    margin-bottom: 34px;
+    border-radius: 13px;
     background: var(--band-accent);
     color: var(--ink);
 }
@@ -1541,39 +1472,30 @@ details[open] .program-plus svg {
     height: 27px;
 }
 
-.capability-graphic__orbit {
-    position: absolute;
-    border: 1px solid color-mix(in srgb, var(--band-accent) 26%, transparent);
-    border-radius: 50%;
-}
-
-.capability-graphic__orbit--one {
-    inset: 14%;
-}
-
-.capability-graphic__orbit--two {
-    inset: 29%;
+.capability-graphic__caption {
+    margin-bottom: 12px;
+    color: var(--band-muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
 }
 
 .capability-graphic strong {
-    position: relative;
-    z-index: 2;
     color: var(--band-accent);
     font-size: clamp(3rem, 5.2vw, 4.8rem);
     font-weight: 760;
-    letter-spacing: -0.09em;
-    line-height: 0.9;
+    letter-spacing: -0.07em;
+    line-height: 0.95;
 }
 
 .capability-graphic small {
-    position: relative;
-    z-index: 2;
-    max-width: 170px;
-    margin: 17px auto 0;
+    max-width: 230px;
+    margin: 14px 0 0;
     color: var(--band-muted);
-    font-size: 0.79rem;
+    font-size: 0.84rem;
     font-weight: 760;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
 }
 
@@ -2242,83 +2164,63 @@ details[open] .program-plus svg {
     color: #aebed3;
 }
 
-.participant-offer__map {
-    position: relative;
-    min-height: 440px;
-}
-
-.participant-offer__map::before {
-    position: absolute;
-    inset: 36px 16%;
+.participant-offer__list {
+    width: min(560px, 100%);
+    justify-self: end;
     border: 1px solid #2b4564;
-    border-radius: 50%;
-    content: '';
+    border-top: 4px solid var(--cyan);
+    border-radius: 16px;
+    background: #0c1c31;
+    padding: 30px;
 }
 
-.participant-offer__core,
-.participant-offer__item {
-    position: absolute;
+.participant-offer__list-heading {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding-bottom: 26px;
 }
 
-.participant-offer__core {
-    z-index: 3;
-    top: 50%;
-    left: 50%;
+.participant-offer__list-heading > strong {
+    font-size: 1.4rem;
+    letter-spacing: -0.035em;
+}
+
+.participant-offer__list-icon {
     display: grid;
-    width: 130px;
-    height: 130px;
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
     place-items: center;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
+    border-radius: 12px;
     background: var(--blue);
 }
 
-.participant-offer__core svg {
-    width: 35px;
-    height: 35px;
-}
-
-.participant-offer__core b {
-    margin-top: -30px;
-    font-size: 0.78rem;
+.participant-offer__list-icon svg {
+    width: 28px;
+    height: 28px;
 }
 
 .participant-offer__item {
-    z-index: 4;
-    display: flex;
-    width: 188px;
-    min-height: 90px;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 10px;
-    background: #112641;
-    padding: 17px 20px;
+    display: grid;
+    width: 100%;
+    min-height: 76px;
+    grid-template-columns: 44px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid #2b4564;
+    padding: 18px 0;
 }
 
-.participant-offer__item--1 {
-    top: 0;
-    left: 0;
-}
-
-.participant-offer__item--2 {
-    top: 0;
-    right: 0;
-}
-
-.participant-offer__item--3 {
-    right: 13%;
-    bottom: 0;
-}
-
-.participant-offer__item small {
+.participant-offer__item > span {
     color: var(--cyan);
-    font-size: 0.66rem;
-    letter-spacing: 0.13em;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
 }
 
 .participant-offer__item strong {
-    margin-top: 5px;
-    font-size: 0.88rem;
+    font-size: 1rem;
 }
 
 .participant-cta {
@@ -2390,7 +2292,7 @@ details[open] .program-plus svg {
         grid-template-columns: 1fr;
     }
 
-    .participant-offer__map {
+    .participant-offer__list {
         width: min(620px, 100%);
         justify-self: center;
     }
@@ -2475,7 +2377,8 @@ details[open] .program-plus svg {
     }
 
     .capability-graphic {
-        width: min(310px, 90vw);
+        width: 100%;
+        min-height: 280px;
     }
 
     .program-card--allvend {
@@ -2532,20 +2435,8 @@ details[open] .program-plus svg {
         padding: 78px 0;
     }
 
-    .participant-offer__map {
-        min-height: 520px;
-    }
-
-    .participant-offer__map::before {
-        inset: 80px 10%;
-    }
-
-    .participant-offer__item {
-        width: 158px;
-    }
-
-    .participant-offer__item--3 {
-        right: 4%;
+    .participant-offer__list {
+        padding: 26px;
     }
 
     .participant-cta__actions {
@@ -2554,8 +2445,20 @@ details[open] .program-plus svg {
 }
 
 @media (max-width: 420px) {
-    .participant-art__metric {
-        right: 20px;
+    .participant-art {
+        min-height: 176px;
+        gap: 16px;
+        padding: 24px;
+    }
+
+    .participant-art__core {
+        width: 58px;
+        height: 58px;
+        flex-basis: 58px;
+    }
+
+    .participant-art__metric strong {
+        font-size: 2.15rem;
     }
 
     .participant-hero__visual {
@@ -2589,9 +2492,19 @@ details[open] .program-plus svg {
         text-align: left;
     }
 
-    .participant-offer__map {
-        transform: scale(0.9);
-        margin-inline: -18px;
+    .participant-offer__list {
+        width: 100%;
+        padding: 22px;
+    }
+
+    .participant-offer__list-heading {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .participant-offer__item {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 10px;
     }
 }
 
