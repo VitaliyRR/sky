@@ -28,17 +28,25 @@ get_header();
                 <a class="button button--accent" href="#connect">Подключиться <?php echo skysend_icon('arrow'); ?></a>
             </div>
 
-            <div class="participant-hero__visual reveal" aria-label="Ключевые показатели">
-                <span class="participant-hero__core" aria-hidden="true"><?php echo skysend_icon($participant['icon']); ?></span>
-                <span class="participant-hero__route participant-hero__route--one" aria-hidden="true"></span>
-                <span class="participant-hero__route participant-hero__route--two" aria-hidden="true"></span>
-                <span class="participant-hero__route participant-hero__route--three" aria-hidden="true"></span>
-                <?php foreach ($participant['metrics'] as $index => $metric) : ?>
-                    <span class="participant-metric participant-metric--<?php echo esc_attr((string) ($index + 1)); ?>">
-                        <strong><?php echo esc_html($metric['value']); ?></strong>
-                        <small><?php echo esc_html($metric['label']); ?></small>
+            <div class="participant-hero__visual reveal" aria-label="<?php echo esc_attr($participant['visual_title']); ?>">
+                <div class="participant-hero__visual-heading">
+                    <span class="participant-hero__core" aria-hidden="true"><?php echo skysend_icon($participant['icon']); ?></span>
+                    <span>
+                        <small>Ключевые возможности</small>
+                        <strong><?php echo esc_html($participant['visual_title']); ?></strong>
                     </span>
-                <?php endforeach; ?>
+                </div>
+                <div class="participant-hero__visual-list" role="list">
+                    <?php foreach ($participant['metrics'] as $index => $metric) : ?>
+                        <div class="participant-metric" role="listitem">
+                            <span class="participant-metric__number"><?php echo esc_html(str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT)); ?></span>
+                            <span class="participant-metric__copy">
+                                <strong><?php echo esc_html($metric['value']); ?></strong>
+                                <small><?php echo esc_html($metric['label']); ?></small>
+                            </span>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </div>
     </section>

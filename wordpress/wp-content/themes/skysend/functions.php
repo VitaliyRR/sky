@@ -144,6 +144,7 @@ function skysend_participants(): array
             'card_metric_label' => 'снижение расходов',
             'kicker' => 'Платёжным агентам',
             'hero_title' => 'Приём платежей с системой SkySend',
+            'visual_title' => 'Основные условия',
             'intro' => 'Система SkySend предоставляет более 5 000 поставщиков услуг, высокое вознаграждение, отсутствие скрытых комиссий и стабильную работу терминалов.',
             'metrics' => array(
                 array('value' => '50%', 'label' => 'снижение расходов'),
@@ -169,6 +170,7 @@ function skysend_participants(): array
             'card_metric_label' => 'подключение',
             'kicker' => 'Провайдерам услуг',
             'hero_title' => 'Дополнительные точки оплаты ваших услуг',
+            'visual_title' => 'Условия подключения',
             'intro' => 'SkySend предлагает разместить кнопку оплаты услуг на платёжных терминалах системы и увеличить число мест приёма платежей.',
             'metrics' => array(
                 array('value' => 'Сеть', 'label' => 'приёма платежей'),
@@ -194,6 +196,7 @@ function skysend_participants(): array
             'card_metric_label' => 'заказ товаров',
             'kicker' => 'Поставщикам товаров',
             'hero_title' => 'Продажа товаров на терминалах SkySend',
+            'visual_title' => 'Возможности SkyMarket',
             'intro' => 'Проект SkyMarket позволяет разместить товары с фотографиями и подробным описанием на платёжных терминалах системы SkySend.',
             'metrics' => array(
                 array('value' => 'SkyMarket', 'label' => 'торговая площадка'),
@@ -219,6 +222,7 @@ function skysend_participants(): array
             'card_metric_label' => 'на экране терминала',
             'kicker' => 'Рекламодателям',
             'hero_title' => 'Реклама SkySend',
+            'visual_title' => 'Виды рекламы',
             'intro' => 'Рекламная платформа SkySend поддерживает трансляцию видеороликов на экранах терминалов, печать рекламы на чеках и онлайн SMS-рассылку.',
             'metrics' => array(
                 array('value' => 'Видео', 'label' => 'на экране'),
@@ -244,6 +248,7 @@ function skysend_participants(): array
             'card_metric_label' => 'эксклюзивность',
             'kicker' => 'Представителям',
             'hero_title' => 'Представительство SkySend в регионе',
+            'visual_title' => 'Условия для представителей',
             'intro' => 'Представитель может наладить работу направлений SkySend в своём регионе, подключать новых партнёров и получать доход от их работы.',
             'metrics' => array(
                 array('value' => 'Доход', 'label' => 'статьи доходов'),
@@ -269,6 +274,7 @@ function skysend_participants(): array
             'card_metric_label' => 'протокол',
             'kicker' => 'Шлюзовикам',
             'hero_title' => 'Работа по XML-протоколу',
+            'visual_title' => 'Возможности подключения',
             'intro' => 'Собственная предпроцессинговая система агента может быть интегрирована с системой SkySend по XML-протоколу для приёма платежей.',
             'metrics' => array(
                 array('value' => 'XML', 'label' => 'протокол'),
