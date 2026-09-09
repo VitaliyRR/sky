@@ -21,11 +21,11 @@ get_header();
     <section class="participant-hero participant-hero--<?php echo esc_attr($participant['tone']); ?>">
         <div class="shell participant-hero__inner">
             <div class="participant-hero__copy reveal">
-                <a class="participant-back" href="<?php echo esc_url(home_url('/#participants')); ?>"><?php echo skysend_icon('arrow'); ?> Все участники</a>
+                <a class="participant-back" href="<?php echo esc_url(home_url('/#participants')); ?>"><?php echo skysend_icon('arrow'); ?> Все партнёры</a>
                 <p class="eyebrow"><?php echo esc_html($participant['kicker']); ?></p>
                 <h1><?php echo esc_html($participant['hero_title']); ?></h1>
                 <p><?php echo esc_html($participant['intro']); ?></p>
-                <a class="button button--accent" href="#connect">Обсудить подключение <?php echo skysend_icon('arrow'); ?></a>
+                <a class="button button--accent" href="#connect">Подключиться <?php echo skysend_icon('arrow'); ?></a>
             </div>
 
             <div class="participant-hero__visual reveal" aria-label="Ключевые показатели">
@@ -46,10 +46,9 @@ get_header();
     <section class="section participant-benefits">
         <div class="shell">
             <header class="section-heading reveal">
-                <p class="section-kicker">Главное для вас</p>
+                <p class="section-kicker">Преимущества</p>
                 <div>
-                    <h2>Практические возможности для ежедневной работы</h2>
-                    <p>От финансового результата до удалённого контроля — каждый инструмент решает конкретную задачу вашей сети.</p>
+                    <h2>Преимущества работы с SkySend</h2>
                 </div>
             </header>
 
@@ -68,7 +67,7 @@ get_header();
     <section class="participant-offer">
         <div class="shell participant-offer__inner">
             <div class="participant-offer__copy reveal">
-                <p class="section-kicker">Как это работает</p>
+                <p class="section-kicker">Возможности</p>
                 <h2><?php echo esc_html($participant['offer_title']); ?></h2>
                 <p><?php echo esc_html($participant['offer_text']); ?></p>
             </div>
@@ -86,9 +85,9 @@ get_header();
     <section class="participant-cta" id="connect">
         <div class="shell participant-cta__inner reveal">
             <div>
-                <p class="section-kicker">Следующий шаг</p>
+                <p class="section-kicker">Контакты</p>
                 <h2>Подключиться к SkySend</h2>
-                <p>Расскажите о своей задаче — команда предложит подходящий формат и план запуска.</p>
+                <p>Для подключения свяжитесь с менеджером по телефону или воспользуйтесь разделом контактов.</p>
             </div>
             <div class="participant-cta__actions">
                 <a class="button button--light" href="<?php echo esc_attr(skysend_phone_href()); ?>"><?php echo esc_html(skysend_phone()); ?></a>
