@@ -127,15 +127,249 @@ function skysend_icon(string $name): string
     return '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' . $icons[$name] . '</svg>';
 }
 
-function skysend_meta_tags(): void
+/**
+ * Content shared by the participant cards and their landing pages.
+ *
+ * @return array<string, array<string, mixed>>
+ */
+function skysend_participants(): array
 {
-    if (!is_front_page()) {
+    return array(
+        'agents' => array(
+            'icon' => 'terminal',
+            'tone' => 'blue',
+            'title' => 'Платёжным агентам',
+            'card_text' => 'Доходная терминальная сеть с удалённым управлением и понятной экономикой.',
+            'card_metric' => 'до 50%',
+            'card_metric_label' => 'меньше расходов',
+            'kicker' => 'Платёжным агентам',
+            'hero_title' => 'Больше дохода с каждой точки',
+            'intro' => 'Переведите терминалы и операторские точки в SkySend, чтобы сократить расходы на обслуживание сети, подключить востребованные платежи и управлять оборудованием из одного центра.',
+            'metrics' => array(
+                array('value' => 'до 50%', 'label' => 'ниже расходы'),
+                array('value' => 'до 20%', 'label' => 'рост дохода'),
+                array('value' => '5 000+', 'label' => 'поставщиков услуг'),
+            ),
+            'benefits' => array(
+                array('icon' => 'cost', 'title' => 'Снижение расходов', 'text' => 'Централизованные настройки и мониторинг уменьшают количество выездов и ручных операций.'),
+                array('icon' => 'network', 'title' => 'Удалённое управление', 'text' => 'Контролируйте терминалы и операторские точки из единого рабочего пространства.'),
+                array('icon' => 'percent', 'title' => 'Рост доходов', 'text' => 'Высокое агентское вознаграждение и широкий набор услуг повышают доходность каждой точки.'),
+                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'Следите за состоянием сети и быстрее реагируйте на отклонения в работе оборудования.'),
+            ),
+            'offer_title' => 'Готовая основа для развития сети',
+            'offer_text' => 'SkySend объединяет перевод действующих терминалов, запуск операторских точек и современное ПО ALLVEND в одном решении.',
+            'offer_items' => array('Перевод действующих терминалов', 'Операторские точки', 'ПО ALLVEND'),
+        ),
+        'providers' => array(
+            'icon' => 'network',
+            'tone' => 'cyan',
+            'title' => 'Провайдерам услуг',
+            'card_text' => 'Больше мест приёма платежей без развёртывания собственной терминальной сети.',
+            'card_metric' => '5 000+',
+            'card_metric_label' => 'поставщиков услуг',
+            'kicker' => 'Провайдерам услуг',
+            'hero_title' => 'Больше точек приёма ваших платежей',
+            'intro' => 'Разместите оплату своих услуг в сети SkySend и дайте клиентам удобный способ платить через терминалы, операторские точки и подключённые интерфейсы.',
+            'metrics' => array(
+                array('value' => 'Шире', 'label' => 'география оплаты'),
+                array('value' => '0 ₽', 'label' => 'за старт интеграции'),
+                array('value' => 'Авто', 'label' => 'сверка и отчётность'),
+            ),
+            'benefits' => array(
+                array('icon' => 'network', 'title' => 'Расширение сети', 'text' => 'Получайте дополнительные точки оплаты без затрат на собственную инфраструктуру.'),
+                array('icon' => 'plus', 'title' => 'Быстрое подключение', 'text' => 'Команда SkySend помогает пройти интеграцию и вывести услугу в платёжную сеть.'),
+                array('icon' => 'shield', 'title' => 'Защита данных', 'text' => 'Контролируемый обмен информацией помогает сохранять целостность платёжных операций.'),
+                array('icon' => 'speed', 'title' => 'Автоматизация отчётности', 'text' => 'Сверка платежей и формирование отчётов становятся быстрее и прозрачнее.'),
+            ),
+            'offer_title' => 'Один вход — тысячи точек оплаты',
+            'offer_text' => 'Подключите услугу к SkySend и используйте действующую сеть для приёма платежей и развития клиентского сервиса.',
+            'offer_items' => array('Подключение к SkySend', 'Интеграция платёжной кнопки', 'Автоматизированная отчётность'),
+        ),
+        'suppliers' => array(
+            'icon' => 'box',
+            'tone' => 'violet',
+            'title' => 'Поставщикам товаров',
+            'card_text' => 'Новый канал продаж через терминалы и цифровые точки платёжной сети.',
+            'card_metric' => 'Новый',
+            'card_metric_label' => 'рынок сбыта',
+            'kicker' => 'Поставщикам товаров',
+            'hero_title' => 'Новый канал продаж без собственной инфраструктуры',
+            'intro' => 'Разместите товары и услуги в подключённой сети SkySend, быстро запустите продажи в новых регионах и управляйте ассортиментом централизованно.',
+            'metrics' => array(
+                array('value' => 'Быстро', 'label' => 'выход на рынок'),
+                array('value' => 'Шире', 'label' => 'география продаж'),
+                array('value' => 'XML', 'label' => 'обмен данными'),
+            ),
+            'benefits' => array(
+                array('icon' => 'box', 'title' => 'Новый рынок сбыта', 'text' => 'Используйте действующие платёжные точки как дополнительный канал продаж.'),
+                array('icon' => 'speed', 'title' => 'Быстрый запуск', 'text' => 'Проверенная инфраструктура сокращает путь от интеграции до первой продажи.'),
+                array('icon' => 'percent', 'title' => 'Рост доходов', 'text' => 'Дополнительные точки контакта помогают расширять продажи без открытия филиалов.'),
+                array('icon' => 'code', 'title' => 'Гибкая интеграция', 'text' => 'Передавайте справочник товаров и данные заказов через согласованный протокол.'),
+            ),
+            'offer_title' => 'Продажи там, где клиент уже платит',
+            'offer_text' => 'SkySend помогает разместить каталог, принимать заказы и передавать статусы между платёжной точкой и вашей системой.',
+            'offer_items' => array('Справочник товаров', 'Работа через кабинет', 'Интеграция по XML'),
+        ),
+        'advertisers' => array(
+            'icon' => 'megaphone',
+            'tone' => 'orange',
+            'title' => 'Рекламодателям',
+            'card_text' => 'Реклама на экранах и чеках в момент, когда клиент совершает платёж.',
+            'card_metric' => '4',
+            'card_metric_label' => 'формата размещения',
+            'kicker' => 'Рекламодателям',
+            'hero_title' => 'Реклама в момент принятия решения',
+            'intro' => 'Показывайте предложения на экранах терминалов, в режиме инфокиоска и на платёжных чеках — с централизованным управлением кампанией.',
+            'metrics' => array(
+                array('value' => 'Экран', 'label' => 'яркий баннер'),
+                array('value' => 'Чек', 'label' => 'предложение после оплаты'),
+                array('value' => 'Видео', 'label' => 'динамичный формат'),
+            ),
+            'benefits' => array(
+                array('icon' => 'terminal', 'title' => 'Контакт в точке оплаты', 'text' => 'Обращайтесь к аудитории в момент высокой вовлечённости и конкретного действия.'),
+                array('icon' => 'megaphone', 'title' => 'Несколько форматов', 'text' => 'Используйте баннеры, видео, экран инфокиоска и сообщения на чеках.'),
+                array('icon' => 'pin', 'title' => 'Точная география', 'text' => 'Подбирайте территории и точки размещения под задачи конкретной кампании.'),
+                array('icon' => 'pulse', 'title' => 'Единое управление', 'text' => 'Обновляйте материалы централизованно без ручной работы на каждой точке.'),
+            ),
+            'offer_title' => 'Одна кампания — вся подключённая сеть',
+            'offer_text' => 'Подготовим формат размещения, выберем точки и поможем запустить рекламную кампанию в инфраструктуре SkySend.',
+            'offer_items' => array('Баннеры и видео', 'Реклама на чеках', 'Региональное размещение'),
+        ),
+        'representatives' => array(
+            'icon' => 'pin',
+            'tone' => 'green',
+            'title' => 'Представителям',
+            'card_text' => 'Готовые направления SkySend для развития платёжной сети в своём регионе.',
+            'card_metric' => 'Регион',
+            'card_metric_label' => 'ваша зона роста',
+            'kicker' => 'Представителям',
+            'hero_title' => 'Развивайте SkySend в своём регионе',
+            'intro' => 'Подключайте новых участников, развивайте востребованные направления системы и получайте доход от работы созданной региональной сети.',
+            'metrics' => array(
+                array('value' => 'Регион', 'label' => 'своя зона развития'),
+                array('value' => 'Готово', 'label' => 'решения и материалы'),
+                array('value' => 'Рост', 'label' => 'ежемесячного дохода'),
+            ),
+            'benefits' => array(
+                array('icon' => 'percent', 'title' => 'Несколько статей дохода', 'text' => 'Развивайте разные направления SkySend и получайте результат от их работы.'),
+                array('icon' => 'pin', 'title' => 'Региональная экспертиза', 'text' => 'Используйте знание местного рынка для быстрого подключения участников.'),
+                array('icon' => 'network', 'title' => 'Открытое партнёрство', 'text' => 'Получайте готовые решения, материалы и поддержку команды SkySend.'),
+                array('icon' => 'plus', 'title' => 'Подключение участников', 'text' => 'Развивайте сеть агентов, провайдеров и поставщиков в своём регионе.'),
+            ),
+            'offer_title' => 'Бизнес-модель для вашего региона',
+            'offer_text' => 'Выберите направления, сформируйте план развития и запустите региональную сеть вместе с командой SkySend.',
+            'offer_items' => array('Региональное представительство', 'Подключение участников', 'Развитие направлений'),
+        ),
+        'gateways' => array(
+            'icon' => 'gateway',
+            'tone' => 'navy',
+            'title' => 'Шлюзовикам',
+            'card_text' => 'Быстрый доступ к платёжной сети и провайдерам по единому XML-протоколу.',
+            'card_metric' => 'XML',
+            'card_metric_label' => 'единый протокол обмена',
+            'kicker' => 'Шлюзовикам',
+            'hero_title' => 'Одна интеграция для развития платёжного шлюза',
+            'intro' => 'Подключайтесь к SkySend по XML-протоколу, расширяйте список доступных услуг и быстрее запускайте новые платёжные направления.',
+            'metrics' => array(
+                array('value' => 'XML', 'label' => 'единый протокол'),
+                array('value' => '5 000+', 'label' => 'поставщиков услуг'),
+                array('value' => 'Быстро', 'label' => 'начало работы'),
+            ),
+            'benefits' => array(
+                array('icon' => 'code', 'title' => 'Понятный XML-протокол', 'text' => 'Единая схема обмена упрощает подключение и дальнейшее сопровождение.'),
+                array('icon' => 'speed', 'title' => 'Высокая скорость', 'text' => 'Оптимизированный обмен данными сокращает время обработки запросов.'),
+                array('icon' => 'network', 'title' => 'Больше провайдеров', 'text' => 'Расширяйте каталог услуг через одну интеграцию с платёжной сетью.'),
+                array('icon' => 'shield', 'title' => 'Контроль операций', 'text' => 'Следите за статусами и целостностью данных на каждом этапе проведения платежа.'),
+            ),
+            'offer_title' => 'Быстрый старт по готовому протоколу',
+            'offer_text' => 'Согласуем схему обмена, подключим тестовый контур и поможем вывести интеграцию в рабочий режим.',
+            'offer_items' => array('Техническая интеграция', 'Подключение провайдеров', 'Сопровождение запуска'),
+        ),
+    );
+}
+
+function skysend_participant_context(): ?array
+{
+    $slug = (string) get_query_var('skysend_participant');
+    $participants = skysend_participants();
+
+    return isset($participants[$slug]) ? $participants[$slug] : null;
+}
+
+function skysend_register_participant_routes(): void
+{
+    foreach (array_keys(skysend_participants()) as $slug) {
+        add_rewrite_rule(
+            '^participants/' . preg_quote($slug, '/') . '/?$',
+            'index.php?skysend_participant=' . $slug,
+            'top'
+        );
+    }
+}
+add_action('init', 'skysend_register_participant_routes');
+
+function skysend_query_vars(array $vars): array
+{
+    $vars[] = 'skysend_participant';
+    return $vars;
+}
+add_filter('query_vars', 'skysend_query_vars');
+
+function skysend_participant_status(): void
+{
+    if (!skysend_participant_context()) {
         return;
     }
 
-    $title = 'SkySend — система приёма платежей для бизнеса';
-    $description = 'SkySend объединяет платёжные терминалы, точки оплаты и более 5 000 поставщиков услуг. ПО ALLVEND, выгодные условия и готовые интеграции.';
-    $canonical = home_url('/');
+    global $wp_query;
+    $wp_query->is_404 = false;
+    status_header(200);
+}
+add_action('template_redirect', 'skysend_participant_status');
+
+function skysend_participant_template(string $template): string
+{
+    if (!skysend_participant_context()) {
+        return $template;
+    }
+
+    $participant_template = locate_template('participant.php');
+    return $participant_template ?: $template;
+}
+add_filter('template_include', 'skysend_participant_template');
+
+function skysend_participant_body_class(array $classes): array
+{
+    if (skysend_participant_context()) {
+        $classes[] = 'participant-page';
+    }
+    return $classes;
+}
+add_filter('body_class', 'skysend_participant_body_class');
+
+function skysend_flush_participant_routes(): void
+{
+    skysend_register_participant_routes();
+    flush_rewrite_rules();
+}
+add_action('after_switch_theme', 'skysend_flush_participant_routes');
+
+function skysend_meta_tags(): void
+{
+    $participant = skysend_participant_context();
+    if (!is_front_page() && !$participant) {
+        return;
+    }
+
+    $title = $participant
+        ? $participant['title'] . ' — SkySend'
+        : 'SkySend — система приёма платежей для бизнеса';
+    $description = $participant
+        ? $participant['intro']
+        : 'SkySend объединяет платёжные терминалы, точки оплаты и более 5 000 поставщиков услуг. ПО ALLVEND, выгодные условия и готовые интеграции.';
+    $canonical = $participant
+        ? home_url('/participants/' . (string) get_query_var('skysend_participant') . '/')
+        : home_url('/');
     $phone = skysend_phone();
 
     echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
@@ -149,19 +383,28 @@ function skysend_meta_tags(): void
     echo '<meta name="twitter:card" content="summary">' . "\n";
     echo '<link rel="icon" href="' . esc_url(get_theme_file_uri('/assets/images/favicon.png')) . '" sizes="16x16">' . "\n";
 
-    $schema = array(
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
-        'name' => 'SkySend',
-        'url' => $canonical,
-        'description' => $description,
-        'contactPoint' => array(
-            '@type' => 'ContactPoint',
-            'telephone' => $phone,
-            'contactType' => 'customer support',
-            'availableLanguage' => 'Russian',
-        ),
-    );
+    $schema = $participant
+        ? array(
+            '@context' => 'https://schema.org',
+            '@type' => 'WebPage',
+            'name' => $title,
+            'url' => $canonical,
+            'description' => $description,
+            'isPartOf' => array('@type' => 'WebSite', 'name' => 'SkySend', 'url' => home_url('/')),
+        )
+        : array(
+            '@context' => 'https://schema.org',
+            '@type' => 'Organization',
+            'name' => 'SkySend',
+            'url' => $canonical,
+            'description' => $description,
+            'contactPoint' => array(
+                '@type' => 'ContactPoint',
+                'telephone' => $phone,
+                'contactType' => 'customer support',
+                'availableLanguage' => 'Russian',
+            ),
+        );
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
 }
@@ -169,7 +412,11 @@ add_action('wp_head', 'skysend_meta_tags', 2);
 
 function skysend_document_title(array $parts): array
 {
-    if (is_front_page()) {
+    $participant = skysend_participant_context();
+    if ($participant) {
+        $parts['title'] = $participant['title'] . ' — SkySend';
+        unset($parts['tagline']);
+    } elseif (is_front_page()) {
         $parts['title'] = 'SkySend — система приёма платежей для бизнеса';
         unset($parts['tagline']);
     }

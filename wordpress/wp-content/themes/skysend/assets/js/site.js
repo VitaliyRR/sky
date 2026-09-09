@@ -30,8 +30,15 @@
 
         navigation.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
         window.addEventListener('resize', () => {
-            if (window.innerWidth > 760) {
+            if (window.innerWidth > 1040) {
                 closeMenu();
+            }
+        });
+
+        window.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
+                closeMenu();
+                menuToggle.focus();
             }
         });
     }
@@ -41,7 +48,6 @@
     if (slider) {
         const slides = Array.from(slider.querySelectorAll('[data-slide]'));
         const dots = Array.from(slider.querySelectorAll('[data-slide-to]'));
-        const toggle = slider.querySelector('[data-slider-toggle]');
         const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         let activeIndex = 0;
         let timer = null;
@@ -87,17 +93,6 @@
             });
         });
 
-        if (toggle) {
-            toggle.setAttribute('aria-pressed', String(paused));
-            toggle.setAttribute('aria-label', paused ? 'Запустить слайдер' : 'Приостановить слайдер');
-            toggle.addEventListener('click', () => {
-                paused = !paused;
-                toggle.setAttribute('aria-pressed', String(paused));
-                toggle.setAttribute('aria-label', paused ? 'Запустить слайдер' : 'Приостановить слайдер');
-                startTimer();
-            });
-        }
-
         slider.addEventListener('keydown', (event) => {
             if (event.key === 'ArrowRight') {
                 showSlide(activeIndex + 1);
@@ -124,21 +119,6 @@
         document.addEventListener('visibilitychange', startTimer);
         startTimer();
     }
-
-    document.querySelectorAll('[data-accordion-group]').forEach((group) => {
-        group.querySelectorAll('details').forEach((item) => {
-            item.addEventListener('toggle', () => {
-                if (!item.open) {
-                    return;
-                }
-                group.querySelectorAll('details').forEach((other) => {
-                    if (other !== item) {
-                        other.open = false;
-                    }
-                });
-            });
-        });
-    });
 
     const revealItems = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
