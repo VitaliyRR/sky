@@ -1190,6 +1190,59 @@ details[open] .program-plus svg {
     --slide-panel: rgb(3 18 48 / 91%);
 }
 
+.hero-slide--services {
+    background-image: none;
+    background-color: #071426;
+}
+
+.hero-slide--services::before {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: min(68vw, 1050px);
+    background-image: var(--slide-image);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    content: '';
+}
+
+.hero-slide.hero-slide--services .hero-overlay {
+    background:
+        linear-gradient(90deg, #071426 0%, rgb(7 20 38 / 98%) 34%, rgb(7 20 38 / 72%) 58%, rgb(7 20 38 / 16%) 88%),
+        linear-gradient(180deg, rgb(3 12 28 / 14%), rgb(3 12 28 / 28%));
+}
+
+.hero-slide--services .button--accent {
+    margin-top: 34px;
+}
+
+.hero-slide--finance {
+    --slide-accent: #86d8ff;
+    --slide-glow: rgb(20 112 214 / 48%);
+    --slide-panel: rgb(3 22 48 / 91%);
+    background-position: center;
+}
+
+.hero-slide--allvend {
+    background-position: center;
+}
+
+.hero-product-logo {
+    display: grid;
+    width: clamp(270px, 27vw, 350px);
+    max-width: 72vw;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 68%);
+    border-radius: 12px;
+    background: var(--white);
+    padding: 12px 18px;
+}
+
+.hero-product-logo img {
+    width: 100%;
+    height: auto;
+}
+
 .hero-slide .hero-overlay {
     background:
         linear-gradient(90deg, #071426 0%, rgb(7 20 38 / 98%) 34%, rgb(7 20 38 / 78%) 52%, rgb(7 20 38 / 15%) 84%),
@@ -1269,6 +1322,11 @@ details[open] .program-plus svg {
     --card-soft: #fff0e9;
 }
 
+.participant-card--red {
+    --card-accent: #c5242f;
+    --card-soft: #fbe7e9;
+}
+
 .participant-card--green {
     --card-accent: #087d64;
     --card-soft: #ddf7ef;
@@ -1280,11 +1338,30 @@ details[open] .program-plus svg {
 }
 
 .participant-photo {
+    position: relative;
     display: block;
     aspect-ratio: 16 / 9;
     overflow: hidden;
     border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 18%, var(--line));
     background: var(--card-soft);
+}
+
+.participant-photo__badge {
+    position: absolute;
+    z-index: 2;
+    top: 16px;
+    left: 16px;
+    border: 1px solid rgb(255 255 255 / 72%);
+    background: var(--card-accent);
+    color: var(--white);
+    padding: 7px 11px;
+    font-size: 0.8rem;
+    font-weight: 820;
+    letter-spacing: 0.1em;
+}
+
+.participant-card--navy .participant-photo img {
+    object-position: center top;
 }
 
 .participant-photo img {
@@ -2334,6 +2411,24 @@ details[open] .program-plus svg {
         background:
             linear-gradient(180deg, rgb(3 12 28 / 34%), rgb(3 12 28 / 94%) 72%),
             linear-gradient(90deg, rgb(7 20 38 / 92%) 0%, rgb(7 20 38 / 70%) 58%, rgb(7 20 38 / 18%) 100%);
+    }
+
+    .hero-slide--services::before {
+        right: -80px;
+        width: calc(100% + 80px);
+        background-position: right center;
+        background-size: auto 70%;
+    }
+
+    .hero-slide.hero-slide--services .hero-overlay {
+        background:
+            linear-gradient(180deg, rgb(3 12 28 / 42%), rgb(3 12 28 / 96%) 76%),
+            linear-gradient(90deg, rgb(7 20 38 / 90%) 0%, rgb(7 20 38 / 48%) 100%);
+    }
+
+    .hero-product-logo {
+        width: min(72vw, 300px);
+        max-width: 100%;
     }
 
     .participant-grid,

@@ -29,10 +29,10 @@ $capabilities = array(
     array(
         'tone' => 'cobalt',
         'icon' => 'pulse',
-        'metric' => 'FastSYS4',
+        'metric' => 'FastSys5',
         'label' => 'ОС на базе Linux',
         'title' => 'Стабильная работа',
-        'text' => 'FastSYS4 поддерживает автоматическое устранение ошибок устройств, анализ работы оборудования и удалённые обновления программного обеспечения.',
+        'text' => 'FastSys5 поддерживает автоматическое устранение ошибок устройств, анализ работы оборудования и удалённые обновления программного обеспечения.',
     ),
     array(
         'tone' => 'sand',
@@ -64,17 +64,16 @@ $capabilities = array(
 <main id="main">
     <section class="hero-slider" aria-label="Главные предложения SkySend" data-slider>
         <div class="hero-slides">
-            <article class="hero-slide hero-slide--violet is-active" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-providers.png')); ?>')" data-slide aria-hidden="false">
+            <article class="hero-slide hero-slide--violet hero-slide--services is-active" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-providers.png')); ?>')" data-slide aria-hidden="false">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Система приёма платежей</p>
                     <h1>Более 5 000<br>провайдеров услуг</h1>
-                    <p>Система SkySend предоставляет возможность совершать оплаты в пользу более 5 000 провайдеров услуг.</p>
                     <a class="button button--accent" href="#participants">Партнерам <?php echo skysend_icon('arrow'); ?></a>
                 </div>
             </article>
 
-            <article class="hero-slide hero-slide--mint" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-conditions.jpg')); ?>')" data-slide aria-hidden="true">
+            <article class="hero-slide hero-slide--mint hero-slide--finance" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/conditions.jpg')); ?>')" data-slide aria-hidden="true">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Преимущества SkySend</p>
@@ -84,11 +83,14 @@ $capabilities = array(
                 </div>
             </article>
 
-            <article class="hero-slide hero-slide--blue" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-allvend.jpg')); ?>')" data-slide aria-hidden="true">
+            <article class="hero-slide hero-slide--blue hero-slide--allvend" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/allvend.jpg')); ?>')" data-slide aria-hidden="true">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Программы</p>
-                    <h2>ПО ALLVEND</h2>
+                    <span class="hero-product-logo" aria-hidden="true">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/allvend-logo.png')); ?>" width="320" height="200" alt="" decoding="async">
+                    </span>
+                    <h2 class="screen-reader-text">ПО ALLVEND</h2>
                     <p>Универсальное программное обеспечение для платёжных терминалов и других устройств самообслуживания.</p>
                     <a class="button button--accent" href="#software">ПО ALLVEND <?php echo skysend_icon('arrow'); ?></a>
                 </div>
@@ -110,7 +112,7 @@ $capabilities = array(
                 <p class="section-kicker">Партнерам</p>
                 <div>
                     <h2>Партнерам SkySend</h2>
-                    <p>Информация для платёжных агентов, провайдеров услуг, поставщиков товаров, рекламодателей, представителей и шлюзовиков.</p>
+                    <p>Информация для платёжных агентов, провайдеров услуг, поставщиков товаров, торговых сетей, представителей и шлюзовиков.</p>
                 </div>
             </header>
 
@@ -119,6 +121,9 @@ $capabilities = array(
                     <a class="participant-card participant-card--<?php echo esc_attr($participant['tone']); ?> reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
                         <span class="participant-photo">
                             <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $participant['image'])); ?>" alt="" loading="lazy" decoding="async">
+                            <?php if (!empty($participant['image_badge'])) : ?>
+                                <span class="participant-photo__badge" aria-hidden="true"><?php echo esc_html($participant['image_badge']); ?></span>
+                            <?php endif; ?>
                         </span>
                         <span class="participant-card__copy">
                             <strong><?php echo esc_html($participant['title']); ?></strong>

@@ -103,6 +103,7 @@ function skysend_icon(string $name): string
         'network' => '<rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-2h12v2"/>',
         'box' => '<path d="m4 8 8-4 8 4-8 4-8-4Z"/><path d="m4 8v8l8 4 8-4V8M12 12v8"/>',
         'megaphone' => '<path d="m3 11 14-6v14L3 13v-2Z"/><path d="M7 14v5h4l1-3"/>',
+        'store' => '<path d="M4 10h16v10H4zM3 10l2-6h14l2 6"/><path d="M8 20v-6h5v6M7 10a2 2 0 0 1-4 0M12 10a2 2 0 0 1-4 0M16 10a2 2 0 0 1-4 0M21 10a2 2 0 0 1-4 0"/>',
         'pin' => '<path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2"/>',
         'gateway' => '<path d="M4 5h16v14H4zM8 9h8M8 13h5"/><path d="m15 16 2-2-2-2"/>',
         'percent' => '<path d="m6 18 12-12"/><circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/>',
@@ -153,7 +154,7 @@ function skysend_participants(): array
                 array('value' => 'Нет', 'label' => 'скрытых комиссий'),
             ),
             'benefits' => array(
-                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'FastSYS4 автоматически устраняет ошибки оборудования, анализирует работу устройств и получает удалённые обновления.'),
+                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'FastSys5 автоматически устраняет ошибки оборудования, анализирует работу устройств и получает удалённые обновления.'),
                 array('icon' => 'cost', 'title' => 'Снижение расходов', 'text' => 'Автоматика терминала решает большинство ситуаций без выезда технического специалиста.'),
                 array('icon' => 'network', 'title' => 'Удалённое управление', 'text' => 'Управление терминалами и настройками программного обеспечения выполняется удалённо.'),
                 array('icon' => 'percent', 'title' => 'Высокое вознаграждение', 'text' => 'Автоматизация и низкие затраты на обслуживание позволяют предоставлять партнёрам повышенное вознаграждение.'),
@@ -219,33 +220,33 @@ function skysend_participants(): array
             'offer_list_title' => 'Работа со SkyMarket',
             'offer_items' => array('Справочник товаров', 'Работа через кабинет', 'Интеграция по XML'),
         ),
-        'advertisers' => array(
-            'icon' => 'megaphone',
-            'tone' => 'orange',
-            'image' => 'partner-advertisers.jpg',
-            'title' => 'Рекламодателям',
-            'card_text' => 'Видеореклама на экранах терминалов, реклама на чеках и SMS-рассылка.',
-            'card_metric' => 'Видео',
-            'card_metric_label' => 'на экране терминала',
-            'kicker' => 'Рекламодателям',
-            'hero_title' => 'Реклама SkySend',
-            'visual_title' => 'Виды рекламы',
-            'intro' => 'Рекламная платформа SkySend поддерживает трансляцию видеороликов на экранах терминалов, печать рекламы на чеках и онлайн SMS-рассылку.',
+        'retailers' => array(
+            'icon' => 'store',
+            'tone' => 'red',
+            'image' => 'partner-retail.jpg',
+            'title' => 'Торговым сетям',
+            'card_text' => 'Точки самообслуживания для продажи товаров и оплаты услуг на ПО ALLVEND.',
+            'card_metric' => 'ALLVEND',
+            'card_metric_label' => 'для самообслуживания',
+            'kicker' => 'Торговым сетям',
+            'hero_title' => 'Самообслуживание для торговых сетей',
+            'visual_title' => 'Возможности ALLVEND',
+            'intro' => 'ПО ALLVEND позволяет настроить точки самообслуживания под потребности и фирменный стиль бизнеса, организовать продажу товаров и оплату услуг.',
             'metrics' => array(
-                array('value' => 'Видео', 'label' => 'на экране'),
-                array('value' => 'Чек', 'label' => 'рекламный текст'),
-                array('value' => 'SMS', 'label' => 'онлайн-рассылка'),
+                array('value' => 'ALLVEND', 'label' => 'универсальное ПО'),
+                array('value' => 'Товары', 'label' => 'формирование заказов'),
+                array('value' => 'Услуги', 'label' => 'приём оплаты'),
             ),
             'benefits' => array(
-                array('icon' => 'terminal', 'title' => 'Видеореклама', 'text' => 'Видеоролик показывается на основном экране терминала в процессе совершения платежа.'),
-                array('icon' => 'megaphone', 'title' => 'Реклама на чеках', 'text' => 'Рекламный текст печатается на лицевой стороне чека после совершения платежа.'),
-                array('icon' => 'pin', 'title' => 'Таргетинг', 'text' => 'Параметры показа позволяют выбирать аудиторию рекламной кампании.'),
-                array('icon' => 'pulse', 'title' => 'Статистика показов', 'text' => 'Статистика трансляций используется для контроля рекламной кампании.'),
+                array('icon' => 'terminal', 'title' => 'Фирменный интерфейс', 'text' => 'Цвета, расположение элементов и логика экранов настраиваются под фирменный стиль торговой сети.'),
+                array('icon' => 'box', 'title' => 'Продажа товаров', 'text' => 'Покупатель выбирает товары, формирует заказ и оплачивает его на устройстве самообслуживания.'),
+                array('icon' => 'network', 'title' => 'Оплата услуг', 'text' => 'ПО поддерживает оплату услуг федеральных и местных поставщиков.'),
+                array('icon' => 'pulse', 'title' => 'Удалённое управление', 'text' => 'Настройки и контроль точек самообслуживания доступны из онлайн-кабинета.'),
             ),
-            'offer_title' => 'Виды рекламы',
-            'offer_text' => 'При проведении рекламной кампании оплачивается фактически осуществлённая реклама, а эффективность контролируется по статистике трансляций.',
-            'offer_list_title' => 'Форматы рекламы',
-            'offer_items' => array('Видеореклама', 'Реклама на чеках', 'Онлайн SMS-рассылка'),
+            'offer_title' => 'ПО ALLVEND для торговых сетей',
+            'offer_text' => 'Универсальное ПО используется на информационных киосках, автоматах продажи товаров и платёжных терминалах.',
+            'offer_list_title' => 'Точки самообслуживания',
+            'offer_items' => array('Информационные киоски', 'Автоматы продажи товаров', 'Платёжные терминалы'),
         ),
         'representatives' => array(
             'icon' => 'pin',
@@ -279,6 +280,7 @@ function skysend_participants(): array
             'icon' => 'gateway',
             'tone' => 'navy',
             'image' => 'partner-gateways.jpg',
+            'image_badge' => 'XML',
             'title' => 'Шлюзовикам',
             'card_text' => 'Приём платежей в пользу провайдеров SkySend по XML-протоколу.',
             'card_metric' => 'XML',
@@ -325,6 +327,18 @@ function skysend_register_participant_routes(): void
     }
 }
 add_action('init', 'skysend_register_participant_routes');
+
+function skysend_redirect_legacy_advertisers_route(): void
+{
+    $request_path = trim((string) wp_parse_url(wp_unslash($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH), '/');
+    if ($request_path !== 'participants/advertisers') {
+        return;
+    }
+
+    wp_safe_redirect(home_url('/participants/retailers/'), 301);
+    exit;
+}
+add_action('template_redirect', 'skysend_redirect_legacy_advertisers_route', 1);
 
 function skysend_query_vars(array $vars): array
 {
@@ -384,7 +398,7 @@ function skysend_meta_tags(): void
         : 'SkySend — система приёма платежей';
     $description = $participant
         ? $participant['intro']
-        : 'Система SkySend предоставляет возможность совершать оплаты в пользу более 5 000 поставщиков услуг. ПО ALLVEND, РМА Windows/Linux, РМА Android и XML-шлюз.';
+        : 'SkySend — система приёма платежей: более 5 000 провайдеров услуг, ПО ALLVEND, РМА Windows/Linux, РМА Android и XML-шлюз.';
     $canonical = $participant
         ? home_url('/participants/' . (string) get_query_var('skysend_participant') . '/')
         : home_url('/');
