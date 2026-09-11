@@ -1,10 +1,19 @@
 <footer class="site-footer">
-    <div class="shell footer-line">
-        <span>© 2006–<?php echo esc_html(wp_date('Y')); ?> Группа компаний «Информ-Системы»</span>
-        <span class="footer-separator" aria-hidden="true">·</span>
-        <a href="<?php echo esc_attr(skysend_phone_href()); ?>"><?php echo esc_html(skysend_phone()); ?></a>
-        <span class="footer-separator" aria-hidden="true">·</span>
-        <a href="https://t.me/<?php echo esc_attr(skysend_telegram()); ?>" target="_blank" rel="noopener">Telegram @<?php echo esc_html(skysend_telegram()); ?></a>
+    <div class="shell footer-contacts" id="contacts">
+        <a class="footer-contact" href="<?php echo esc_attr(skysend_phone_href()); ?>">
+            <span class="footer-contact__icon"><?php echo skysend_icon('phone'); ?></span>
+            <span>
+                <small>Подключение к системе</small>
+                <strong><?php echo esc_html(skysend_phone()); ?></strong>
+            </span>
+        </a>
+        <a class="footer-contact footer-contact--support" href="https://t.me/<?php echo esc_attr(skysend_telegram()); ?>" target="_blank" rel="noopener">
+            <span class="footer-contact__icon"><?php echo skysend_icon('telegram'); ?></span>
+            <span>
+                <small>Техническая поддержка</small>
+                <strong>@<?php echo esc_html(skysend_telegram()); ?></strong>
+            </span>
+        </a>
     </div>
 </footer>
 <?php wp_footer(); ?>

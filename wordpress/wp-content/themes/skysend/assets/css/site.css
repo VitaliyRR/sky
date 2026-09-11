@@ -146,10 +146,10 @@ svg {
 
 .header-inner {
     display: grid;
-    grid-template-columns: 146px 1fr auto;
-    min-height: 82px;
+    grid-template-columns: 104px 1fr auto;
+    min-height: 66px;
     align-items: center;
-    gap: 40px;
+    gap: 32px;
 }
 
 .is-scrolled .header-inner,
@@ -159,14 +159,14 @@ svg {
 
 .brand {
     display: flex;
-    width: 136px;
-    height: 66px;
+    width: 98px;
+    height: 58px;
     align-items: center;
     background: transparent;
 }
 
 .brand img {
-    width: 132px;
+    width: 96px;
     height: auto;
 }
 
@@ -179,7 +179,7 @@ svg {
 .main-nav a,
 .header-phone {
     color: var(--muted);
-    font-size: 0.875rem;
+    font-size: 0.82rem;
     font-weight: 700;
     transition: color 160ms ease;
 }
@@ -192,7 +192,7 @@ svg {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
 }
 
 .menu-toggle {
@@ -224,9 +224,9 @@ svg {
 }
 
 .button--small {
-    min-height: 40px;
-    padding-inline: 17px;
-    font-size: 0.84rem;
+    min-height: 36px;
+    padding-inline: 15px;
+    font-size: 0.8rem;
 }
 
 .button--line {
@@ -260,7 +260,7 @@ svg {
 
 .hero-slider {
     position: relative;
-    min-height: 780px;
+    min-height: 620px;
     overflow: hidden;
     background: var(--ink);
     color: white;
@@ -276,7 +276,7 @@ svg {
     display: none;
     background-color: var(--ink);
     background-image: var(--slide-image);
-    background-position: center;
+    background-position: right center;
     background-size: cover;
 }
 
@@ -302,11 +302,11 @@ svg {
     position: relative;
     z-index: 2;
     display: flex;
-    min-height: 780px;
+    min-height: 620px;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    padding-top: 116px;
+    padding-top: 76px;
 }
 
 .hero-content .eyebrow,
@@ -755,27 +755,62 @@ details[open] .program-plus svg {
 }
 
 .site-footer {
-    border-top: 1px solid var(--line-dark);
+    border-top: 1px solid #263a54;
     background: var(--ink);
-    color: #a6b3c5;
+    color: var(--white);
 }
 
-.footer-line {
+.footer-contacts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.footer-contact {
     display: flex;
-    min-height: 82px;
-    flex-wrap: wrap;
+    min-height: 112px;
     align-items: center;
-    justify-content: center;
-    gap: 14px;
-    font-size: 0.8rem;
+    gap: 16px;
+    padding: 22px 0;
 }
 
-.footer-line a {
-    color: white;
+.footer-contact--support {
+    justify-content: flex-end;
+    border-left: 1px solid #263a54;
+    text-align: right;
 }
 
-.footer-separator {
-    color: #506079;
+.footer-contact__icon {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    border: 1px solid #35506f;
+    border-radius: 8px;
+    color: var(--cyan);
+}
+
+.footer-contact__icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.footer-contact > span:last-child {
+    display: grid;
+    gap: 4px;
+}
+
+.footer-contact small {
+    color: #93a8c1;
+    font-size: 0.72rem;
+    font-weight: 760;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.footer-contact strong {
+    color: var(--white);
+    font-size: 1rem;
 }
 
 .simple-page {
@@ -802,7 +837,7 @@ details[open] .program-plus svg {
 
 @media (max-width: 1040px) {
     .header-inner {
-        grid-template-columns: 136px 1fr;
+        grid-template-columns: 104px 1fr;
     }
 
     .main-nav {
@@ -853,19 +888,19 @@ details[open] .program-plus svg {
 
     .header-inner {
         position: relative;
-        grid-template-columns: 108px 1fr auto;
-        min-height: 74px;
+        grid-template-columns: 90px 1fr auto;
+        min-height: 62px;
         gap: 14px;
         border-bottom: 0;
     }
 
     .brand {
-        width: 108px;
-        height: 56px;
+        width: 86px;
+        height: 52px;
     }
 
     .brand img {
-        width: 104px;
+        width: 84px;
     }
 
     .header-phone {
@@ -914,7 +949,7 @@ details[open] .program-plus svg {
 
     .main-nav {
         position: absolute;
-        top: 74px;
+        top: 62px;
         right: -16px;
         left: -16px;
         display: none;
@@ -939,7 +974,7 @@ details[open] .program-plus svg {
 
     .hero-slider,
     .hero-content {
-        min-height: 720px;
+        min-height: 620px;
     }
 
     .hero-slide {
@@ -1045,31 +1080,36 @@ details[open] .program-plus svg {
         padding: 0 16px 30px 62px;
     }
 
-    .footer-line {
-        flex-direction: column;
-        gap: 6px;
-        padding: 24px 0;
-        text-align: center;
+    .footer-contacts {
+        grid-template-columns: 1fr;
     }
 
-    .footer-separator {
-        display: none;
+    .footer-contact {
+        min-height: 88px;
+        padding: 18px 0;
+    }
+
+    .footer-contact--support {
+        justify-content: flex-start;
+        border-top: 1px solid #263a54;
+        border-left: 0;
+        text-align: left;
     }
 }
 
 @media (max-width: 420px) {
     .header-inner {
-        grid-template-columns: 96px 1fr auto;
+        grid-template-columns: 82px 1fr auto;
         gap: 10px;
     }
 
     .brand {
-        width: 96px;
-        height: 50px;
+        width: 80px;
+        height: 46px;
     }
 
     .brand img {
-        width: 92px;
+        width: 78px;
     }
 
     .button--small {
@@ -1123,7 +1163,7 @@ details[open] .program-plus svg {
 
 .hero-slider,
 .hero-content {
-    min-height: 740px;
+    min-height: 620px;
 }
 
 .hero-slide {
@@ -1152,8 +1192,8 @@ details[open] .program-plus svg {
 
 .hero-slide .hero-overlay {
     background:
-        radial-gradient(circle at 78% 42%, var(--slide-glow), transparent 40%),
-        linear-gradient(90deg, var(--slide-panel) 0%, rgb(3 12 28 / 78%) 46%, rgb(3 12 28 / 18%) 100%);
+        linear-gradient(90deg, #071426 0%, rgb(7 20 38 / 98%) 34%, rgb(7 20 38 / 78%) 52%, rgb(7 20 38 / 15%) 84%),
+        linear-gradient(180deg, rgb(3 12 28 / 18%), rgb(3 12 28 / 28%));
 }
 
 .hero-slide .hero-overlay::after {
@@ -1239,55 +1279,23 @@ details[open] .program-plus svg {
     --card-soft: #e4eaf4;
 }
 
-.participant-art {
-    display: flex;
-    min-height: 196px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+.participant-photo {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
     border-bottom: 1px solid color-mix(in srgb, var(--card-accent) 18%, var(--line));
     background: var(--card-soft);
-    padding: 30px;
 }
 
-.participant-art__core {
-    display: grid;
-    width: 68px;
-    height: 68px;
-    flex: 0 0 68px;
-    place-items: center;
-    border-radius: 14px;
-    background: var(--card-accent);
-    color: var(--white);
+.participant-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 240ms ease;
 }
 
-.participant-art__core svg {
-    width: 30px;
-    height: 30px;
-}
-
-.participant-art__metric {
-    display: flex;
-    max-width: 174px;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.participant-art__metric strong {
-    color: var(--card-accent);
-    font-size: 2.7rem;
-    font-weight: 770;
-    letter-spacing: -0.07em;
-    line-height: 1;
-}
-
-.participant-art__metric small {
-    margin-top: 8px;
-    color: color-mix(in srgb, var(--card-accent) 72%, var(--ink));
-    font-size: 0.73rem;
-    font-weight: 740;
-    line-height: 1.35;
+.participant-card:hover .participant-photo img {
+    transform: scale(1.025);
 }
 
 .participant-card__copy {
@@ -2314,7 +2322,7 @@ details[open] .program-plus svg {
 
     .hero-slider,
     .hero-content {
-        min-height: 700px;
+        min-height: 620px;
     }
 
     .hero-content h1,
@@ -2324,8 +2332,8 @@ details[open] .program-plus svg {
 
     .hero-slide .hero-overlay {
         background:
-            radial-gradient(circle at 70% 24%, var(--slide-glow), transparent 42%),
-            linear-gradient(180deg, rgb(3 12 28 / 48%), var(--slide-panel) 62%);
+            linear-gradient(180deg, rgb(3 12 28 / 34%), rgb(3 12 28 / 94%) 72%),
+            linear-gradient(90deg, rgb(7 20 38 / 92%) 0%, rgb(7 20 38 / 70%) 58%, rgb(7 20 38 / 18%) 100%);
     }
 
     .participant-grid,
@@ -2445,22 +2453,6 @@ details[open] .program-plus svg {
 }
 
 @media (max-width: 420px) {
-    .participant-art {
-        min-height: 176px;
-        gap: 16px;
-        padding: 24px;
-    }
-
-    .participant-art__core {
-        width: 58px;
-        height: 58px;
-        flex-basis: 58px;
-    }
-
-    .participant-art__metric strong {
-        font-size: 2.15rem;
-    }
-
     .participant-hero__visual {
         width: 100%;
         margin-inline: 0;
@@ -2514,13 +2506,13 @@ details[open] .program-plus svg {
 #software,
 #contacts,
 #connect {
-    scroll-margin-top: 82px;
+    scroll-margin-top: 66px;
 }
 
 @media (min-width: 761px) and (max-width: 1040px) {
     .header-inner {
         position: relative;
-        grid-template-columns: 136px 1fr auto;
+        grid-template-columns: 104px 1fr auto;
         gap: 18px;
     }
 
@@ -2563,7 +2555,7 @@ details[open] .program-plus svg {
 
     .main-nav {
         position: absolute;
-        top: 82px;
+        top: 66px;
         right: -24px;
         left: -24px;
         display: none;
@@ -2593,7 +2585,7 @@ details[open] .program-plus svg {
     #software,
     #contacts,
     #connect {
-        scroll-margin-top: 74px;
+        scroll-margin-top: 62px;
     }
 
     .participants {
@@ -2620,7 +2612,7 @@ details[open] .program-plus svg {
 .error-page {
     background: var(--ink);
     color: var(--white);
-    padding-top: 82px;
+    padding-top: 66px;
 }
 
 .error-page__section {
@@ -2723,7 +2715,7 @@ details[open] .program-plus svg {
 
 @media (max-width: 760px) {
     .error-page {
-        padding-top: 74px;
+        padding-top: 62px;
     }
 
     .error-page__inner {

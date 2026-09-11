@@ -64,17 +64,17 @@ $capabilities = array(
 <main id="main">
     <section class="hero-slider" aria-label="Главные предложения SkySend" data-slider>
         <div class="hero-slides">
-            <article class="hero-slide hero-slide--violet is-active" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/providers.jpg')); ?>')" data-slide aria-hidden="false">
+            <article class="hero-slide hero-slide--violet is-active" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-providers.png')); ?>')" data-slide aria-hidden="false">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Система приёма платежей</p>
-                    <h1>Более 5 000<br>поставщиков услуг</h1>
-                    <p>Система SkySend предоставляет возможность совершать оплаты в пользу более 5 000 поставщиков услуг.</p>
+                    <h1>Более 5 000<br>провайдеров услуг</h1>
+                    <p>Система SkySend предоставляет возможность совершать оплаты в пользу более 5 000 провайдеров услуг.</p>
                     <a class="button button--accent" href="#participants">Партнерам <?php echo skysend_icon('arrow'); ?></a>
                 </div>
             </article>
 
-            <article class="hero-slide hero-slide--mint" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/conditions.jpg')); ?>')" data-slide aria-hidden="true">
+            <article class="hero-slide hero-slide--mint" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-conditions.jpg')); ?>')" data-slide aria-hidden="true">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Преимущества SkySend</p>
@@ -84,7 +84,7 @@ $capabilities = array(
                 </div>
             </article>
 
-            <article class="hero-slide hero-slide--blue" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/allvend.jpg')); ?>')" data-slide aria-hidden="true">
+            <article class="hero-slide hero-slide--blue" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-allvend.jpg')); ?>')" data-slide aria-hidden="true">
                 <div class="hero-overlay"></div>
                 <div class="shell hero-content">
                     <p class="eyebrow">Программы</p>
@@ -97,7 +97,7 @@ $capabilities = array(
 
         <div class="shell slider-controls">
             <div class="slider-dots" role="group" aria-label="Выбор слайда">
-                <button class="is-active" type="button" aria-label="Более 5 000 поставщиков услуг" aria-current="true" data-slide-to="0"><span>01</span></button>
+                <button class="is-active" type="button" aria-label="Более 5 000 провайдеров услуг" aria-current="true" data-slide-to="0"><span>01</span></button>
                 <button type="button" aria-label="Лучшие финансовые условия" data-slide-to="1"><span>02</span></button>
                 <button type="button" aria-label="ПО ALLVEND" data-slide-to="2"><span>03</span></button>
             </div>
@@ -117,12 +117,8 @@ $capabilities = array(
             <div class="participant-grid">
                 <?php foreach ($participants as $slug => $participant) : ?>
                     <a class="participant-card participant-card--<?php echo esc_attr($participant['tone']); ?> reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
-                        <span class="participant-art">
-                            <span class="participant-art__core"><?php echo skysend_icon($participant['icon']); ?></span>
-                            <span class="participant-art__metric">
-                                <strong><?php echo esc_html($participant['card_metric']); ?></strong>
-                                <small><?php echo esc_html($participant['card_metric_label']); ?></small>
-                            </span>
+                        <span class="participant-photo">
+                            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $participant['image'])); ?>" alt="" loading="lazy" decoding="async">
                         </span>
                         <span class="participant-card__copy">
                             <strong><?php echo esc_html($participant['title']); ?></strong>
@@ -175,7 +171,7 @@ $capabilities = array(
 
             <div class="program-grid">
                 <article class="program-card program-card--allvend reveal">
-                    <div class="program-card__visual program-card__visual--photo" style="--program-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/allvend.jpg')); ?>')">
+                    <div class="program-card__visual program-card__visual--photo" style="--program-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-allvend.jpg')); ?>')">
                         <span class="program-chip">Для систем самообслуживания</span>
                         <span class="program-screen" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
                     </div>
@@ -231,39 +227,6 @@ $capabilities = array(
         </div>
     </section>
 
-    <section class="section contacts" id="contacts">
-        <div class="shell contacts-layout">
-            <div class="contacts-intro reveal">
-                <p class="section-kicker">Контакты</p>
-                <h2>Подключение и техническая поддержка</h2>
-                <p>Контакты для подключения к системе SkySend и технической поддержки.</p>
-                <span class="contacts-note">Телефон и Telegram</span>
-            </div>
-
-            <div class="contact-methods reveal">
-                <a class="contact-method" href="<?php echo esc_attr(skysend_phone_href()); ?>">
-                    <span class="contact-method__icon"><?php echo skysend_icon('phone'); ?></span>
-                    <span class="contact-method__copy">
-                        <small>Подключение</small>
-                        <strong>Подключение к системе</strong>
-                        <span>Для подключения к системе SkySend.</span>
-                        <b><?php echo esc_html(skysend_phone()); ?> <?php echo skysend_icon('arrow'); ?></b>
-                    </span>
-                </a>
-                <a class="contact-method contact-method--telegram" href="https://t.me/<?php echo esc_attr(skysend_telegram()); ?>" target="_blank" rel="noopener">
-                    <span class="contact-method__icon"><?php echo skysend_icon('telegram'); ?></span>
-                    <span class="contact-method__copy">
-                        <small>Поддержка</small>
-                        <strong>Техническая поддержка</strong>
-                        <span>Служба технической поддержки SkySend.</span>
-                        <b>@<?php echo esc_html(skysend_telegram()); ?> <?php echo skysend_icon('arrow'); ?></b>
-                    </span>
-                </a>
-            </div>
-        </div>
-        <span class="contacts-orbit contacts-orbit--one" aria-hidden="true"></span>
-        <span class="contacts-orbit contacts-orbit--two" aria-hidden="true"></span>
-    </section>
 </main>
 
 <?php

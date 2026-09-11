@@ -138,6 +138,7 @@ function skysend_participants(): array
         'agents' => array(
             'icon' => 'terminal',
             'tone' => 'blue',
+            'image' => 'partner-agents.jpg',
             'title' => 'Платёжным агентам',
             'card_text' => 'Стабильная работа, снижение расходов, удалённое управление и высокое вознаграждение.',
             'card_metric' => '50%',
@@ -165,6 +166,7 @@ function skysend_participants(): array
         'providers' => array(
             'icon' => 'network',
             'tone' => 'cyan',
+            'image' => 'partner-providers.jpg',
             'title' => 'Провайдерам услуг',
             'card_text' => 'Дополнительные точки оплаты услуг в терминальной сети SkySend.',
             'card_metric' => 'Бесплатно',
@@ -192,6 +194,7 @@ function skysend_participants(): array
         'suppliers' => array(
             'icon' => 'box',
             'tone' => 'violet',
+            'image' => 'partner-suppliers.jpg',
             'title' => 'Поставщикам товаров',
             'card_text' => 'Продажа товаров через платёжные терминалы системы SkySend.',
             'card_metric' => 'SkyMarket',
@@ -219,6 +222,7 @@ function skysend_participants(): array
         'advertisers' => array(
             'icon' => 'megaphone',
             'tone' => 'orange',
+            'image' => 'partner-advertisers.jpg',
             'title' => 'Рекламодателям',
             'card_text' => 'Видеореклама на экранах терминалов, реклама на чеках и SMS-рассылка.',
             'card_metric' => 'Видео',
@@ -246,6 +250,7 @@ function skysend_participants(): array
         'representatives' => array(
             'icon' => 'pin',
             'tone' => 'green',
+            'image' => 'partner-representatives.jpg',
             'title' => 'Представителям',
             'card_text' => 'Готовые решения для развития направлений SkySend в своём регионе.',
             'card_metric' => 'Регион',
@@ -273,6 +278,7 @@ function skysend_participants(): array
         'gateways' => array(
             'icon' => 'gateway',
             'tone' => 'navy',
+            'image' => 'partner-gateways.jpg',
             'title' => 'Шлюзовикам',
             'card_text' => 'Приём платежей в пользу провайдеров SkySend по XML-протоколу.',
             'card_metric' => 'XML',
