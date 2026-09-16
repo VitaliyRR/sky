@@ -2,10 +2,12 @@
 /** SkySend landing page. @package SkySend */
 get_header();
 $partners = skysend_partners();
+// The group celebrates its anniversary on May 15 (official ISG news, 2024).
+$company_years = max(0, (int) wp_date('Y') - 2006 - (wp_date('m-d') < '05-15' ? 1 : 0));
 $partner_offers = array(
-    'agents' => 'Лучшие финансовые условия и стабильная работа терминалов.',
-    'providers' => 'Дополнительные точки приёма платежей и бесплатное подключение.',
-    'suppliers' => 'Заказ и продажа товаров через терминалы SkySend.',
+    'agents' => 'Лучшие условия и стабильная работа.',
+    'providers' => 'Надёжный и качественный приём платежей.',
+    'suppliers' => 'Автоматизация клиентского обслуживания и продажи товаров.',
     'retailers' => 'Самообслуживание, заказ товаров и оплата услуг на ALLVEND.',
     'representatives' => 'Развитие региональной сети и подключение партнёров.',
     'gateways' => 'Интеграция вашей платёжной системы со SkySend.',
@@ -25,7 +27,7 @@ $provider_categories = skysend_provider_categories();
                 <div class="shell masthead-inner">
                     <div class="masthead-copy">
                         <h1>Более 5 000<br>провайдеров услуг</h1>
-                        <a class="button button--blue" href="#providers">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                        <a class="button button--small button--line" href="#providers">Подробнее</a>
                     </div>
                     <div class="masthead-media">
                         <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-providers-20260914.webp')); ?>" width="1774" height="887" alt="Банки, операторы связи и поставщики услуг" fetchpriority="high" decoding="async">
@@ -37,7 +39,7 @@ $provider_categories = skysend_provider_categories();
                     <div class="masthead-copy">
                         <h2>Лучшие финансовые условия</h2>
                         <p>Высокое вознаграждение, снижение расходов на обслуживание и отсутствие скрытых комиссий.</p>
-                        <a class="button button--blue" href="#participants">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                        <a class="button button--small button--line" href="#participants">Подробнее</a>
                     </div>
                     <div class="masthead-media">
                         <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-finance-20260914.webp')); ?>" width="1774" height="887" alt="Платежи и финансовые условия для партнёров" decoding="async">
@@ -49,7 +51,7 @@ $provider_categories = skysend_provider_categories();
                     <div class="masthead-copy">
                         <h2>Уникальное программное обеспечение</h2>
                         <p>ALLVEND — единое решение для разных устройств самообслуживания.</p>
-                        <a class="button button--blue" href="#allvend">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                        <a class="button button--small button--line" href="#allvend">Подробнее</a>
                     </div>
                     <div class="masthead-media masthead-media--allvend">
                         <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-allvend-20260914.webp')); ?>" width="1774" height="887" alt="Платёжный терминал, настольный инфокиоск, информационная панель и паркомат на ПО ALLVEND" decoding="async">
@@ -79,6 +81,16 @@ $provider_categories = skysend_provider_categories();
                         </div>
                     </article>
                 <?php endforeach; ?>
+            </div>
+            <div class="partner-proof reveal" role="group" aria-label="Показатели группы компаний «Информ-Системы»">
+                <p class="partner-proof-caption">Группа компаний «Информ-Системы» в цифрах</p>
+                <dl class="partner-statistics">
+                    <div><dt>Опыт работы, лет</dt><dd><?php echo esc_html((string) $company_years); ?></dd></div>
+                    <div><dt>Партнёров группы</dt><dd>1 800+</dd></div>
+                    <div><dt>Оборот через разработки, ₽</dt><dd>50 млрд+</dd></div>
+                    <div><dt>Проведённых транзакций</dt><dd>150 млн+</dd></div>
+                </dl>
+                <p class="partner-proof-note">Оборот и транзакции — по презентации группы от 07.02.2021.</p>
             </div>
         </div>
     </section>
