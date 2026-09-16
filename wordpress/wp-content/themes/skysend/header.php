@@ -12,9 +12,8 @@
 
 <?php
 $front_url = trailingslashit(home_url('/'));
-$is_participant = (bool) skysend_participant_context();
-$nav_url = static function (string $anchor) use ($front_url, $is_participant): string {
-    return is_front_page() && !$is_participant ? '#' . $anchor : $front_url . '#' . $anchor;
+$nav_url = static function (string $anchor) use ($front_url): string {
+    return is_front_page() ? '#' . $anchor : $front_url . '#' . $anchor;
 };
 ?>
 

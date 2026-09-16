@@ -24,17 +24,16 @@
 .landing-panel--ice { background: var(--landing-ice); }
 .landing-panel--navy { background: var(--ink); color: white; }
 .landing-panel-inner { display: grid; min-width: 0; height: 100%; align-content: center; padding-block: 44px; }
-.partner-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
-.partner-tile { display: grid; min-width: 0; min-height: 215px; grid-template-columns: 76px minmax(0, 1fr); align-items: start; gap: 19px; border: 1px solid var(--line); border-radius: 8px; background: white; padding: 26px 22px; transition: border-color 180ms ease; }
-.partner-tile:hover { border-color: var(--blue); }
-.partner-tile-photo { width: 76px; height: 76px; border-radius: 6px; object-fit: cover; object-position: center; }
-.partner-tile-copy { display: flex; min-width: 0; height: 100%; flex-direction: column; align-items: flex-start; }
-.partner-tile h2 { font-size: 17px; font-weight: 780; line-height: 1.4; }
-.partner-tile p { margin: 12px 0 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
+.partners-layout { gap: 28px; }
+.partner-offers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 32px; }
+.partner-offer { display: flex; min-width: 0; min-height: 185px; flex-direction: column; align-items: center; text-align: center; }
+.partner-offer-photo { width: 92px; height: 74px; border-radius: 6px; object-fit: cover; object-position: center; margin-bottom: 16px; }
+.partner-offer-copy { min-width: 0; max-width: 290px; }
+.partner-offer h3 { font-size: 18px; font-weight: 780; line-height: 1.4; }
+.partner-offer p { margin: 10px 0 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .more-link, .participant-card__more, .program-card__copy > a { display: inline-flex; align-items: center; gap: 10px; color: var(--blue); font-size: 13px; font-weight: 800; }
 .more-link svg { width: 18px; height: 18px; }
 .more-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.partner-tile .more-link { margin-top: auto; }
 .feature-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; column-gap: 64px; }
 .feature-copy { min-width: 0; }
 .feature-copy h2, .panel-heading h2 { font-size: clamp(32px, 3.35vw, 43px); font-weight: 740; line-height: 1.16; letter-spacing: -0.04em; }
@@ -110,9 +109,8 @@
 @media (min-width: 980px) { .landing-panel { height: 600px; } }
 @media (max-width: 1130px) and (min-width: 980px) {
     .feature-layout { column-gap: 40px; }
-    .partner-tile { grid-template-columns: 60px minmax(0, 1fr); gap: 15px; padding: 24px 18px; }
-    .partner-tile-photo { width: 60px; height: 60px; }
-    .partner-tile h2 { font-size: 15px; }
+    .partner-offers { column-gap: 24px; }
+    .partner-offer h3 { font-size: 17px; }
     .client-software-card { padding: 23px 20px; }
     .provider-browser { grid-template-columns: 220px minmax(0, 1fr); gap: 24px; }
     .footer-main { grid-template-columns: 124px 1fr 1fr 1.4fr; gap: 24px; }
@@ -123,8 +121,7 @@
     .masthead-inner { gap: 12px; }
     .masthead-copy h1, .masthead-copy h2 { font-size: 39px; }
     .masthead-media { height: 330px; }
-    .partner-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
-    .partner-tile { min-height: 190px; }
+    .partner-offers { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .feature-layout { column-gap: 30px; }
     .feature-copy h2, .panel-heading h2 { font-size: 33px; }
     .feature-list { gap: 15px; }
@@ -155,9 +152,12 @@
     .masthead-controls { bottom: 19px; }
     .landing-panel { min-height: 0; }
     .landing-panel-inner { padding-block: 38px; }
-    .partner-tiles { grid-template-columns: 1fr; gap: 14px; }
-    .partner-tile { min-height: 164px; grid-template-columns: 72px minmax(0, 1fr); padding: 22px; }
-    .partner-tile-photo { width: 72px; height: 72px; }
+    .partners-layout { gap: 25px; }
+    .partner-offers { gap: 24px 18px; }
+    .partner-offer { min-height: 205px; }
+    .partner-offer-photo { width: 80px; height: 65px; margin-bottom: 14px; }
+    .partner-offer h3 { font-size: 14px; }
+    .partner-offer p { font-size: 12px; }
     .feature-layout { grid-template-columns: 1fr; row-gap: 24px; }
     .feature-copy h2, .panel-heading h2 { font-size: 31px; }
     .panel-lead, .panel-heading p { font-size: 14px; }

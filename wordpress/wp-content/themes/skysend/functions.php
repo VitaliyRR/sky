@@ -137,278 +137,51 @@ function skysend_icon(string $name): string
 }
 
 /**
- * Content shared by the participant cards and their landing pages.
+ * Partner tiles on the single-page landing.
  *
- * @return array<string, array<string, mixed>>
+ * @return array<string, array{title: string, image: string}>
  */
-function skysend_participants(): array
+function skysend_partners(): array
 {
     return array(
-        'agents' => array(
-            'icon' => 'terminal',
-            'tone' => 'blue',
-            'image' => 'partner-agents.jpg',
-            'title' => 'Платёжным агентам',
-            'card_text' => 'Стабильная работа, снижение расходов, удалённое управление и высокое вознаграждение.',
-            'card_metric' => '50%',
-            'card_metric_label' => 'снижение расходов',
-            'kicker' => 'Платёжным агентам',
-            'hero_title' => 'Приём платежей с системой SkySend',
-            'visual_title' => 'Основные условия',
-            'intro' => 'Система SkySend предоставляет более 5 000 поставщиков услуг, высокое вознаграждение, отсутствие скрытых комиссий и стабильную работу терминалов.',
-            'metrics' => array(
-                array('value' => '50%', 'label' => 'снижение расходов'),
-                array('value' => '5 000+', 'label' => 'поставщиков услуг'),
-                array('value' => 'Нет', 'label' => 'скрытых комиссий'),
-            ),
-            'benefits' => array(
-                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'FastSYS 5 автоматически устраняет ошибки оборудования, анализирует работу устройств и получает удалённые обновления.'),
-                array('icon' => 'cost', 'title' => 'Снижение расходов', 'text' => 'Автоматика терминала решает большинство ситуаций без выезда технического специалиста.'),
-                array('icon' => 'network', 'title' => 'Удалённое управление', 'text' => 'Управление терминалами и настройками программного обеспечения выполняется удалённо.'),
-                array('icon' => 'percent', 'title' => 'Высокое вознаграждение', 'text' => 'Автоматизация и низкие затраты на обслуживание позволяют предоставлять партнёрам повышенное вознаграждение.'),
-            ),
-            'offer_title' => 'Возможности для платёжных агентов',
-            'offer_text' => 'Система SkySend предлагает перевести действующие терминалы, организовать операторские точки и использовать ПО ALLVEND.',
-            'offer_list_title' => 'Что доступно агентам',
-            'offer_items' => array('Перевести терминалы', 'Операторские точки', 'ПО ALLVEND'),
-        ),
-        'providers' => array(
-            'icon' => 'network',
-            'tone' => 'cyan',
-            'image' => 'partner-providers.jpg',
-            'title' => 'Провайдерам услуг',
-            'card_text' => 'Дополнительные точки оплаты услуг в терминальной сети SkySend.',
-            'card_metric' => 'Бесплатно',
-            'card_metric_label' => 'подключение',
-            'kicker' => 'Провайдерам услуг',
-            'hero_title' => 'Дополнительные точки оплаты ваших услуг',
-            'visual_title' => 'Условия подключения',
-            'intro' => 'SkySend предлагает разместить кнопку оплаты услуг на платёжных терминалах системы и увеличить число мест приёма платежей.',
-            'metrics' => array(
-                array('value' => 'Сеть', 'label' => 'приёма платежей'),
-                array('value' => 'Бесплатно', 'label' => 'подключение'),
-                array('value' => 'Авто', 'label' => 'отчётность'),
-            ),
-            'benefits' => array(
-                array('icon' => 'network', 'title' => 'Сеть приёма платежей', 'text' => 'Кнопка оплаты услуги размещается на платёжных терминалах системы SkySend.'),
-                array('icon' => 'plus', 'title' => 'Бесплатное подключение', 'text' => 'Подключение провайдера услуг к системе SkySend выполняется бесплатно.'),
-                array('icon' => 'shield', 'title' => 'Защита данных', 'text' => 'Информация передаётся по защищённым шифрованным каналам с использованием электронной цифровой подписи.'),
-                array('icon' => 'speed', 'title' => 'Автоматизация отчётности', 'text' => 'Система автоматизирует учёт и формирование отчётности по принятым платежам.'),
-            ),
-            'offer_title' => 'Подключение к SkySend',
-            'offer_text' => 'Провайдерам доступны сеть приёма платежей, бесплатное подключение и автоматизация отчётности.',
-            'offer_list_title' => 'Что доступно провайдерам',
-            'offer_items' => array('Кнопка оплаты услуг', 'Защита данных', 'Автоматизация отчётности'),
-        ),
-        'suppliers' => array(
-            'icon' => 'box',
-            'tone' => 'violet',
-            'image' => 'partner-suppliers.jpg',
-            'title' => 'Поставщикам товаров',
-            'card_text' => 'Продажа товаров через платёжные терминалы системы SkySend.',
-            'card_metric' => 'SkyMarket',
-            'card_metric_label' => 'заказ товаров',
-            'kicker' => 'Поставщикам товаров',
-            'hero_title' => 'Продажа товаров на терминалах SkySend',
-            'visual_title' => 'Возможности SkyMarket',
-            'intro' => 'Проект SkyMarket позволяет разместить товары с фотографиями и подробным описанием на платёжных терминалах системы SkySend.',
-            'metrics' => array(
-                array('value' => 'SkyMarket', 'label' => 'торговая площадка'),
-                array('value' => 'Каталог', 'label' => 'фото и описание'),
-                array('value' => 'XML', 'label' => 'интеграция'),
-            ),
-            'benefits' => array(
-                array('icon' => 'plus', 'title' => 'Бесплатное подключение', 'text' => 'Поставщики товаров подключаются к проекту SkyMarket бесплатно.'),
-                array('icon' => 'box', 'title' => 'Сеть продаж товаров', 'text' => 'Товары размещаются на платёжных терминалах SkySend в нескольких регионах страны.'),
-                array('icon' => 'speed', 'title' => 'Простота взаимодействия', 'text' => 'Покупатель знакомится с товаром на терминале, формирует и оплачивает заказ.'),
-                array('icon' => 'code', 'title' => 'Справочник товаров', 'text' => 'В справочнике размещаются фотографии и подробные описания товаров.'),
-            ),
-            'offer_title' => 'Проект SkyMarket',
-            'offer_text' => 'SkyMarket обеспечивает загрузку справочника товаров, формирование и оплату заказов на терминалах SkySend.',
-            'offer_list_title' => 'Работа со SkyMarket',
-            'offer_items' => array('Справочник товаров', 'Работа через кабинет', 'Интеграция по XML'),
-        ),
-        'retailers' => array(
-            'icon' => 'store',
-            'tone' => 'red',
-            'image' => 'partner-retail.jpg',
-            'title' => 'Торговым сетям',
-            'card_text' => 'Точки самообслуживания для продажи товаров и оплаты услуг на ПО ALLVEND.',
-            'card_metric' => 'ALLVEND',
-            'card_metric_label' => 'для самообслуживания',
-            'kicker' => 'Торговым сетям',
-            'hero_title' => 'Самообслуживание для торговых сетей',
-            'visual_title' => 'Возможности ALLVEND',
-            'intro' => 'ПО ALLVEND позволяет настроить точки самообслуживания под потребности и фирменный стиль бизнеса, организовать продажу товаров и оплату услуг.',
-            'metrics' => array(
-                array('value' => 'ALLVEND', 'label' => 'универсальное ПО'),
-                array('value' => 'Товары', 'label' => 'формирование заказов'),
-                array('value' => 'Услуги', 'label' => 'приём оплаты'),
-            ),
-            'benefits' => array(
-                array('icon' => 'terminal', 'title' => 'Фирменный интерфейс', 'text' => 'Цвета, расположение элементов и логика экранов настраиваются под фирменный стиль торговой сети.'),
-                array('icon' => 'box', 'title' => 'Продажа товаров', 'text' => 'Покупатель выбирает товары, формирует заказ и оплачивает его на устройстве самообслуживания.'),
-                array('icon' => 'network', 'title' => 'Оплата услуг', 'text' => 'ПО поддерживает оплату услуг федеральных и местных поставщиков.'),
-                array('icon' => 'pulse', 'title' => 'Удалённое управление', 'text' => 'Настройки и контроль точек самообслуживания доступны из онлайн-кабинета.'),
-            ),
-            'offer_title' => 'ПО ALLVEND для торговых сетей',
-            'offer_text' => 'Универсальное ПО используется на информационных киосках, автоматах продажи товаров и платёжных терминалах.',
-            'offer_list_title' => 'Точки самообслуживания',
-            'offer_items' => array('Информационные киоски', 'Автоматы продажи товаров', 'Платёжные терминалы'),
-        ),
-        'representatives' => array(
-            'icon' => 'pin',
-            'tone' => 'green',
-            'image' => 'partner-representatives.jpg',
-            'title' => 'Представителям',
-            'card_text' => 'Готовые решения для развития направлений SkySend в своём регионе.',
-            'card_metric' => 'Регион',
-            'card_metric_label' => 'эксклюзивность',
-            'kicker' => 'Представителям',
-            'hero_title' => 'Представительство SkySend в регионе',
-            'visual_title' => 'Условия для представителей',
-            'intro' => 'Представитель может наладить работу направлений SkySend в своём регионе, подключать новых партнёров и получать доход от их работы.',
-            'metrics' => array(
-                array('value' => 'Доход', 'label' => 'статьи доходов'),
-                array('value' => 'Скидки', 'label' => 'дилерские'),
-                array('value' => 'Регион', 'label' => 'эксклюзивность'),
-            ),
-            'benefits' => array(
-                array('icon' => 'percent', 'title' => 'Статьи доходов', 'text' => 'Представитель получает доход от работы направлений SkySend в своём регионе.'),
-                array('icon' => 'network', 'title' => 'Дилерские скидки', 'text' => 'Для представителей предусмотрены дилерские скидки.'),
-                array('icon' => 'pin', 'title' => 'Эксклюзивность в регионе', 'text' => 'Представитель развивает направления системы SkySend на территории своего региона.'),
-                array('icon' => 'plus', 'title' => 'Подключение партнёров', 'text' => 'Представитель подключает новых партнёров к системе SkySend.'),
-            ),
-            'offer_title' => 'Направления работы в регионе',
-            'offer_text' => 'Система предлагает представителям организацию кассы в регионе, подключение партнёров и освоение направлений SkySend.',
-            'offer_list_title' => 'Направления в регионе',
-            'offer_items' => array('Касса в регионе', 'Подключение партнёров', 'Освоение направлений'),
-        ),
-        'gateways' => array(
-            'icon' => 'gateway',
-            'tone' => 'navy',
-            'image' => 'partner-gateways.jpg',
-            'title' => 'Шлюзовикам',
-            'card_text' => 'Приём платежей в пользу провайдеров SkySend по XML-протоколу.',
-            'card_metric' => 'XML',
-            'card_metric_label' => 'протокол',
-            'kicker' => 'Шлюзовикам',
-            'hero_title' => 'Работа по XML-протоколу',
-            'visual_title' => 'Возможности подключения',
-            'intro' => 'Собственная предпроцессинговая система агента может быть интегрирована с системой SkySend по XML-протоколу для приёма платежей.',
-            'metrics' => array(
-                array('value' => 'XML', 'label' => 'протокол'),
-                array('value' => '5 000+', 'label' => 'поставщиков услуг'),
-                array('value' => 'Интеграция', 'label' => 'с системой SkySend'),
-            ),
-            'benefits' => array(
-                array('icon' => 'percent', 'title' => 'Высокое вознаграждение', 'text' => 'Система предоставляет высокое вознаграждение и отсутствие скрытых комиссий.'),
-                array('icon' => 'code', 'title' => 'XML-протокол', 'text' => 'По XML-протоколу автоматически передаются сведения о провайдерах, условиях и платежах.'),
-                array('icon' => 'speed', 'title' => 'Высокая скорость', 'text' => 'Кластерный процессинговый центр распределяет нагрузку и синхронизирует данные между серверами.'),
-                array('icon' => 'network', 'title' => 'Быстрое начало работы', 'text' => 'Для запуска выполняются интеграция протокола, создание XML-точки и тестирование платежей.'),
-            ),
-            'offer_title' => 'Организация приёма платежей',
-            'offer_text' => 'Технические специалисты консультируют по интеграции XML-протокола, запускают XML-точку и тестируют проведение платежей.',
-            'offer_list_title' => 'Этапы подключения',
-            'offer_items' => array('Интеграция XML-протокола', 'Запуск XML-точки', 'Тестирование платежей'),
-        ),
+        'agents' => array('title' => 'Платёжным агентам', 'image' => 'partner-agents.jpg'),
+        'providers' => array('title' => 'Провайдерам услуг', 'image' => 'partner-providers.jpg'),
+        'suppliers' => array('title' => 'Поставщикам товаров', 'image' => 'partner-suppliers.jpg'),
+        'retailers' => array('title' => 'Торговым сетям', 'image' => 'partner-retail.jpg'),
+        'representatives' => array('title' => 'Представителям', 'image' => 'partner-representatives.jpg'),
+        'gateways' => array('title' => 'Шлюзовикам', 'image' => 'partner-gateways-no-xml-20260916.webp'),
     );
 }
 
-function skysend_participant_context(): ?array
+/**
+ * Retire only the seven known partner URLs, with optional trailing slash.
+ * Other URLs retain WordPress's normal routing and 404 handling.
+ */
+function skysend_redirect_legacy_partner_routes(): void
 {
-    $slug = (string) get_query_var('skysend_participant');
-    $participants = skysend_participants();
+    $request_path = (string) wp_parse_url(wp_unslash($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH);
+    $home_path = rtrim((string) wp_parse_url(home_url('/'), PHP_URL_PATH), '/');
+    $legacy_slugs = array('agents', 'providers', 'suppliers', 'retailers', 'representatives', 'gateways', 'advertisers');
 
-    return isset($participants[$slug]) ? $participants[$slug] : null;
-}
-
-function skysend_register_participant_routes(): void
-{
-    foreach (array_keys(skysend_participants()) as $slug) {
-        add_rewrite_rule(
-            '^participants/' . preg_quote($slug, '/') . '/?$',
-            'index.php?skysend_participant=' . $slug,
-            'top'
-        );
+    foreach ($legacy_slugs as $slug) {
+        $legacy_path = $home_path . '/participants/' . $slug;
+        if ($request_path === $legacy_path || $request_path === $legacy_path . '/') {
+            wp_safe_redirect(home_url('/#participants'), 301);
+            exit;
+        }
     }
 }
-add_action('init', 'skysend_register_participant_routes');
-
-function skysend_redirect_legacy_advertisers_route(): void
-{
-    $request_path = trim((string) wp_parse_url(wp_unslash($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH), '/');
-    if ($request_path !== 'participants/advertisers') {
-        return;
-    }
-
-    wp_safe_redirect(home_url('/participants/retailers/'), 301);
-    exit;
-}
-add_action('template_redirect', 'skysend_redirect_legacy_advertisers_route', 1);
-
-function skysend_query_vars(array $vars): array
-{
-    $vars[] = 'skysend_participant';
-    return $vars;
-}
-add_filter('query_vars', 'skysend_query_vars');
-
-function skysend_participant_status(): void
-{
-    if (!skysend_participant_context()) {
-        return;
-    }
-
-    global $wp_query;
-    $wp_query->is_404 = false;
-    status_header(200);
-}
-add_action('template_redirect', 'skysend_participant_status');
-
-function skysend_participant_template(string $template): string
-{
-    if (!skysend_participant_context()) {
-        return $template;
-    }
-
-    $participant_template = locate_template('participant.php');
-    return $participant_template ?: $template;
-}
-add_filter('template_include', 'skysend_participant_template');
-
-function skysend_participant_body_class(array $classes): array
-{
-    if (skysend_participant_context()) {
-        $classes[] = 'participant-page';
-    }
-    return $classes;
-}
-add_filter('body_class', 'skysend_participant_body_class');
-
-function skysend_flush_participant_routes(): void
-{
-    skysend_register_participant_routes();
-    flush_rewrite_rules();
-}
-add_action('after_switch_theme', 'skysend_flush_participant_routes');
+add_action('template_redirect', 'skysend_redirect_legacy_partner_routes', 1);
 
 function skysend_meta_tags(): void
 {
-    $participant = skysend_participant_context();
-    if (!is_front_page() && !$participant) {
+    if (!is_front_page()) {
         return;
     }
 
-    $title = $participant
-        ? $participant['title'] . ' — SkySend'
-        : 'SkySend — система приёма платежей';
-    $description = $participant
-        ? $participant['intro']
-        : 'SkySend — система приёма платежей: более 5 000 провайдеров услуг, ПО ALLVEND, РМА Windows/Linux, РМА Android и XML-шлюз.';
-    $canonical = $participant
-        ? home_url('/participants/' . (string) get_query_var('skysend_participant') . '/')
-        : home_url('/');
+    $title = 'SkySend — система приёма платежей';
+    $description = 'SkySend — система приёма платежей: более 5 000 провайдеров услуг, ПО ALLVEND, РМА Windows/Linux, РМА Android и XML-шлюз.';
+    $canonical = home_url('/');
     $phone = skysend_phone();
 
     echo '<meta name="description" content="' . esc_attr($description) . '">' . "\n";
@@ -422,28 +195,19 @@ function skysend_meta_tags(): void
     echo '<meta name="twitter:card" content="summary">' . "\n";
     echo '<link rel="icon" href="' . esc_url(get_theme_file_uri('/assets/images/favicon.png')) . '" sizes="16x16">' . "\n";
 
-    $schema = $participant
-        ? array(
-            '@context' => 'https://schema.org',
-            '@type' => 'WebPage',
-            'name' => $title,
-            'url' => $canonical,
-            'description' => $description,
-            'isPartOf' => array('@type' => 'WebSite', 'name' => 'SkySend', 'url' => home_url('/')),
-        )
-        : array(
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => 'SkySend',
-            'url' => $canonical,
-            'description' => $description,
-            'contactPoint' => array(
-                '@type' => 'ContactPoint',
-                'telephone' => $phone,
-                'contactType' => 'customer support',
-                'availableLanguage' => 'Russian',
-            ),
-        );
+    $schema = array(
+        '@context' => 'https://schema.org',
+        '@type' => 'Organization',
+        'name' => 'SkySend',
+        'url' => $canonical,
+        'description' => $description,
+        'contactPoint' => array(
+            '@type' => 'ContactPoint',
+            'telephone' => $phone,
+            'contactType' => 'customer support',
+            'availableLanguage' => 'Russian',
+        ),
+    );
 
     echo '<script type="application/ld+json">' . wp_json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>' . "\n";
 }
@@ -451,11 +215,7 @@ add_action('wp_head', 'skysend_meta_tags', 2);
 
 function skysend_document_title(array $parts): array
 {
-    $participant = skysend_participant_context();
-    if ($participant) {
-        $parts['title'] = $participant['title'] . ' — SkySend';
-        unset($parts['tagline']);
-    } elseif (is_front_page()) {
+    if (is_front_page()) {
         $parts['title'] = 'SkySend — система приёма платежей';
         unset($parts['tagline']);
     }

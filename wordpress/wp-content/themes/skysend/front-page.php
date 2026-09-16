@@ -1,7 +1,7 @@
 <?php
 /** SkySend landing page. @package SkySend */
 get_header();
-$participants = skysend_participants();
+$partners = skysend_partners();
 $partner_offers = array(
     'agents' => 'Лучшие финансовые условия и стабильная работа терминалов.',
     'providers' => 'Дополнительные точки приёма платежей и бесплатное подключение.',
@@ -14,7 +14,7 @@ $software = array(
     array('icon' => 'terminal', 'title' => 'ПО ALLVEND', 'text' => 'Единое ПО для платёжных терминалов, инфокиосков и других устройств самообслуживания.', 'url' => '#allvend'),
     array('icon' => 'windows', 'title' => 'РМА Windows / Linux', 'text' => 'Рабочее место агента для приёма платежей с компьютера или ноутбука.', 'url' => 'https://www.isg.dev/ru/products/skysend/'),
     array('icon' => 'android', 'title' => 'РМА Android', 'text' => 'Приём платежей со смартфона или планшета под управлением Android.', 'url' => 'https://www.isg.dev/ru/products/skysend-app/'),
-    array('icon' => 'code', 'title' => 'XML-шлюз', 'text' => 'Подключение собственной предпроцессинговой системы агента к SkySend.', 'url' => home_url('/participants/gateways/')),
+    array('icon' => 'code', 'title' => 'XML-шлюз', 'text' => 'Подключение собственной предпроцессинговой системы агента к SkySend.', 'url' => 'https://www.isg.dev/ru/products/skysend/'),
 );
 $provider_categories = skysend_provider_categories();
 ?>
@@ -67,20 +67,18 @@ $provider_categories = skysend_provider_categories();
         </div>
     </section>
 
-    <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнерам">
-        <div class="shell landing-panel-inner">
-            <div class="partner-tiles">
-                <?php foreach ($participants as $slug => $participant) :
-                    $tile_image = $slug === 'gateways' ? 'partner-gateways-no-xml-20260916.webp' : $participant['image'];
-                ?>
-                    <a class="partner-tile reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
-                        <img class="partner-tile-photo" src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $tile_image)); ?>" width="453" height="367" alt="" loading="lazy" decoding="async">
-                        <div class="partner-tile-copy">
-                            <h2><?php echo esc_html($participant['title']); ?></h2>
+    <section class="landing-panel landing-panel--partners" id="participants" aria-labelledby="partners-title">
+        <div class="shell landing-panel-inner partners-layout">
+            <header class="panel-heading reveal"><h2 id="partners-title">Партнерам</h2></header>
+            <div class="partner-offers">
+                <?php foreach ($partners as $slug => $partner) : ?>
+                    <article class="partner-offer reveal">
+                        <img class="partner-offer-photo" src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $partner['image'])); ?>" width="453" height="367" alt="" loading="lazy" decoding="async">
+                        <div class="partner-offer-copy">
+                            <h3><?php echo esc_html($partner['title']); ?></h3>
                             <p><?php echo esc_html($partner_offers[$slug]); ?></p>
-                            <span class="more-link">Подробнее <?php echo skysend_icon('arrow'); ?></span>
                         </div>
-                    </a>
+                    </article>
                 <?php endforeach; ?>
             </div>
         </div>

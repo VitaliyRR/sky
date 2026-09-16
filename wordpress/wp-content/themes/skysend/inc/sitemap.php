@@ -1,5 +1,5 @@
 <?php
-/** Sitemap for the landing and its six custom partner routes. @package SkySend */
+/** Sitemap for the single-page landing. @package SkySend */
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -22,11 +22,7 @@ function skysend_register_landing_sitemap(): void
             if ((int) $page_num !== 1 || $object_subtype !== '') {
                 return array();
             }
-            $urls = array(array('loc' => home_url('/')));
-            foreach (array_keys(skysend_participants()) as $slug) {
-                $urls[] = array('loc' => home_url('/participants/' . $slug . '/'));
-            }
-            return $urls;
+            return array(array('loc' => home_url('/')));
         }
 
         public function get_max_num_pages($object_subtype = '')
