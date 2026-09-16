@@ -157,7 +157,6 @@ $provider_categories = skysend_provider_categories();
                 <div class="fastsys-mark"><?php echo skysend_icon('chip'); ?></div>
                 <strong>FastSYS <span>5</span></strong>
                 <p>Операционная система для устройств самообслуживания</p>
-                <div class="os-platforms"><span>Linux</span><span>Flash-накопитель</span></div>
             </div>
             <div class="feature-copy reveal">
                 <h2 id="fastsys-title">Собственная операционная система</h2>
