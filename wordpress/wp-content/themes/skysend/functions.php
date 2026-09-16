@@ -9,6 +9,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+require_once __DIR__ . '/inc/providers.php';
+require_once __DIR__ . '/inc/sitemap.php';
+
 function skysend_setup(): void
 {
     add_theme_support('title-tag');
@@ -38,6 +41,8 @@ function skysend_assets(): void
         true
     );
     wp_script_add_data('skysend-site', 'strategy', 'defer');
+    $layout_path = get_theme_file_path('/assets/css/landing.css');
+    wp_enqueue_style('skysend-landing', get_theme_file_uri('/assets/css/landing.css'), array('skysend-site'), (string) filemtime($layout_path));
 }
 add_action('wp_enqueue_scripts', 'skysend_assets');
 
@@ -119,6 +124,9 @@ function skysend_icon(string $name): string
         'telegram' => '<path d="m3 11 18-8-6 18-4-7-8-3Z"/><path d="m11 14 4-4"/>',
         'arrow' => '<path d="M5 12h14M14 7l5 5-5 5"/>',
         'plus' => '<path d="M12 5v14M5 12h14"/>',
+        'server' => '<rect x="3" y="3" width="18" height="7" rx="1"/><rect x="3" y="14" width="18" height="7" rx="1"/><path d="M7 6.5h.01M7 17.5h.01M11 6.5h6M11 17.5h6"/>',
+        'chip' => '<rect x="6" y="6" width="12" height="12" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/>',
+        'key' => '<circle cx="8" cy="8" r="5"/><path d="m12 12 9 9M16 16l3-3M18 18l3-3"/>',
     );
 
     if (!isset($icons[$name])) {
@@ -154,7 +162,7 @@ function skysend_participants(): array
                 array('value' => 'Нет', 'label' => 'скрытых комиссий'),
             ),
             'benefits' => array(
-                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'FastSys5 автоматически устраняет ошибки оборудования, анализирует работу устройств и получает удалённые обновления.'),
+                array('icon' => 'pulse', 'title' => 'Стабильная работа', 'text' => 'FastSYS 5 автоматически устраняет ошибки оборудования, анализирует работу устройств и получает удалённые обновления.'),
                 array('icon' => 'cost', 'title' => 'Снижение расходов', 'text' => 'Автоматика терминала решает большинство ситуаций без выезда технического специалиста.'),
                 array('icon' => 'network', 'title' => 'Удалённое управление', 'text' => 'Управление терминалами и настройками программного обеспечения выполняется удалённо.'),
                 array('icon' => 'percent', 'title' => 'Высокое вознаграждение', 'text' => 'Автоматизация и низкие затраты на обслуживание позволяют предоставлять партнёрам повышенное вознаграждение.'),
@@ -280,7 +288,6 @@ function skysend_participants(): array
             'icon' => 'gateway',
             'tone' => 'navy',
             'image' => 'partner-gateways.jpg',
-            'image_badge' => 'XML',
             'title' => 'Шлюзовикам',
             'card_text' => 'Приём платежей в пользу провайдеров SkySend по XML-протоколу.',
             'card_metric' => 'XML',

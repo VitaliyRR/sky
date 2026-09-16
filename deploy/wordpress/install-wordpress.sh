@@ -92,6 +92,7 @@ install -d -o root -g www-data -m 0755 "${WP_ROOT}/wp-content/themes/skysend"
 cp -a "${THEME_SOURCE}/." "${WP_ROOT}/wp-content/themes/skysend/"
 install -d -o www-data -g www-data -m 0775 "${WP_ROOT}/wp-content/uploads"
 install -o root -g www-data -m 0644 "${PUBLIC_SOURCE}/robots.txt" "${WP_ROOT}/robots.txt"
+sed -i "s|^Sitemap:.*|Sitemap: ${SITE_URL%/}/wp-sitemap.xml|" "${WP_ROOT}/robots.txt"
 install -o root -g www-data -m 0644 "${PUBLIC_SOURCE}/.htaccess" "${WP_ROOT}/.htaccess"
 
 if ! wp core is-installed --path="${WP_ROOT}" --allow-root; then
@@ -105,6 +106,9 @@ if ! wp core is-installed --path="${WP_ROOT}" --allow-root; then
         --admin_email="webmaster@skysend.ru" \
         --skip-email \
         --allow-root
+
+    # Keep the two default examples recoverable, but never publish them on the landing.
+    wp post update 1 2 --post_status=draft --path="${WP_ROOT}" --allow-root
 
     umask 077
     {

@@ -3,4 +3,4 @@ Allow: /
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
-Sitemap: https://skysend.ru/wp-sitemap.xml
+Sitemap: http://31.129.98.28/wp-sitemap.xml

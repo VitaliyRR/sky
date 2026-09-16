@@ -31,8 +31,9 @@ $nav_url = static function (string $anchor) use ($front_url, $is_participant): s
 
         <nav class="main-nav" id="site-navigation" aria-label="Основная навигация" data-navigation>
             <a href="<?php echo esc_url($nav_url('participants')); ?>">Партнерам</a>
-            <a href="<?php echo esc_url($nav_url('capabilities')); ?>">Возможности</a>
+            <a href="<?php echo esc_url($nav_url('allvend')); ?>">ALLVEND</a>
             <a href="<?php echo esc_url($nav_url('software')); ?>">Программы</a>
+            <a href="<?php echo esc_url($nav_url('providers')); ?>">Провайдеры</a>
             <a href="<?php echo esc_url($nav_url('contacts')); ?>">Контакты</a>
         </nav>
 

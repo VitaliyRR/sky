@@ -1,238 +1,205 @@
 <?php
-/**
- * SkySend landing page.
- *
- * @package SkySend
- */
-
+/** SkySend landing page. @package SkySend */
 get_header();
-
 $participants = skysend_participants();
-
-$capabilities = array(
-    array(
-        'tone' => 'ink',
-        'icon' => 'percent',
-        'metric' => 'Нет',
-        'label' => 'скрытых комиссий',
-        'title' => 'Высокое вознаграждение',
-        'text' => 'Система SkySend полностью автоматизирована, поэтому затраты на её обслуживание снижены, а партнёрам предоставляется повышенное вознаграждение.',
-    ),
-    array(
-        'tone' => 'ice',
-        'icon' => 'cost',
-        'metric' => '50%',
-        'label' => 'экономия на обслуживании',
-        'title' => 'Низкие расходы',
-        'text' => 'Автоматическое устранение ошибок оборудования, удалённые обновления и автоматическая отладка сокращают количество технических выездов.',
-    ),
-    array(
-        'tone' => 'cobalt',
-        'icon' => 'pulse',
-        'metric' => 'FastSys5',
-        'label' => 'ОС на базе Linux',
-        'title' => 'Стабильная работа',
-        'text' => 'FastSys5 поддерживает автоматическое устранение ошибок устройств, анализ работы оборудования и удалённые обновления программного обеспечения.',
-    ),
-    array(
-        'tone' => 'sand',
-        'icon' => 'spark',
-        'metric' => 'SkyMarket',
-        'label' => 'заказ товаров',
-        'title' => 'Уникальные инновации',
-        'text' => 'Система включает рекламную платформу SkySend, проект заказа товаров SkyMarket и программное обеспечение с настраиваемым интерфейсом.',
-    ),
-    array(
-        'tone' => 'aqua',
-        'icon' => 'speed',
-        'metric' => 'UNIX',
-        'label' => 'кластерный процессинг',
-        'title' => 'Высокая скорость',
-        'text' => 'Серверы SkySend работают под управлением операционных систем семейства UNIX, синхронизируют данные и распределяют поступающую нагрузку.',
-    ),
-    array(
-        'tone' => 'violet',
-        'icon' => 'shield',
-        'metric' => 'IPSEC',
-        'label' => 'шифрованные каналы',
-        'title' => 'Защита данных',
-        'text' => 'Для передачи информации используются защищённые шифрованные каналы и электронная цифровая подпись.',
-    ),
+$partner_offers = array(
+    'agents' => 'Лучшие финансовые условия и стабильная работа терминалов.',
+    'providers' => 'Дополнительные точки приёма платежей и бесплатное подключение.',
+    'suppliers' => 'Заказ и продажа товаров через терминалы SkySend.',
+    'retailers' => 'Самообслуживание, заказ товаров и оплата услуг на ALLVEND.',
+    'representatives' => 'Развитие региональной сети и подключение партнёров.',
+    'gateways' => 'Интеграция вашей платёжной системы по XML-протоколу.',
 );
+$software = array(
+    array('icon' => 'terminal', 'title' => 'ПО ALLVEND', 'text' => 'Единое ПО для платёжных терминалов, инфокиосков и других устройств самообслуживания.', 'url' => '#allvend'),
+    array('icon' => 'windows', 'title' => 'РМА Windows / Linux', 'text' => 'Рабочее место агента для приёма платежей с компьютера или ноутбука.', 'url' => 'https://www.isg.dev/ru/products/skysend/'),
+    array('icon' => 'android', 'title' => 'РМА Android', 'text' => 'Приём платежей со смартфона или планшета под управлением Android.', 'url' => 'https://www.isg.dev/ru/products/skysend-app/'),
+    array('icon' => 'code', 'title' => 'XML-шлюз', 'text' => 'Подключение собственной предпроцессинговой системы агента к SkySend.', 'url' => home_url('/participants/gateways/')),
+);
+$provider_categories = skysend_provider_categories();
 ?>
-
-<main id="main">
-    <section class="hero-slider" aria-label="Главные предложения SkySend" data-slider>
-        <div class="hero-slides">
-            <article class="hero-slide hero-slide--violet hero-slide--services is-active" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-providers.png')); ?>')" data-slide aria-hidden="false">
-                <div class="hero-overlay"></div>
-                <div class="shell hero-content">
-                    <p class="eyebrow">Система приёма платежей</p>
-                    <h1>Более 5 000<br>провайдеров услуг</h1>
-                    <a class="button button--accent" href="#participants">Партнерам <?php echo skysend_icon('arrow'); ?></a>
+<main id="main" class="landing-home">
+    <section class="masthead" aria-label="Главные предложения SkySend" aria-roledescription="карусель" data-slider>
+        <div class="masthead-slides">
+            <article class="masthead-slide is-active" data-slide aria-hidden="false">
+                <div class="shell masthead-inner">
+                    <div class="masthead-copy">
+                        <h1>Более 5 000<br>провайдеров услуг</h1>
+                        <a class="button button--blue" href="#providers">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                    </div>
+                    <div class="masthead-media">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-providers-20260914.webp')); ?>" width="1774" height="887" alt="Банки, операторы связи и поставщики услуг" fetchpriority="high" decoding="async">
+                    </div>
                 </div>
             </article>
-
-            <article class="hero-slide hero-slide--mint hero-slide--finance" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/conditions.jpg')); ?>')" data-slide aria-hidden="true">
-                <div class="hero-overlay"></div>
-                <div class="shell hero-content">
-                    <p class="eyebrow">Преимущества SkySend</p>
-                    <h2>Лучшие финансовые<br>условия</h2>
-                    <p>Высокие ставки вознаграждения, экономия 50% на обслуживании и отсутствие скрытых комиссий.</p>
-                    <a class="button button--accent" href="#capabilities">Преимущества <?php echo skysend_icon('arrow'); ?></a>
+            <article class="masthead-slide" data-slide aria-hidden="true" inert>
+                <div class="shell masthead-inner">
+                    <div class="masthead-copy">
+                        <h2>Лучшие финансовые условия</h2>
+                        <p>Высокое вознаграждение, снижение расходов на обслуживание и отсутствие скрытых комиссий.</p>
+                        <a class="button button--blue" href="#participants">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                    </div>
+                    <div class="masthead-media">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-finance-20260914.webp')); ?>" width="1774" height="887" alt="Платежи и финансовые условия для партнёров" decoding="async">
+                    </div>
                 </div>
             </article>
-
-            <article class="hero-slide hero-slide--blue hero-slide--allvend" style="--slide-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/allvend.jpg')); ?>')" data-slide aria-hidden="true">
-                <div class="hero-overlay"></div>
-                <div class="shell hero-content">
-                    <p class="eyebrow">Программы</p>
-                    <span class="hero-product-logo" aria-hidden="true">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/allvend-logo.png')); ?>" width="320" height="200" alt="" decoding="async">
-                    </span>
-                    <h2 class="screen-reader-text">ПО ALLVEND</h2>
-                    <p>Универсальное программное обеспечение для платёжных терминалов и других устройств самообслуживания.</p>
-                    <a class="button button--accent" href="#software">ПО ALLVEND <?php echo skysend_icon('arrow'); ?></a>
+            <article class="masthead-slide" data-slide aria-hidden="true" inert>
+                <div class="shell masthead-inner">
+                    <div class="masthead-copy">
+                        <h2>Уникальное программное обеспечение</h2>
+                        <p>ALLVEND — единое решение для разных устройств самообслуживания.</p>
+                        <a class="button button--blue" href="#allvend">Подробнее... <?php echo skysend_icon('arrow'); ?></a>
+                    </div>
+                    <div class="masthead-media masthead-media--allvend">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-allvend-20260914.webp')); ?>" width="1774" height="887" alt="Платёжный терминал, настольный инфокиоск, информационная панель и паркомат на ПО ALLVEND" decoding="async">
+                        <img class="allvend-brand" src="<?php echo esc_url(get_theme_file_uri('/assets/images/allvend-logo.png')); ?>" width="320" height="200" alt="ALLVEND">
+                    </div>
                 </div>
             </article>
         </div>
-
-        <div class="shell slider-controls">
-            <div class="slider-dots" role="group" aria-label="Выбор слайда">
-                <button class="is-active" type="button" aria-label="Более 5 000 провайдеров услуг" aria-current="true" data-slide-to="0"><span>01</span></button>
-                <button type="button" aria-label="Лучшие финансовые условия" data-slide-to="1"><span>02</span></button>
-                <button type="button" aria-label="ПО ALLVEND" data-slide-to="2"><span>03</span></button>
+        <div class="shell masthead-controls">
+            <div class="masthead-pagination" role="group" aria-label="Выбор баннера">
+                <button class="is-active" type="button" aria-label="Более 5 000 провайдеров услуг" aria-current="true" data-slide-to="0"></button>
+                <button type="button" aria-label="Лучшие финансовые условия" data-slide-to="1"></button>
+                <button type="button" aria-label="Уникальное программное обеспечение" data-slide-to="2"></button>
             </div>
         </div>
     </section>
 
-    <section class="section participants" id="participants">
-        <div class="shell">
-            <header class="section-heading section-heading--compact reveal">
-                <p class="section-kicker">Партнерам</p>
-                <div>
-                    <h2>Партнерам SkySend</h2>
-                    <p>Информация для платёжных агентов, провайдеров услуг, поставщиков товаров, торговых сетей, представителей и шлюзовиков.</p>
-                </div>
-            </header>
-
-            <div class="participant-grid">
+    <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнерам">
+        <div class="shell landing-panel-inner">
+            <div class="partner-tiles">
                 <?php foreach ($participants as $slug => $participant) : ?>
-                    <a class="participant-card participant-card--<?php echo esc_attr($participant['tone']); ?> reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
-                        <span class="participant-photo">
-                            <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $participant['image'])); ?>" alt="" loading="lazy" decoding="async">
-                            <?php if (!empty($participant['image_badge'])) : ?>
-                                <span class="participant-photo__badge" aria-hidden="true"><?php echo esc_html($participant['image_badge']); ?></span>
-                            <?php endif; ?>
-                        </span>
-                        <span class="participant-card__copy">
-                            <strong><?php echo esc_html($participant['title']); ?></strong>
-                            <span><?php echo esc_html($participant['card_text']); ?></span>
-                            <span class="participant-card__more">Подробнее <?php echo skysend_icon('arrow'); ?></span>
-                        </span>
+                    <a class="partner-tile reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
+                        <img class="partner-tile-photo" src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $participant['image'])); ?>" width="453" height="367" alt="" loading="lazy" decoding="async">
+                        <div class="partner-tile-copy">
+                            <h2><?php echo esc_html($participant['title']); ?></h2>
+                            <p><?php echo esc_html($partner_offers[$slug]); ?></p>
+                            <span class="more-link">Подробнее <?php echo skysend_icon('arrow'); ?></span>
+                        </div>
                     </a>
                 <?php endforeach; ?>
             </div>
         </div>
     </section>
 
-    <section class="capability-stack" id="capabilities" aria-labelledby="capability-title">
-        <header class="capability-intro">
-            <div class="shell capability-intro__inner reveal">
-                <p class="section-kicker">Преимущества</p>
-                <h2 id="capability-title">Преимущества системы SkySend</h2>
-                <p>Высокое вознаграждение, низкие расходы, стабильная работа, уникальные инновации, высокая скорость и защита данных.</p>
+    <section class="landing-panel landing-panel--ice" id="allvend" aria-labelledby="allvend-title">
+        <div class="shell landing-panel-inner feature-layout">
+            <div class="product-art reveal">
+                <img class="product-art-image" src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-allvend-20260914.webp')); ?>" width="1774" height="887" alt="Разные устройства самообслуживания с единым ПО ALLVEND" loading="lazy" decoding="async">
+                <img class="product-art-brand" src="<?php echo esc_url(get_theme_file_uri('/assets/images/allvend-logo.png')); ?>" width="320" height="200" alt="ALLVEND" loading="lazy">
             </div>
-        </header>
-
-        <?php foreach ($capabilities as $index => $capability) : ?>
-            <article class="capability-band capability-band--<?php echo esc_attr($capability['tone']); ?>">
-                <div class="shell capability-band__inner reveal">
-                    <div class="capability-band__copy">
-                        <span class="capability-band__number"><?php echo esc_html(str_pad((string) ($index + 1), 2, '0', STR_PAD_LEFT)); ?></span>
-                        <h3><?php echo esc_html($capability['title']); ?></h3>
-                        <p><?php echo esc_html($capability['text']); ?></p>
-                    </div>
-                    <div class="capability-graphic" aria-label="<?php echo esc_attr($capability['metric'] . ' — ' . $capability['label']); ?>">
-                        <span class="capability-graphic__icon"><?php echo skysend_icon($capability['icon']); ?></span>
-                        <span class="capability-graphic__caption">Ключевой факт</span>
-                        <strong><?php echo esc_html($capability['metric']); ?></strong>
-                        <small><?php echo esc_html($capability['label']); ?></small>
-                    </div>
-                </div>
-            </article>
-        <?php endforeach; ?>
-    </section>
-
-    <section class="section programs" id="software">
-        <div class="shell">
-            <header class="section-heading reveal">
-                <p class="section-kicker">Программы</p>
-                <div>
-                    <h2>Программы SkySend</h2>
-                    <p>ПО ALLVEND, рабочее место агента для Windows и Linux, приложение для Android и подключение по XML-протоколу.</p>
-                </div>
-            </header>
-
-            <div class="program-grid">
-                <article class="program-card program-card--allvend reveal">
-                    <div class="program-card__visual program-card__visual--photo" style="--program-image: url('<?php echo esc_url(get_theme_file_uri('/assets/images/hero-allvend.jpg')); ?>')">
-                        <span class="program-chip">Для систем самообслуживания</span>
-                        <span class="program-screen" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-                    </div>
-                    <div class="program-card__copy">
-                        <span class="program-icon"><?php echo skysend_icon('terminal'); ?></span>
-                        <h3>ПО ALLVEND</h3>
-                        <p>Универсальное ПО для устройств самообслуживания: настройка интерфейса, реклама, формирование и оплата заказов.</p>
-                        <a href="#contacts">Подключение <?php echo skysend_icon('arrow'); ?></a>
-                    </div>
-                </article>
-
-                <article class="program-card reveal">
-                    <div class="program-card__visual program-card__visual--desktop" aria-hidden="true">
-                        <span class="device-desktop"><i></i><b></b></span>
-                        <span class="program-signal program-signal--one"></span>
-                        <span class="program-signal program-signal--two"></span>
-                    </div>
-                    <div class="program-card__copy">
-                        <span class="program-icon"><?php echo skysend_icon('windows'); ?></span>
-                        <h3>РМА Windows / Linux</h3>
-                        <p>Программа приёма платежей на стационарном компьютере или ноутбуке под управлением Windows или Linux.</p>
-                        <a href="#contacts">Подключение <?php echo skysend_icon('arrow'); ?></a>
-                    </div>
-                </article>
-
-                <article class="program-card reveal">
-                    <div class="program-card__visual program-card__visual--mobile" aria-hidden="true">
-                        <span class="device-phone"><i></i><i></i><i></i><i></i></span>
-                        <span class="device-pulse"></span>
-                    </div>
-                    <div class="program-card__copy">
-                        <span class="program-icon"><?php echo skysend_icon('android'); ?></span>
-                        <h3>РМА Android</h3>
-                        <p>Приложение для приёма платежей с планшета или смартфона под управлением Android.</p>
-                        <a href="#contacts">Подключение <?php echo skysend_icon('arrow'); ?></a>
-                    </div>
-                </article>
-
-                <article class="program-card reveal">
-                    <div class="program-card__visual program-card__visual--code" aria-hidden="true">
-                        <span class="code-window"><i>&lt;request&gt;</i><i>&nbsp;&nbsp;&lt;payment /&gt;</i><i>&lt;/request&gt;</i></span>
-                        <span class="code-route code-route--one"></span>
-                        <span class="code-route code-route--two"></span>
-                    </div>
-                    <div class="program-card__copy">
-                        <span class="program-icon"><?php echo skysend_icon('code'); ?></span>
-                        <h3>XML-шлюз</h3>
-                        <p>Интеграция собственной предпроцессинговой системы агента с системой SkySend по XML-протоколу.</p>
-                        <a href="<?php echo esc_url(home_url('/participants/gateways/')); ?>">Подробнее <?php echo skysend_icon('arrow'); ?></a>
-                    </div>
-                </article>
+            <div class="feature-copy reveal">
+                <h2 id="allvend-title">Уникальное ПО ALLVEND</h2>
+                <p class="panel-lead">Автоматизация продаж, оплаты услуг и обслуживания клиентов на разных устройствах.</p>
+                <ul class="feature-list">
+                    <li><?php echo skysend_icon('terminal'); ?><span><strong>Единое решение</strong>Платёжные терминалы, электронные кассиры, инфокиоски и информационные панели.</span></li>
+                    <li><?php echo skysend_icon('box'); ?><span><strong>Товары и услуги</strong>Формирование заказов, оплата наличными и банковскими картами.</span></li>
+                    <li><?php echo skysend_icon('network'); ?><span><strong>Удалённое управление</strong>Настройки, дизайн, мониторинг устройств и транзакций из онлайн-кабинета.</span></li>
+                </ul>
+                <a class="more-link" href="https://www.isg.dev/ru/products/allvend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
             </div>
         </div>
     </section>
 
-</main>
+    <section class="landing-panel" id="capabilities" aria-labelledby="processing-title">
+        <div class="shell landing-panel-inner feature-layout">
+            <figure class="processing-art reveal">
+                <div class="processing-stack" aria-hidden="true">
+                    <?php for ($server = 0; $server < 3; $server++) : ?>
+                        <div class="server-unit"><?php echo skysend_icon('server'); ?><i></i><i></i><i></i></div>
+                    <?php endfor; ?>
+                </div>
+                <figcaption><strong>UNIX / FreeBSD</strong><span>Кластерная архитектура процессинга</span></figcaption>
+            </figure>
+            <div class="feature-copy reveal">
+                <h2 id="processing-title">Высокая скорость обработки транзакций</h2>
+                <p class="panel-lead">Серверы системы синхронизируют данные и распределяют поступающую нагрузку.</p>
+                <ul class="feature-list">
+                    <li><?php echo skysend_icon('network'); ?><span><strong>Кластер серверов</strong>Совместная обработка платежей и распределение нагрузки.</span></li>
+                    <li><?php echo skysend_icon('server'); ?><span><strong>UNIX / FreeBSD</strong>Система разработана на базе FreeBSD и открытого программного обеспечения.</span></li>
+                    <li><?php echo skysend_icon('shield'); ?><span><strong>Распределённая архитектура</strong>Серверы в разных центрах обработки данных связаны шифрованными туннелями IPSEC.</span></li>
+                </ul>
+                <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+            </div>
+        </div>
+    </section>
 
-<?php
-get_footer();
+    <section class="landing-panel landing-panel--navy" id="security" aria-labelledby="security-title">
+        <div class="shell landing-panel-inner security-layout">
+            <header class="panel-heading reveal">
+                <h2 id="security-title">Безопасность</h2>
+                <p>Защита информации на серверах, при передаче данных и на устройствах самообслуживания.</p>
+            </header>
+            <div class="security-cards">
+                <article class="security-card reveal"><?php echo skysend_icon('server'); ?><h3>Данные на серверах</h3><p>Хранение информации на криптографических разделах с шифрованием AES-XTS.</p></article>
+                <article class="security-card reveal"><?php echo skysend_icon('shield'); ?><h3>Каналы связи</h3><p>Защищённые шифрованные каналы и электронная цифровая подпись.</p></article>
+                <article class="security-card reveal"><?php echo skysend_icon('key'); ?><h3>Защита терминального ПО</h3><p>Шифрование образов ПО и данных, криптографическая привязка к устройству.</p></article>
+            </div>
+            <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+        </div>
+    </section>
+
+    <section class="landing-panel landing-panel--ice" id="fastsys" aria-labelledby="fastsys-title">
+        <div class="shell landing-panel-inner feature-layout">
+            <div class="fastsys-art reveal">
+                <div class="fastsys-mark"><?php echo skysend_icon('chip'); ?></div>
+                <strong>FastSYS <span>5</span></strong>
+                <p>Операционная система для устройств самообслуживания</p>
+                <div class="os-platforms"><span>Linux</span><span>Flash-накопитель</span></div>
+            </div>
+            <div class="feature-copy reveal">
+                <h2 id="fastsys-title">Собственная операционная система</h2>
+                <p class="panel-lead">FastSYS 5 поставляется с ПО ALLVEND как готовое решение для устройств самообслуживания.</p>
+                <ul class="feature-list">
+                    <li><?php echo skysend_icon('terminal'); ?><span><strong>Работа с flash-накопителя</strong>ОС и прикладное ПО устанавливаются вместе.</span></li>
+                    <li><?php echo skysend_icon('pulse'); ?><span><strong>Бинарные обновления</strong>Обновление программного обеспечения и удалённый анализ работы.</span></li>
+                    <li><?php echo skysend_icon('shield'); ?><span><strong>Криптографическая защита</strong>Шифрование образов ПО, хранимых и передаваемых данных.</span></li>
+                </ul>
+                <a class="more-link" href="https://www.isg.dev/ru/products/fastsys/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="landing-panel" id="software" aria-labelledby="software-title">
+        <div class="shell landing-panel-inner software-layout">
+            <header class="panel-heading reveal"><h2 id="software-title">Полный набор клиентского софта</h2><p>Для устройств самообслуживания, компьютеров, смартфонов и интеграции собственной системы.</p></header>
+            <div class="client-software-grid">
+                <?php foreach ($software as $program) : ?>
+                    <article class="client-software-card reveal">
+                        <div class="client-software-icon"><?php echo skysend_icon($program['icon']); ?></div>
+                        <h3><?php echo esc_html($program['title']); ?></h3>
+                        <p><?php echo esc_html($program['text']); ?></p>
+                        <a class="more-link" href="<?php echo esc_url($program['url']); ?>"<?php if (str_starts_with($program['url'], 'https://')) : ?> target="_blank" rel="noopener"<?php endif; ?>>Подробнее <?php echo skysend_icon('arrow'); ?></a>
+                    </article>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
+    <section class="landing-panel landing-panel--ice" id="providers" aria-labelledby="providers-title">
+        <div class="shell landing-panel-inner providers-layout">
+            <header class="panel-heading reveal"><h2 id="providers-title">Провайдеры услуг</h2></header>
+            <div class="provider-browser" data-provider-tabs>
+                <div class="provider-categories" role="tablist" aria-label="Категории провайдеров" aria-orientation="vertical">
+                    <?php $category_index = 0; foreach ($provider_categories as $slug => $category) : ?>
+                        <button type="button" role="tab" id="provider-tab-<?php echo esc_attr($slug); ?>" aria-controls="provider-panel-<?php echo esc_attr($slug); ?>" aria-selected="<?php echo $category_index === 0 ? 'true' : 'false'; ?>" tabindex="<?php echo $category_index === 0 ? '0' : '-1'; ?>" data-provider-tab="<?php echo esc_attr($slug); ?>"><?php echo esc_html($category['title']); ?> <?php echo skysend_icon('arrow'); ?></button>
+                    <?php $category_index++; endforeach; ?>
+                </div>
+                <div class="provider-panels">
+                    <?php $category_index = 0; foreach ($provider_categories as $slug => $category) : ?>
+                        <div class="provider-panel" role="tabpanel" id="provider-panel-<?php echo esc_attr($slug); ?>" aria-labelledby="provider-tab-<?php echo esc_attr($slug); ?>" tabindex="0" data-provider-panel="<?php echo esc_attr($slug); ?>"<?php if ($category_index !== 0) : ?> hidden<?php endif; ?>>
+                            <div class="provider-logo-grid<?php echo count($category['items']) === 6 ? ' provider-logo-grid--six' : ''; ?>">
+                                <?php foreach ($category['items'] as $provider) : ?>
+                                    <div class="provider-logo"><img src="<?php echo esc_url(get_theme_file_uri('/assets/images/providers/' . $provider['image'])); ?>" alt="" loading="lazy" decoding="async"><span><?php echo esc_html($provider['name']); ?></span></div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    <?php $category_index++; endforeach; ?>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<?php get_footer(); ?>
