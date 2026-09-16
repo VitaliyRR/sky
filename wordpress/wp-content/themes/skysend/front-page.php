@@ -108,7 +108,7 @@ $provider_categories = skysend_provider_categories();
                     <li><?php echo skysend_icon('box'); ?><span><strong>Товары и услуги</strong>Формирование заказов, оплата наличными и банковскими картами.</span></li>
                     <li><?php echo skysend_icon('network'); ?><span><strong>Удалённое управление</strong>Настройки, дизайн, мониторинг устройств и транзакций из онлайн-кабинета.</span></li>
                 </ul>
-                <a class="more-link" href="https://www.isg.dev/ru/products/allvend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+                <a class="more-link" href="https://www.isg.dev/ru/products/allvend/" target="_blank" rel="noopener">Подробнее</a>
             </div>
         </div>
     </section>
@@ -131,7 +131,7 @@ $provider_categories = skysend_provider_categories();
                     <li><?php echo skysend_icon('server'); ?><span><strong>UNIX / FreeBSD</strong>Система разработана на базе FreeBSD и открытого программного обеспечения.</span></li>
                     <li><?php echo skysend_icon('shield'); ?><span><strong>Распределённая архитектура</strong>Серверы в разных центрах обработки данных связаны шифрованными туннелями IPSEC.</span></li>
                 </ul>
-                <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+                <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее</a>
             </div>
         </div>
     </section>
@@ -147,7 +147,7 @@ $provider_categories = skysend_provider_categories();
                 <article class="security-card reveal"><?php echo skysend_icon('shield'); ?><h3>Каналы связи</h3><p>Защищённые шифрованные каналы и электронная цифровая подпись.</p></article>
                 <article class="security-card reveal"><?php echo skysend_icon('key'); ?><h3>Защита терминального ПО</h3><p>Шифрование образов ПО и данных, криптографическая привязка к устройству.</p></article>
             </div>
-            <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+            <a class="more-link" href="https://www.isg.dev/ru/products/skysend/" target="_blank" rel="noopener">Подробнее</a>
         </div>
     </section>
 
@@ -166,7 +166,7 @@ $provider_categories = skysend_provider_categories();
                     <li><?php echo skysend_icon('pulse'); ?><span><strong>Бинарные обновления</strong>Обновление программного обеспечения и удалённый анализ работы.</span></li>
                     <li><?php echo skysend_icon('shield'); ?><span><strong>Криптографическая защита</strong>Шифрование образов ПО, хранимых и передаваемых данных.</span></li>
                 </ul>
-                <a class="more-link" href="https://www.isg.dev/ru/products/fastsys/" target="_blank" rel="noopener">Подробнее <?php echo skysend_icon('arrow'); ?></a>
+                <a class="more-link" href="https://www.isg.dev/ru/products/fastsys/" target="_blank" rel="noopener">Подробнее</a>
             </div>
         </div>
     </section>
@@ -180,7 +180,7 @@ $provider_categories = skysend_provider_categories();
                         <div class="client-software-icon"><?php echo skysend_icon($program['icon']); ?></div>
                         <h3><?php echo esc_html($program['title']); ?></h3>
                         <p><?php echo esc_html($program['text']); ?></p>
-                        <a class="more-link" href="<?php echo esc_url($program['url']); ?>"<?php if (str_starts_with($program['url'], 'https://')) : ?> target="_blank" rel="noopener"<?php endif; ?>>Подробнее <?php echo skysend_icon('arrow'); ?></a>
+                        <a class="more-link" href="<?php echo esc_url($program['url']); ?>"<?php if (str_starts_with($program['url'], 'https://')) : ?> target="_blank" rel="noopener"<?php endif; ?>>Подробнее</a>
                     </article>
                 <?php endforeach; ?>
             </div>
