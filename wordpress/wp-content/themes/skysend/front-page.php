@@ -67,9 +67,8 @@ $provider_categories = skysend_provider_categories();
         </div>
     </section>
 
-    <section class="landing-panel landing-panel--partners" id="participants" aria-labelledby="partners-title">
+    <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнерам">
         <div class="shell landing-panel-inner partners-layout">
-            <header class="panel-heading reveal"><h2 id="partners-title">Партнерам</h2></header>
             <div class="partner-offers">
                 <?php foreach ($partners as $slug => $partner) : ?>
                     <article class="partner-offer reveal">
