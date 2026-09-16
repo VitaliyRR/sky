@@ -69,8 +69,9 @@ $provider_categories = skysend_provider_categories();
         </div>
     </section>
 
-    <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнерам">
+    <section class="landing-panel landing-panel--partners" id="participants" aria-labelledby="partners-title">
         <div class="shell landing-panel-inner partners-layout">
+            <header class="panel-heading reveal"><h2 id="partners-title">Партнерам</h2></header>
             <div class="partner-offers">
                 <?php foreach ($partners as $slug => $partner) : ?>
                     <article class="partner-offer reveal">
@@ -83,14 +84,12 @@ $provider_categories = skysend_provider_categories();
                 <?php endforeach; ?>
             </div>
             <div class="partner-proof reveal" role="group" aria-label="Показатели группы компаний «Информ-Системы»">
-                <p class="partner-proof-caption">Группа компаний «Информ-Системы» в цифрах</p>
                 <dl class="partner-statistics">
                     <div><dt>Опыт работы, лет</dt><dd><?php echo esc_html((string) $company_years); ?></dd></div>
                     <div><dt>Партнёров группы</dt><dd>1 800+</dd></div>
                     <div><dt>Оборот через разработки, ₽</dt><dd>50 млрд+</dd></div>
                     <div><dt>Проведённых транзакций</dt><dd>150 млн+</dd></div>
                 </dl>
-                <p class="partner-proof-note">Оборот и транзакции — по презентации группы от 07.02.2021.</p>
             </div>
         </div>
     </section>
