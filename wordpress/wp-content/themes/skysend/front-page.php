@@ -8,7 +8,7 @@ $partner_offers = array(
     'suppliers' => 'Заказ и продажа товаров через терминалы SkySend.',
     'retailers' => 'Самообслуживание, заказ товаров и оплата услуг на ALLVEND.',
     'representatives' => 'Развитие региональной сети и подключение партнёров.',
-    'gateways' => 'Интеграция вашей платёжной системы по XML-протоколу.',
+    'gateways' => 'Интеграция вашей платёжной системы со SkySend.',
 );
 $software = array(
     array('icon' => 'terminal', 'title' => 'ПО ALLVEND', 'text' => 'Единое ПО для платёжных терминалов, инфокиосков и других устройств самообслуживания.', 'url' => '#allvend'),
@@ -70,9 +70,11 @@ $provider_categories = skysend_provider_categories();
     <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнерам">
         <div class="shell landing-panel-inner">
             <div class="partner-tiles">
-                <?php foreach ($participants as $slug => $participant) : ?>
+                <?php foreach ($participants as $slug => $participant) :
+                    $tile_image = $slug === 'gateways' ? 'partner-gateways-no-xml-20260916.webp' : $participant['image'];
+                ?>
                     <a class="partner-tile reveal" href="<?php echo esc_url(home_url('/participants/' . $slug . '/')); ?>">
-                        <img class="partner-tile-photo" src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $participant['image'])); ?>" width="453" height="367" alt="" loading="lazy" decoding="async">
+                        <img class="partner-tile-photo" src="<?php echo esc_url(get_theme_file_uri('/assets/images/' . $tile_image)); ?>" width="453" height="367" alt="" loading="lazy" decoding="async">
                         <div class="partner-tile-copy">
                             <h2><?php echo esc_html($participant['title']); ?></h2>
                             <p><?php echo esc_html($partner_offers[$slug]); ?></p>
