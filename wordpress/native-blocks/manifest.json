@@ -3,34 +3,9 @@
     "name": "page",
     "id": 67,
     "type": "page",
-    "beforeHash": "5f7331febab1007bf85421c76c2856b8a7e526cbb69555261b2867283b04349c",
-    "afterHash": "c8cd4a4f132845af89f0befc0c888c4d9bde67f97e4576d6e0ca8ce6c0081945",
+    "beforeHash": "37b2dbfb486bf37a6e9225a33afd6575a36994301c048428ec71757ef8cc042f",
+    "afterHash": "fe45f982f8dd48ed45b4e6dedf46dba3c0d3033b9fd730117fa47753525de15e",
     "count": 356,
     "invalid": 0
-  },
-  {
-    "name": "footer",
-    "id": 69,
-    "type": "wp_template_part",
-    "beforeHash": "3380f1bc999e820069dcaadaa3b6e829b09a5d27228b941fa8b748ba919953b2",
-    "afterHash": "ad502d8099c0af7fb6a44a993df268bf2795145264f86a62dbc8f3d5b58a03b8",
-    "count": 24,
-    "invalid": 0
-  },
-  {
-    "name": "header",
-    "id": 68,
-    "type": "wp_template_part",
-    "beforeHash": "9f017d5eef6928d757731ec573ba247b624b1d8d3705f2e791eb4ced77c751dc",
-    "afterHash": "9f017d5eef6928d757731ec573ba247b624b1d8d3705f2e791eb4ced77c751dc",
-    "count": 12,
-    "invalid": 0
-  },
-  {
-    "name": "styles",
-    "id": 66,
-    "type": "wp_global_styles",
-    "beforeHash": "7f74afac2d51db2b8ba8191f72518c66fa6f0c569ee587066befaf5242ed9452",
-    "afterHash": "7f74afac2d51db2b8ba8191f72518c66fa6f0c569ee587066befaf5242ed9452"
   }
 ]

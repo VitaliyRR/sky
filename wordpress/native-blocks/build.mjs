@@ -53,6 +53,13 @@ if (process.argv.includes('--repair')) {
   dom.window.close();
   process.exit(0);
 }
+if (process.argv.includes('--providers-layout')) {
+  const index = process.argv.indexOf('--providers-layout');
+  const { providersLayout } = await import('./providers-layout.mjs');
+  await providersLayout(w, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 const raw = JSON.parse(fs.readFileSync(path.join(dir, 'content.json'), 'utf8'));
 const sourceImage = src => src.replace(/^assets\/images\//, '');
 const fromSection = id => {const x=raw.sections.find(x=>x.id===id);return {...x,text:x.lead,url:x.action?.url,features:x.features || x.cards};};
