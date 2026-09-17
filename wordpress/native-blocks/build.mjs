@@ -45,6 +45,13 @@ for (const type of ['tabs','tab-list','tab-panels','tab-panel','icon']) {
   if (!w.wp.blocks.getBlockType('core/' + type)) throw new Error('The target WordPress must support native Tabs and Icon blocks (7.1+).');
 }
 console.log('Registered', w.wp.blocks.getBlockTypes().length, 'native blocks');
+if (process.argv.includes('--carousel')) {
+  const index = process.argv.indexOf('--carousel');
+  const { carousel } = await import('./carousel.mjs');
+  await carousel(w, origin, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 if (process.argv.includes('--probe')) { console.log(w.wp.blocks.serialize(w.wp.blocks.createBlock('core/tabs', {}, [w.wp.blocks.createBlock('core/tab-list', { tabs: [{label:'Первый'}, {label:'Второй'}] }), w.wp.blocks.createBlock('core/tab-panels', {}, [w.wp.blocks.createBlock('core/tab-panel', {label:'Первый'}, [w.wp.blocks.createBlock('core/paragraph', {content:'Тест'})]), w.wp.blocks.createBlock('core/tab-panel', {label:'Второй'})])] ))); dom.window.close(); process.exit(0); }
 if (process.argv.includes('--repair')) {
   const index = process.argv.indexOf('--repair');

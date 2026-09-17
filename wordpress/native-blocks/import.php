@@ -1,5 +1,5 @@
 <?php
-/** One-time WP-CLI import of ordinary core blocks. Not a theme or plugin. */
+/** One-time WP-CLI import of editor blocks. Not a theme or plugin. */
 if (!defined('WP_CLI') || !WP_CLI) { exit(1); }
 $mode = $args[0] ?? 'prepare';
 $base = __DIR__;
@@ -57,7 +57,9 @@ function skysend_native_validate(string $text): void {
     while ($queue) {
         $block=array_pop($queue);
         if (!$block['blockName']) { if (trim($block['innerHTML'])) { WP_CLI::error('Unstructured HTML'); } continue; }
-        if (!str_starts_with($block['blockName'],'core/') || in_array($block['blockName'],['core/html','core/freeform','core/code','core/shortcode'],true)) { WP_CLI::error('Non-native content'); }
+        $approved_carousel = in_array($block['blockName'],['cb/carousel-v2','cb/slide-v2'],true);
+        if ((!str_starts_with($block['blockName'],'core/') && !$approved_carousel) || in_array($block['blockName'],['core/html','core/freeform','core/code','core/shortcode'],true)) { WP_CLI::error('Unsupported editor content'); }
+        if ($approved_carousel && !is_plugin_active('carousel-block/plugin.php')) { WP_CLI::error('Install and activate carousel-block before importing its editor blocks'); }
         if (!WP_Block_Type_Registry::get_instance()->is_registered($block['blockName'])) { WP_CLI::error('Unregistered '.$block['blockName']); }
         array_push($queue,...$block['innerBlocks']);
     }

@@ -1,0 +1,9 @@
+[
+  {
+    "slug": "carousel-block",
+    "version": "2.1.5",
+    "source": "https://wordpress.org/plugins/carousel-block/",
+    "blocks": ["cb/carousel-v2", "cb/slide-v2"],
+    "scope": "Three homepage banners only"
+  }
+]
