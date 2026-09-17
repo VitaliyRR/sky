@@ -20,10 +20,20 @@ $after = parse_blocks($text);
 if (($before[0]['attrs']['metadata']['name'] ?? '') !== 'Три баннера' || ($after[0]['attrs']['metadata']['name'] ?? '') !== 'Три баннера') { $fail('Missing banner section'); }
 if (serialize_blocks(array_slice($before,1)) !== serialize_blocks(array_slice($after,1))) { $fail('Changes outside banners'); }
 $slider = $after[0]['innerBlocks'][0] ?? [];
-$panels = $before[0]['innerBlocks'][0]['innerBlocks'][1]['innerBlocks'] ?? [];
-if (($slider['blockName'] ?? '') !== 'cb/carousel-v2' || count($slider['innerBlocks']) !== 3 || count($panels) !== 3 || ($slider['attrs']['autoplay'] ?? false) !== true || ($slider['attrs']['autoplaySpeed'] ?? 0) !== 6000) { $fail('Unexpected carousel'); }
-foreach ($slider['innerBlocks'] as $index => $slide) {
-    if ($slide['blockName'] !== 'cb/slide-v2' || serialize_blocks($slide['innerBlocks']) !== serialize_blocks($panels[$index]['innerBlocks'])) { $fail('Slide content changed'); }
+if (($item['operation'] ?? 'migration') === 'height') {
+    $expected = $before[0]['attrs'];
+    $expected['style']['dimensions']['minHeight'] = '600px';
+    $expected['style']['spacing']['padding']['top'] = '12px';
+    $expected['style']['spacing']['padding']['bottom'] = '20px';
+    if (($slider['blockName'] ?? '') !== 'cb/carousel-v2' || $expected !== $after[0]['attrs'] || serialize_blocks($before[0]['innerBlocks']) !== serialize_blocks($after[0]['innerBlocks'])) { $fail('Only outer banner height and padding may change'); }
+} elseif (($item['operation'] ?? 'migration') === 'migration') {
+    $panels = $before[0]['innerBlocks'][0]['innerBlocks'][1]['innerBlocks'] ?? [];
+    if (($slider['blockName'] ?? '') !== 'cb/carousel-v2' || count($slider['innerBlocks']) !== 3 || count($panels) !== 3 || ($slider['attrs']['autoplay'] ?? false) !== true || ($slider['attrs']['autoplaySpeed'] ?? 0) !== 6000) { $fail('Unexpected carousel'); }
+    foreach ($slider['innerBlocks'] as $index => $slide) {
+        if ($slide['blockName'] !== 'cb/slide-v2' || serialize_blocks($slide['innerBlocks']) !== serialize_blocks($panels[$index]['innerBlocks'])) { $fail('Slide content changed'); }
+    }
+} else {
+    $fail('Unexpected operation');
 }
 $queue = $after;
 while ($queue) {

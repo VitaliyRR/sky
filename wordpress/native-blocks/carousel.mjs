@@ -3,8 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-export async function carousel(w, origin, input, output) {
-  if (!input || !output) throw new Error('Usage: build.mjs --carousel current-page.xml output-directory');
+async function registerCarouselBlocks(w, origin) {
   const pluginRoot = `${origin}/wp-content/plugins/carousel-block/build`;
   for (const folder of ['carousel', 'slide']) {
     const metaResponse = await fetch(`${pluginRoot}/${folder}/block.json`);
@@ -16,6 +15,11 @@ export async function carousel(w, origin, input, output) {
     w.eval(await scriptResponse.text());
     if (!w.wp.blocks.getBlockType(metadata.name)) throw new Error('Plugin block registration failed');
   }
+}
+
+export async function carousel(w, origin, input, output) {
+  if (!input || !output) throw new Error('Usage: build.mjs --carousel current-page.xml output-directory');
+  await registerCarouselBlocks(w, origin);
   const xml = new w.DOMParser().parseFromString(fs.readFileSync(input, 'utf8'), 'text/xml');
   if (xml.querySelector('parsererror')) throw new Error('Invalid WXR');
   const wpns = 'http://wordpress.org/export/1.2/';
@@ -62,4 +66,44 @@ export async function carousel(w, origin, input, output) {
   fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(manifest, null, 2));
   console.log(JSON.stringify(manifest, null, 2));
   function hash(text) { return crypto.createHash('sha256').update(text).digest('hex'); }
+}
+
+/** Only native outer Group dimensions; keeps all carousel settings and slides. */
+export async function carouselHeight(w, origin, input, output) {
+  if (!input || !output) throw new Error('Usage: build.mjs --carousel-height current-page.xml output-directory');
+  await registerCarouselBlocks(w, origin);
+  const xml = new w.DOMParser().parseFromString(fs.readFileSync(input, 'utf8'), 'text/xml');
+  if (xml.querySelector('parsererror')) throw new Error('Invalid WXR');
+  const wpns = 'http://wordpress.org/export/1.2/';
+  const item = [...xml.querySelectorAll('item')].find(x => x.getElementsByTagNameNS(wpns, 'post_id')[0]?.textContent === '67');
+  if (!item || item.getElementsByTagNameNS(wpns, 'post_type')[0]?.textContent !== 'page') throw new Error('Missing page 67');
+  const original = item.getElementsByTagNameNS('http://purl.org/rss/1.0/modules/content/', 'encoded')[0]?.textContent;
+  const blocks = w.wp.blocks.parse(original);
+  const hero = blocks.find(block => block.attributes.metadata?.name === 'Три баннера');
+  if (!hero || hero.innerBlocks.length !== 1 || hero.innerBlocks[0].name !== 'cb/carousel-v2' || hero.innerBlocks[0].innerBlocks.length !== 3) throw new Error('Unexpected existing carousel');
+  const outside = blocks.filter(block => block !== hero).map(block => w.wp.blocks.serialize([block]));
+  const children = w.wp.blocks.serialize(hero.innerBlocks);
+  const a = hero.attributes;
+  hero.attributes = { ...a, style: { ...a.style,
+    dimensions: { ...a.style?.dimensions, minHeight: '600px' },
+    spacing: { ...a.style?.spacing, padding: { ...a.style?.spacing?.padding, top: '12px', bottom: '20px' } },
+  } };
+  const text = w.wp.blocks.serialize(blocks);
+  const parsed = w.wp.blocks.parse(text);
+  const nextHero = parsed.find(block => block.attributes.metadata?.name === 'Три баннера');
+  if (JSON.stringify(outside) !== JSON.stringify(parsed.filter(block => block !== nextHero).map(block => w.wp.blocks.serialize([block])))) throw new Error('Changes outside banner');
+  if (children !== w.wp.blocks.serialize(nextHero.innerBlocks)) throw new Error('Carousel settings or content changed');
+  let count = 0;
+  const walk = tree => tree.forEach(block => {
+    count++;
+    if (!block.isValid || (!block.name.startsWith('core/') && !['cb/carousel-v2','cb/slide-v2'].includes(block.name)) || ['core/html','core/freeform','core/code','core/shortcode'].includes(block.name)) throw new Error('Invalid or unexpected block: ' + block.name);
+    walk(block.innerBlocks);
+  });
+  walk(parsed);
+  const hash = value => crypto.createHash('sha256').update(value).digest('hex');
+  const manifest = [{ name: 'page', id: 67, type: 'page', beforeHash: hash(original), afterHash: hash(text), count, invalid: 0, plugin: 'carousel-block', pluginVersion: '2.1.5', operation: 'height', minHeight: 600 }];
+  fs.mkdirSync(output, { recursive: true });
+  fs.writeFileSync(path.join(output, 'page.html'), text);
+  fs.writeFileSync(path.join(output, 'manifest.json'), JSON.stringify(manifest, null, 2));
+  console.log(JSON.stringify(manifest, null, 2));
 }

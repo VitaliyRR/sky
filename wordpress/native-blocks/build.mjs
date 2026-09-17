@@ -45,6 +45,13 @@ for (const type of ['tabs','tab-list','tab-panels','tab-panel','icon']) {
   if (!w.wp.blocks.getBlockType('core/' + type)) throw new Error('The target WordPress must support native Tabs and Icon blocks (7.1+).');
 }
 console.log('Registered', w.wp.blocks.getBlockTypes().length, 'native blocks');
+if (process.argv.includes('--carousel-height')) {
+  const index = process.argv.indexOf('--carousel-height');
+  const { carouselHeight } = await import('./carousel.mjs');
+  await carouselHeight(w, origin, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 if (process.argv.includes('--carousel')) {
   const index = process.argv.indexOf('--carousel');
   const { carousel } = await import('./carousel.mjs');
