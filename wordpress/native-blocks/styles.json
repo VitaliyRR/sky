@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "isGlobalStylesUserThemeJSON": true,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "slug": "base",
+          "name": "Белый",
+          "color": "#ffffff"
+        },
+        {
+          "slug": "contrast",
+          "name": "Текст SkySend",
+          "color": "#071426"
+        },
+        {
+          "slug": "accent-1",
+          "name": "Синий SkySend",
+          "color": "#0b63f6"
+        },
+        {
+          "slug": "accent-2",
+          "name": "Светлый фон",
+          "color": "#edf4ff"
+        }
+      ]
+    },
+    "layout": {
+      "contentSize": "1120px",
+      "wideSize": "1120px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#ffffff",
+      "text": "#071426"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|manrope",
+      "fontSize": "16px",
+      "lineHeight": "1.5"
+    },
+    "spacing": {
+      "blockGap": "0px",
+      "padding": {
+        "top": "0px",
+        "bottom": "0px",
+        "left": "0px",
+        "right": "0px"
+      }
+    },
+    "elements": {
+      "heading": {
+        "color": {
+          "text": "inherit"
+        },
+        "typography": {
+          "fontWeight": "700",
+          "lineHeight": "1.15"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "32px"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "20px"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#0b63f6"
+        }
+      },
+      "button": {
+        "border": {
+          "radius": "5px"
+        },
+        "color": {
+          "background": "#0b63f6",
+          "text": "#ffffff"
+        },
+        "typography": {
+          "fontSize": "14px",
+          "fontWeight": "600"
+        },
+        "spacing": {
+          "padding": {
+            "top": "10px",
+            "bottom": "10px",
+            "left": "20px",
+            "right": "20px"
+          }
+        }
+      }
+    },
+    "blocks": {
+      "core/column": {
+        "spacing": {
+          "blockGap": "18px"
+        }
+      },
+      "core/navigation": {
+        "typography": {
+          "fontSize": "14px"
+        }
+      }
+    }
+  }
+}

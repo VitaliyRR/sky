@@ -1,22 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-THEME_SOURCE="${1:-wordpress/wp-content/themes/skysend}"
+ASSET_SOURCE="${1:-wordpress/wp-content/themes/skysend}"
 PUBLIC_SOURCE="${2:-wordpress/public}"
-SITE_URL="${3:-http://31.129.98.28}"
+SITE_URL="${3:-}"
+OFFICIAL_THEME="twentytwentyfive"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WP_ROOT="/var/www/skysend"
 DB_NAME="skysend_wp"
 DB_USER="skysend_wp"
 ADMIN_FILE="/root/skysend-wordpress-admin.txt"
+NEW_INSTALL=0
 
 if [[ "${EUID}" -ne 0 ]]; then
     echo "Run this script as root." >&2
     exit 1
 fi
 
-if [[ ! -f "${THEME_SOURCE}/style.css" || ! -f "${THEME_SOURCE}/front-page.php" ]]; then
-    echo "SkySend theme was not found at ${THEME_SOURCE}." >&2
+if [[ -z "${SITE_URL}" ]]; then
+    echo "Pass the current site URL as the third argument; it must not silently overwrite a saved domain or HTTPS URL." >&2
+    exit 1
+fi
+
+if [[ ! -f "${ASSET_SOURCE}/assets/images/skysend-logo.png" || ! -d "${ASSET_SOURCE}/assets/images/providers" ]]; then
+    echo "SkySend image source was not found at ${ASSET_SOURCE}." >&2
     exit 1
 fi
 
@@ -58,7 +65,7 @@ install -d -o root -g www-data -m 0750 "${WP_ROOT}"
 if [[ ! -f "${WP_ROOT}/wp-load.php" ]]; then
     wp core download \
         --path="${WP_ROOT}" \
-        --version=7.1 \
+        --version=latest \
         --locale=ru_RU \
         --skip-content \
         --allow-root
@@ -88,14 +95,17 @@ SQL
     wp config set WP_AUTO_UPDATE_CORE true --raw --path="${WP_ROOT}" --allow-root
 fi
 
-install -d -o root -g www-data -m 0755 "${WP_ROOT}/wp-content/themes/skysend"
-cp -a "${THEME_SOURCE}/." "${WP_ROOT}/wp-content/themes/skysend/"
+# Retain the previous assets only for the one-time Media Library import.
+# This source directory is never a request to activate the legacy theme.
+install -d -o root -g www-data -m 0755 "${WP_ROOT}/wp-content/themes/skysend/assets/images"
+cp -a "${ASSET_SOURCE}/assets/images/." "${WP_ROOT}/wp-content/themes/skysend/assets/images/"
 install -d -o www-data -g www-data -m 0775 "${WP_ROOT}/wp-content/uploads"
 install -o root -g www-data -m 0644 "${PUBLIC_SOURCE}/robots.txt" "${WP_ROOT}/robots.txt"
 sed -i "s|^Sitemap:.*|Sitemap: ${SITE_URL%/}/wp-sitemap.xml|" "${WP_ROOT}/robots.txt"
 install -o root -g www-data -m 0644 "${PUBLIC_SOURCE}/.htaccess" "${WP_ROOT}/.htaccess"
 
 if ! wp core is-installed --path="${WP_ROOT}" --allow-root; then
+    NEW_INSTALL=1
     ADMIN_PASSWORD="$(openssl rand -base64 36 | tr -d '/+=' | cut -c1-28)"
     wp core install \
         --path="${WP_ROOT}" \
@@ -110,6 +120,12 @@ if ! wp core is-installed --path="${WP_ROOT}" --allow-root; then
     # Keep the two default examples recoverable, but never publish them on the landing.
     wp post update 1 2 --post_status=draft --path="${WP_ROOT}" --allow-root
 
+    wp option update blogdescription "Система приёма платежей для бизнеса" --path="${WP_ROOT}" --allow-root
+    wp option update timezone_string "Europe/Moscow" --path="${WP_ROOT}" --allow-root
+    wp option update blog_public 1 --path="${WP_ROOT}" --allow-root
+    wp option update default_comment_status closed --path="${WP_ROOT}" --allow-root
+    wp option update default_ping_status closed --path="${WP_ROOT}" --allow-root
+
     umask 077
     {
         echo "WordPress: ${SITE_URL}/wp-admin/"
@@ -122,12 +138,25 @@ fi
 
 wp option update home "${SITE_URL}" --path="${WP_ROOT}" --allow-root
 wp option update siteurl "${SITE_URL}" --path="${WP_ROOT}" --allow-root
-wp option update blogdescription "Система приёма платежей для бизнеса" --path="${WP_ROOT}" --allow-root
-wp option update timezone_string "Europe/Moscow" --path="${WP_ROOT}" --allow-root
-wp option update blog_public 1 --path="${WP_ROOT}" --allow-root
-wp option update default_comment_status closed --path="${WP_ROOT}" --allow-root
-wp option update default_ping_status closed --path="${WP_ROOT}" --allow-root
-wp theme activate skysend --path="${WP_ROOT}" --allow-root
+if ! wp theme is-installed "${OFFICIAL_THEME}" --path="${WP_ROOT}" --allow-root; then
+    wp theme install "${OFFICIAL_THEME}" --path="${WP_ROOT}" --allow-root
+fi
+
+NATIVE_MIGRATION_COMPLETE="$(wp option get skysend_native_migration_complete --path="${WP_ROOT}" --allow-root 2>/dev/null || true)"
+if [[ -n "${NATIVE_MIGRATION_COMPLETE}" ]]; then
+    ACTIVE_THEME="$(wp option get stylesheet --path="${WP_ROOT}" --allow-root)"
+    if [[ "${ACTIVE_THEME}" == "skysend" ]]; then
+        echo "Native migration is complete, but the legacy SkySend theme is active. Refusing to continue; inspect the saved native page before selecting the official theme." >&2
+        exit 1
+    fi
+    echo "Native migration already complete: existing page, templates, styles and active theme are unchanged."
+elif [[ "${NEW_INSTALL}" -eq 1 ]]; then
+    wp theme activate "${OFFICIAL_THEME}" --path="${WP_ROOT}" --allow-root
+    echo "Official theme ready. Run the one-time native import (media, build, prepare, QA, activate) to create the landing."
+else
+    echo "Existing database detected: leaving the published theme and editor content unchanged until the separate native import is approved."
+fi
+# Do not import/rebuild page content here, and never activate skysend.
 wp rewrite structure '/%postname%/' --hard --path="${WP_ROOT}" --allow-root
 wp rewrite flush --hard --path="${WP_ROOT}" --allow-root
 wp language core install ru_RU --activate --path="${WP_ROOT}" --allow-root || true
@@ -152,6 +181,8 @@ apache2ctl configtest
 systemctl enable apache2
 systemctl restart apache2
 
-wp core verify-checksums --path="${WP_ROOT}" --version=7.1 --locale=ru_RU --allow-root
+INSTALLED_CORE_VERSION="$(wp core version --path="${WP_ROOT}" --allow-root)"
+wp core verify-checksums --path="${WP_ROOT}" --version="${INSTALLED_CORE_VERSION}" --locale=ru_RU --allow-root
+wp theme get "${OFFICIAL_THEME}" --fields=name,status,version --format=table --path="${WP_ROOT}" --allow-root
 wp db check --path="${WP_ROOT}" --allow-root
 systemctl --no-pager --full status apache2

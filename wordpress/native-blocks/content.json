@@ -1,0 +1,365 @@
+{
+  "schemaVersion": 1,
+  "contentYear": 2026,
+  "assetBase": "wordpress/wp-content/themes/skysend",
+  "header": {
+    "brand": {
+      "url": "/",
+      "ariaLabel": "SkySend — главная",
+      "image": { "src": "assets/images/skysend-logo.png", "alt": "SkySend", "width": 158, "height": 100 }
+    },
+    "skipLink": { "label": "К основному содержанию", "url": "#main" },
+    "menuLabel": "Открыть меню",
+    "navigationLabel": "Основная навигация",
+    "navigation": [
+      { "label": "Партнерам", "url": "#participants" },
+      { "label": "ALLVEND", "url": "#allvend" },
+      { "label": "Программы", "url": "#software" },
+      { "label": "Провайдеры", "url": "#providers" },
+      { "label": "Контакты", "url": "#contacts" }
+    ],
+    "contacts": [
+      { "label": "+7 (861) 201-12-21", "url": "tel:+78612011221" }
+    ],
+    "login": { "label": "Войти | Регистрация", "url": "https://cluster.skysend.ru/", "newTab": true }
+  },
+  "hero": {
+    "ariaLabel": "Главные предложения SkySend",
+    "paginationLabel": "Выбор баннера",
+    "slides": [
+      {
+        "title": "Более 5 000 провайдеров услуг",
+        "titleLines": ["Более 5 000", "провайдеров услуг"],
+        "headingLevel": 1,
+        "image": {
+          "src": "assets/images/banner-providers-20260914.webp",
+          "alt": "Банки, операторы связи и поставщики услуг",
+          "width": 1774,
+          "height": 887
+        },
+        "action": { "label": "Подробнее", "url": "#providers" },
+        "paginationLabel": "Более 5 000 провайдеров услуг"
+      },
+      {
+        "title": "Лучшие финансовые условия",
+        "headingLevel": 2,
+        "text": "Высокое вознаграждение, снижение расходов на обслуживание и отсутствие скрытых комиссий.",
+        "image": {
+          "src": "assets/images/banner-finance-20260914.webp",
+          "alt": "Платежи и финансовые условия для партнёров",
+          "width": 1774,
+          "height": 887
+        },
+        "action": { "label": "Подробнее", "url": "#participants" },
+        "paginationLabel": "Лучшие финансовые условия"
+      },
+      {
+        "title": "Уникальное программное обеспечение",
+        "headingLevel": 2,
+        "text": "ALLVEND — единое решение для разных устройств самообслуживания.",
+        "image": {
+          "src": "assets/images/banner-allvend-20260914.webp",
+          "alt": "Платёжный терминал, настольный инфокиоск, информационная панель и паркомат на ПО ALLVEND",
+          "width": 1774,
+          "height": 887
+        },
+        "brand": { "src": "assets/images/allvend-logo.png", "alt": "ALLVEND", "width": 320, "height": 200 },
+        "action": { "label": "Подробнее", "url": "#allvend" },
+        "paginationLabel": "Уникальное программное обеспечение"
+      }
+    ]
+  },
+  "partners": {
+    "id": "participants",
+    "title": "Партнерам",
+    "items": [
+      {
+        "slug": "agents",
+        "title": "Платёжным агентам",
+        "offer": "Лучшие условия и стабильная работа.",
+        "image": { "src": "assets/images/partner-agents.jpg", "alt": "", "width": 453, "height": 367 }
+      },
+      {
+        "slug": "providers",
+        "title": "Провайдерам услуг",
+        "offer": "Надёжный и качественный приём платежей.",
+        "image": { "src": "assets/images/partner-providers.jpg", "alt": "", "width": 453, "height": 367 }
+      },
+      {
+        "slug": "suppliers",
+        "title": "Поставщикам товаров",
+        "offer": "Автоматизация клиентского обслуживания и продажи товаров.",
+        "image": { "src": "assets/images/partner-suppliers.jpg", "alt": "", "width": 453, "height": 367 }
+      },
+      {
+        "slug": "retailers",
+        "title": "Торговым сетям",
+        "offer": "Самообслуживание, заказ товаров и оплата услуг на ALLVEND.",
+        "image": { "src": "assets/images/partner-retail.jpg", "alt": "", "width": 453, "height": 367 }
+      },
+      {
+        "slug": "representatives",
+        "title": "Представителям",
+        "offer": "Развитие региональной сети и подключение партнёров.",
+        "image": { "src": "assets/images/partner-representatives.jpg", "alt": "", "width": 453, "height": 367 }
+      },
+      {
+        "slug": "gateways",
+        "title": "Шлюзовикам",
+        "offer": "Интеграция вашей платёжной системы со SkySend.",
+        "image": { "src": "assets/images/partner-gateways-no-xml-20260916.webp", "alt": "", "width": 453, "height": 367 }
+      }
+    ],
+    "statisticsLabel": "Показатели группы компаний «Информ-Системы»"
+  },
+  "stats": [
+    { "label": "Опыт работы, лет", "value": "20" },
+    { "label": "Партнёров группы", "value": "1 800+" },
+    { "label": "Оборот через разработки, ₽", "value": "50 млрд+" },
+    { "label": "Проведённых транзакций", "value": "150 млн+" }
+  ],
+  "sections": [
+    {
+      "id": "participants",
+      "kind": "partners",
+      "title": "Партнерам",
+      "contentKey": "partners",
+      "statsKey": "stats"
+    },
+    {
+      "id": "allvend",
+      "kind": "feature",
+      "title": "Уникальное ПО ALLVEND",
+      "lead": "Автоматизация продаж, оплаты услуг и обслуживания клиентов на разных устройствах.",
+      "media": {
+        "image": {
+          "src": "assets/images/banner-allvend-20260914.webp",
+          "alt": "Разные устройства самообслуживания с единым ПО ALLVEND",
+          "width": 1774,
+          "height": 887
+        },
+        "brand": { "src": "assets/images/allvend-logo.png", "alt": "ALLVEND", "width": 320, "height": 200 }
+      },
+      "features": [
+        { "icon": "terminal", "title": "Единое решение", "text": "Платёжные терминалы, электронные кассиры, инфокиоски и информационные панели." },
+        { "icon": "box", "title": "Товары и услуги", "text": "Формирование заказов, оплата наличными и банковскими картами." },
+        { "icon": "network", "title": "Удалённое управление", "text": "Настройки, дизайн, мониторинг устройств и транзакций из онлайн-кабинета." }
+      ],
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/allvend/", "newTab": true }
+    },
+    {
+      "id": "capabilities",
+      "kind": "processing",
+      "title": "Высокая скорость обработки транзакций",
+      "lead": "Серверы системы синхронизируют данные и распределяют поступающую нагрузку.",
+      "media": {
+        "icon": "server",
+        "repeat": 3,
+        "title": "UNIX / FreeBSD",
+        "text": "Кластерная архитектура процессинга"
+      },
+      "features": [
+        { "icon": "network", "title": "Кластер серверов", "text": "Совместная обработка платежей и распределение нагрузки." },
+        { "icon": "server", "title": "UNIX / FreeBSD", "text": "Система разработана на базе FreeBSD и открытого программного обеспечения." },
+        { "icon": "shield", "title": "Распределённая архитектура", "text": "Серверы в разных центрах обработки данных связаны шифрованными туннелями IPSEC." }
+      ],
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/skysend/", "newTab": true }
+    },
+    {
+      "id": "security",
+      "kind": "security",
+      "title": "Безопасность",
+      "lead": "Защита информации на серверах, при передаче данных и на устройствах самообслуживания.",
+      "cards": [
+        { "icon": "server", "title": "Данные на серверах", "text": "Хранение информации на криптографических разделах с шифрованием AES-XTS." },
+        { "icon": "shield", "title": "Каналы связи", "text": "Защищённые шифрованные каналы и электронная цифровая подпись." },
+        { "icon": "key", "title": "Защита терминального ПО", "text": "Шифрование образов ПО и данных, криптографическая привязка к устройству." }
+      ],
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/skysend/", "newTab": true }
+    },
+    {
+      "id": "fastsys",
+      "kind": "fastsys",
+      "title": "Собственная операционная система",
+      "lead": "FastSYS 5 поставляется с ПО ALLVEND как готовое решение для устройств самообслуживания.",
+      "media": {
+        "icon": "chip",
+        "title": "FastSYS 5",
+        "text": "Операционная система для устройств самообслуживания"
+      },
+      "features": [
+        { "icon": "terminal", "title": "Работа с flash-накопителя", "text": "ОС и прикладное ПО устанавливаются вместе." },
+        { "icon": "pulse", "title": "Бинарные обновления", "text": "Обновление программного обеспечения и удалённый анализ работы." },
+        { "icon": "shield", "title": "Криптографическая защита", "text": "Шифрование образов ПО, хранимых и передаваемых данных." }
+      ],
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/fastsys/", "newTab": true }
+    },
+    {
+      "id": "software",
+      "kind": "software",
+      "title": "Полный набор клиентского софта",
+      "lead": "Для устройств самообслуживания, компьютеров, смартфонов и интеграции собственной системы.",
+      "contentKey": "software"
+    },
+    {
+      "id": "providers",
+      "kind": "providers",
+      "title": "Провайдеры услуг",
+      "contentKey": "providers"
+    }
+  ],
+  "software": [
+    {
+      "icon": "terminal",
+      "title": "ПО ALLVEND",
+      "text": "Единое ПО для платёжных терминалов, инфокиосков и других устройств самообслуживания.",
+      "action": { "label": "Подробнее", "url": "#allvend" }
+    },
+    {
+      "icon": "windows",
+      "title": "РМА Windows / Linux",
+      "text": "Рабочее место агента для приёма платежей с компьютера или ноутбука.",
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/skysend/", "newTab": true }
+    },
+    {
+      "icon": "android",
+      "title": "РМА Android",
+      "text": "Приём платежей со смартфона или планшета под управлением Android.",
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/skysend-app/", "newTab": true }
+    },
+    {
+      "icon": "code",
+      "title": "XML-шлюз",
+      "text": "Подключение собственной предпроцессинговой системы агента к SkySend.",
+      "action": { "label": "Подробнее", "url": "https://www.isg.dev/ru/products/skysend/", "newTab": true }
+    }
+  ],
+  "providers": {
+    "categoriesLabel": "Категории провайдеров",
+    "categories": [
+      {
+        "slug": "communications",
+        "title": "Связь и интернет",
+        "items": [
+          { "name": "МТС", "image": { "src": "assets/images/providers/mts.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=359" },
+          { "name": "Win Mobile", "image": { "src": "assets/images/providers/win-mobile.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1134" },
+          { "name": "КМВТелеком", "image": { "src": "assets/images/providers/kmvtelecom.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8450" },
+          { "name": "SIPNET", "image": { "src": "assets/images/providers/sipnet.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=9253" },
+          { "name": "Дом.ru", "image": { "src": "assets/images/providers/domru.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4074" },
+          { "name": "Зелёная точка", "image": { "src": "assets/images/providers/zelenaya-tochka.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=6871" },
+          { "name": "Эрлайн", "image": { "src": "assets/images/providers/rline.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=914" },
+          { "name": "Ридлан", "image": { "src": "assets/images/providers/reedlan.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=2250" }
+        ]
+      },
+      {
+        "slug": "television",
+        "title": "Телевидение",
+        "items": [
+          { "name": "НТВ-Плюс", "image": { "src": "assets/images/providers/ntv-plus.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=7" },
+          { "name": "Билайн ТВ", "image": { "src": "assets/images/providers/beeline-tv.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=6581" },
+          { "name": "Триколор", "image": { "src": "assets/images/providers/tricolor.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=258" },
+          { "name": "Город-ТВ", "image": { "src": "assets/images/providers/gorod-tv.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4323" },
+          { "name": "Ридлан ТВ", "image": { "src": "assets/images/providers/reedlan-tv.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=2249" },
+          { "name": "ТЦ Электрон", "image": { "src": "assets/images/providers/elektron-tv.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=7331" }
+        ]
+      },
+      {
+        "slug": "finance",
+        "title": "Банки и кошельки",
+        "items": [
+          { "name": "Сбербанк", "image": { "src": "assets/images/providers/sberbank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=631" },
+          { "name": "Т-Банк", "image": { "src": "assets/images/providers/t-bank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=241" },
+          { "name": "Альфа-Банк", "image": { "src": "assets/images/providers/alfa-bank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=168" },
+          { "name": "ВТБ Северо-Запад", "image": { "src": "assets/images/providers/vtb.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=191" },
+          { "name": "Россельхозбанк", "image": { "src": "assets/images/providers/rosselkhozbank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=232" },
+          { "name": "ОТП Банк", "image": { "src": "assets/images/providers/otp-bank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=226" },
+          { "name": "Совкомбанк", "image": { "src": "assets/images/providers/sovcombank.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1098" },
+          { "name": "Монета.ру", "image": { "src": "assets/images/providers/moneta.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=144" }
+        ]
+      },
+      {
+        "slug": "digital",
+        "title": "Игры и соцсети",
+        "items": [
+          { "name": "ВКонтакте", "image": { "src": "assets/images/providers/vk.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4819" },
+          { "name": "Одноклассники", "image": { "src": "assets/images/providers/ok.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4816" },
+          { "name": "Мой Мир", "image": { "src": "assets/images/providers/my-world.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4820" },
+          { "name": "Галактика знакомств", "image": { "src": "assets/images/providers/galaxy.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1074" },
+          { "name": "Warface", "image": { "src": "assets/images/providers/warface.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4675" },
+          { "name": "ArcheAge", "image": { "src": "assets/images/providers/archeage.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4755" },
+          { "name": "Perfect World", "image": { "src": "assets/images/providers/perfect-world.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=4729" },
+          { "name": "Xsolla", "image": { "src": "assets/images/providers/xsolla.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=252" }
+        ]
+      },
+      {
+        "slug": "utilities",
+        "title": "ЖКХ",
+        "items": [
+          { "name": "Волгоградэнергосбыт", "image": { "src": "assets/images/providers/volgogradenergosbyt.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=9416" },
+          { "name": "ТНС энерго Кубань", "image": { "src": "assets/images/providers/tns-energo.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=253" },
+          { "name": "Крымская Водная Компания", "image": { "src": "assets/images/providers/crimea-water.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8271" },
+          { "name": "Оплата ЖКУ (ГИС ЖКХ)", "image": { "src": "assets/images/providers/gis-zhkh.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8640" },
+          { "name": "ГарантСтрой-Юг", "image": { "src": "assets/images/providers/garantstroy-yug.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1152" },
+          { "name": "Градострой", "image": { "src": "assets/images/providers/gradostroy.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1148" },
+          { "name": "УК Управдом", "image": { "src": "assets/images/providers/upravdom.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1160" },
+          { "name": "УК Екатеринодар", "image": { "src": "assets/images/providers/ekaterinodar.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=1164" }
+        ]
+      },
+      {
+        "slug": "services",
+        "title": "Сервисы и прочие услуги",
+        "items": [
+          { "name": "AVON", "image": { "src": "assets/images/providers/avon.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=630" },
+          { "name": "Faberlic", "image": { "src": "assets/images/providers/faberlic.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=644" },
+          { "name": "ТБГ", "image": { "src": "assets/images/providers/tbg.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=2268" },
+          { "name": "ВСК Страхование", "image": { "src": "assets/images/providers/vsk.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=9151" },
+          { "name": "МСК АйАйСи", "image": { "src": "assets/images/providers/iic.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8459" },
+          { "name": "ЦСМТ ЗДОРОВЬЕ", "image": { "src": "assets/images/providers/health.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8526" },
+          { "name": "Еммануил", "image": { "src": "assets/images/providers/emmanuel.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=323" },
+          { "name": "Такси Союз", "image": { "src": "assets/images/providers/taxi-soyuz.png", "alt": "" }, "sourceUrl": "http://cluster.skysend.ru:6721/image.php?provider=8455" }
+        ]
+      }
+    ]
+  },
+  "footer": {
+    "id": "contacts",
+    "ariaLabel": "Контакты и загрузки",
+    "brand": {
+      "url": "/",
+      "ariaLabel": "SkySend — главная",
+      "image": { "src": "assets/images/skysend-logo.png", "alt": "SkySend", "width": 158, "height": 100 }
+    },
+    "contacts": {
+      "title": "Контакты компании",
+      "links": [
+        { "label": "+7 (861) 201-12-21", "url": "tel:+78612011221" },
+        { "label": "info@isg.dev", "url": "mailto:info@isg.dev" }
+      ]
+    },
+    "support": {
+      "title": "Техническая поддержка",
+      "links": [
+        { "label": "@infsysgroup", "url": "https://t.me/infsysgroup", "newTab": true },
+        { "label": "support@isg.dev", "url": "mailto:support@isg.dev" }
+      ]
+    },
+    "downloadsTitle": "Популярные загрузки",
+    "downloads": [
+      { "title": "Установочный образ ALLVEND · ZIP", "url": "https://ftp.isg.dev/soft/allvend/fastsys5_allvend.iso.zip", "newTab": true },
+      { "title": "Установка ALLVEND · PDF", "url": "https://ftp.isg.dev/docs/instruction_installation_allvend.pdf", "newTab": true },
+      { "title": "Настройка и сервисный режим · PDF", "url": "https://ftp.isg.dev/docs/instruction_setup_and_service_mode_allvend.pdf", "newTab": true },
+      { "title": "Подключение оборудования · PDF", "url": "https://ftp.isg.dev/docs/instruction_setup_devices_kiosks.pdf", "newTab": true },
+      { "title": "Конфигурация ALLVEND · PDF", "url": "https://ftp.isg.dev/docs/description_configuration_allvend.pdf", "newTab": true },
+      { "title": "Разработка и сопровождение ПО · PDF", "url": "https://ftp.isg.dev/offer/allvend/presentation_support_software_development.pdf", "newTab": true }
+    ],
+    "socialLabel": "Социальные сети",
+    "social": [
+      { "label": "Telegram", "url": "https://t.me/infsysgroup", "newTab": true },
+      { "label": "YouTube", "url": "https://www.youtube.com/c/infsysgroup", "newTab": true },
+      { "label": "Facebook", "url": "https://www.facebook.com/infsysgroup", "newTab": true },
+      { "label": "Instagram", "url": "https://www.instagram.com/infsysgroup", "newTab": true },
+      { "label": "X (Twitter)", "url": "https://twitter.com/infsysgroup", "newTab": true }
+    ],
+    "copyright": "© 2006 - 2026 Группа компаний «Информ-Системы»"
+  }
+}

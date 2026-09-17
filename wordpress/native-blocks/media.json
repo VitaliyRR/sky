@@ -1,0 +1,234 @@
+{
+    "skysend-logo.png": {
+        "id": 8,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/skysend-logo.png"
+    },
+    "allvend-logo.png": {
+        "id": 9,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/allvend-logo.png"
+    },
+    "favicon.png": {
+        "id": 10,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/favicon.png"
+    },
+    "banner-providers-20260914.webp": {
+        "id": 11,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/banner-providers-20260914.webp"
+    },
+    "banner-finance-20260914.webp": {
+        "id": 12,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/banner-finance-20260914.webp"
+    },
+    "banner-allvend-20260914.webp": {
+        "id": 13,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/banner-allvend-20260914.webp"
+    },
+    "partner-agents.jpg": {
+        "id": 14,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-agents.jpg"
+    },
+    "partner-providers.jpg": {
+        "id": 15,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-providers.jpg"
+    },
+    "partner-suppliers.jpg": {
+        "id": 16,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-suppliers.jpg"
+    },
+    "partner-retail.jpg": {
+        "id": 17,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-retail.jpg"
+    },
+    "partner-representatives.jpg": {
+        "id": 18,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-representatives.jpg"
+    },
+    "partner-gateways-no-xml-20260916.webp": {
+        "id": 19,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/partner-gateways-no-xml-20260916.webp"
+    },
+    "providers/alfa-bank.png": {
+        "id": 20,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/alfa-bank.png"
+    },
+    "providers/archeage.png": {
+        "id": 21,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/archeage.png"
+    },
+    "providers/avon.png": {
+        "id": 22,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/avon.png"
+    },
+    "providers/beeline-tv.png": {
+        "id": 23,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/beeline-tv.png"
+    },
+    "providers/crimea-water.png": {
+        "id": 24,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/crimea-water.png"
+    },
+    "providers/domru.png": {
+        "id": 25,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/domru.png"
+    },
+    "providers/ekaterinodar.png": {
+        "id": 26,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/ekaterinodar.png"
+    },
+    "providers/elektron-tv.png": {
+        "id": 27,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/elektron-tv.png"
+    },
+    "providers/emmanuel.png": {
+        "id": 28,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/emmanuel.png"
+    },
+    "providers/faberlic.png": {
+        "id": 29,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/faberlic.png"
+    },
+    "providers/galaxy.png": {
+        "id": 30,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/galaxy.png"
+    },
+    "providers/garantstroy-yug.png": {
+        "id": 31,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/garantstroy-yug.png"
+    },
+    "providers/gis-zhkh.png": {
+        "id": 32,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/gis-zhkh.png"
+    },
+    "providers/gorod-tv.png": {
+        "id": 33,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/gorod-tv.png"
+    },
+    "providers/gradostroy.png": {
+        "id": 34,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/gradostroy.png"
+    },
+    "providers/health.png": {
+        "id": 35,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/health.png"
+    },
+    "providers/iic.png": {
+        "id": 36,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/iic.png"
+    },
+    "providers/kmvtelecom.png": {
+        "id": 37,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/kmvtelecom.png"
+    },
+    "providers/moneta.png": {
+        "id": 38,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/moneta.png"
+    },
+    "providers/mts.png": {
+        "id": 39,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/mts.png"
+    },
+    "providers/my-world.png": {
+        "id": 40,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/my-world.png"
+    },
+    "providers/ntv-plus.png": {
+        "id": 41,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/ntv-plus.png"
+    },
+    "providers/ok.png": {
+        "id": 42,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/ok.png"
+    },
+    "providers/otp-bank.png": {
+        "id": 43,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/otp-bank.png"
+    },
+    "providers/perfect-world.png": {
+        "id": 44,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/perfect-world.png"
+    },
+    "providers/reedlan-tv.png": {
+        "id": 45,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/reedlan-tv.png"
+    },
+    "providers/reedlan.png": {
+        "id": 46,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/reedlan.png"
+    },
+    "providers/rline.png": {
+        "id": 47,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/rline.png"
+    },
+    "providers/rosselkhozbank.png": {
+        "id": 48,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/rosselkhozbank.png"
+    },
+    "providers/sberbank.png": {
+        "id": 49,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/sberbank.png"
+    },
+    "providers/sipnet.png": {
+        "id": 50,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/sipnet.png"
+    },
+    "providers/sovcombank.png": {
+        "id": 51,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/sovcombank.png"
+    },
+    "providers/t-bank.png": {
+        "id": 52,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/t-bank.png"
+    },
+    "providers/taxi-soyuz.png": {
+        "id": 53,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/taxi-soyuz.png"
+    },
+    "providers/tbg.png": {
+        "id": 54,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/tbg.png"
+    },
+    "providers/tns-energo.png": {
+        "id": 55,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/tns-energo.png"
+    },
+    "providers/tricolor.png": {
+        "id": 56,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/tricolor.png"
+    },
+    "providers/upravdom.png": {
+        "id": 57,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/upravdom.png"
+    },
+    "providers/vk.png": {
+        "id": 58,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/vk.png"
+    },
+    "providers/volgogradenergosbyt.png": {
+        "id": 59,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/volgogradenergosbyt.png"
+    },
+    "providers/vsk.png": {
+        "id": 60,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/vsk.png"
+    },
+    "providers/vtb.png": {
+        "id": 61,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/vtb.png"
+    },
+    "providers/warface.png": {
+        "id": 62,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/warface.png"
+    },
+    "providers/win-mobile.png": {
+        "id": 63,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/win-mobile.png"
+    },
+    "providers/xsolla.png": {
+        "id": 64,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/xsolla.png"
+    },
+    "providers/zelenaya-tochka.png": {
+        "id": 65,
+        "url": "http://31.129.98.28/wp-content/uploads/2026/09/zelenaya-tochka.png"
+    }
+}

@@ -2,6 +2,8 @@ Options -Indexes
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteRule ^participants/(agents|providers|suppliers|retailers|representatives|gateways|advertisers)/?$ /#participants [R=301,L,NE]
+RewriteRule ^wp-sitemap-skysend-1\.xml$ /wp-sitemap-posts-page-1.xml [R=301,L]
 RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
 RewriteBase /
 RewriteRule ^index\.php$ - [L]
