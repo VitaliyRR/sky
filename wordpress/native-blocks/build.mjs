@@ -46,6 +46,13 @@ for (const type of ['tabs','tab-list','tab-panels','tab-panel','icon']) {
 }
 console.log('Registered', w.wp.blocks.getBlockTypes().length, 'native blocks');
 if (process.argv.includes('--probe')) { console.log(w.wp.blocks.serialize(w.wp.blocks.createBlock('core/tabs', {}, [w.wp.blocks.createBlock('core/tab-list', { tabs: [{label:'Первый'}, {label:'Второй'}] }), w.wp.blocks.createBlock('core/tab-panels', {}, [w.wp.blocks.createBlock('core/tab-panel', {label:'Первый'}, [w.wp.blocks.createBlock('core/paragraph', {content:'Тест'})]), w.wp.blocks.createBlock('core/tab-panel', {label:'Второй'})])] ))); dom.window.close(); process.exit(0); }
+if (process.argv.includes('--repair')) {
+  const index = process.argv.indexOf('--repair');
+  const { repair } = await import('./repair.mjs');
+  await repair(w, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 const raw = JSON.parse(fs.readFileSync(path.join(dir, 'content.json'), 'utf8'));
 const sourceImage = src => src.replace(/^assets\/images\//, '');
 const fromSection = id => {const x=raw.sections.find(x=>x.id===id);return {...x,text:x.lead,url:x.action?.url,features:x.features || x.cards};};

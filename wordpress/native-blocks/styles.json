@@ -27,8 +27,40 @@
       ]
     },
     "layout": {
-      "contentSize": "1120px",
-      "wideSize": "1120px"
+      "contentSize": "1200px",
+      "wideSize": "1200px"
+    },
+    "typography": {
+      "fluid": true,
+      "fontSizes": [
+        {
+          "slug": "sky-hero",
+          "name": "Заголовок баннера",
+          "size": "48px",
+          "fluid": {
+            "min": "30px",
+            "max": "48px"
+          }
+        },
+        {
+          "slug": "sky-section",
+          "name": "Заголовок секции",
+          "size": "40px",
+          "fluid": {
+            "min": "28px",
+            "max": "40px"
+          }
+        },
+        {
+          "slug": "sky-stat",
+          "name": "Показатели",
+          "size": "30px",
+          "fluid": {
+            "min": "21px",
+            "max": "30px"
+          }
+        }
+      ]
     }
   },
   "styles": {
@@ -62,7 +94,10 @@
       },
       "h2": {
         "typography": {
-          "fontSize": "32px"
+          "fontSize": "var:preset|font-size|sky-section",
+          "fontWeight": "740",
+          "letterSpacing": "-0.04em",
+          "lineHeight": "1.16"
         }
       },
       "h3": {
