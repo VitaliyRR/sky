@@ -1,0 +1,22 @@
+{
+  "pageId": 67,
+  "title": "SkySend — система приёма платежей",
+  "description": "SkySend — система приёма платежей. ПО ALLVEND, FastSYS 5 и клиентские приложения для платёжных агентов и устройств самообслуживания. Подключение и поддержка.",
+  "socialImageId": 11,
+  "socialImageFile": "banner-providers-20260914.webp",
+  "organization": {
+    "name": "SkySend",
+    "logoId": 8,
+    "logoFile": "skysend-logo.png",
+    "email": "info@isg.dev",
+    "phone": "+78612011221",
+    "contactType": "sales",
+    "socialAccounts": {
+      "facebook": "https://www.facebook.com/infsysgroup",
+      "twitter": "@infsysgroup",
+      "instagram": "https://www.instagram.com/infsysgroup",
+      "youtube": "https://www.youtube.com/c/infsysgroup",
+      "extra": "https://t.me/infsysgroup"
+    }
+  }
+}

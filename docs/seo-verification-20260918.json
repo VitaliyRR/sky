@@ -1,0 +1,530 @@
+{
+  "date": "2026-09-18",
+  "baseUrl": "http://31.129.98.28",
+  "checkType": "Anonymous HTTP/source audit, not interactive browser testing",
+  "passed": 126,
+  "failed": 0,
+  "localAssets": 61,
+  "title": "SkySend — система приёма платежей",
+  "description": "SkySend — система приёма платежей. ПО ALLVEND, FastSYS 5 и клиентские приложения для платёжных агентов и устройств самообслуживания. Подключение и поддержка.",
+  "descriptionCharacters": 157,
+  "checks": [
+    {
+      "name": "Homepage HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "Homepage X-Robots-Tag does not prohibit indexing",
+      "passed": true
+    },
+    {
+      "name": "Russian language",
+      "passed": true
+    },
+    {
+      "name": "One H1",
+      "passed": true
+    },
+    {
+      "name": "One accurate title",
+      "passed": true
+    },
+    {
+      "name": "One nonempty description",
+      "passed": true
+    },
+    {
+      "name": "One nonempty robots",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:url",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:site_name",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:locale",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:type",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:title",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:description",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:image",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:image:width",
+      "passed": true
+    },
+    {
+      "name": "One nonempty og:image:height",
+      "passed": true
+    },
+    {
+      "name": "One nonempty twitter:card",
+      "passed": true
+    },
+    {
+      "name": "One nonempty twitter:title",
+      "passed": true
+    },
+    {
+      "name": "One nonempty twitter:description",
+      "passed": true
+    },
+    {
+      "name": "One nonempty twitter:image",
+      "passed": true
+    },
+    {
+      "name": "One nonempty twitter:site",
+      "passed": true
+    },
+    {
+      "name": "Confirmed description",
+      "passed": true
+    },
+    {
+      "name": "Open Graph title/description",
+      "passed": true
+    },
+    {
+      "name": "X title/description",
+      "passed": true
+    },
+    {
+      "name": "Indexable homepage robots",
+      "passed": true
+    },
+    {
+      "name": "One canonical for current host",
+      "passed": true
+    },
+    {
+      "name": "OG URL matches canonical",
+      "passed": true
+    },
+    {
+      "name": "Large X Card and valid handle",
+      "passed": true
+    },
+    {
+      "name": "Same real image for OG and X",
+      "passed": true
+    },
+    {
+      "name": "Social image available",
+      "passed": true
+    },
+    {
+      "name": "Adequate social image dimensions",
+      "passed": true
+    },
+    {
+      "name": "One Organization JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "One WebSite JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "Correct organization name/URL",
+      "passed": true
+    },
+    {
+      "name": "Confirmed organization contacts",
+      "passed": true
+    },
+    {
+      "name": "No office address or invented organization metrics",
+      "passed": true
+    },
+    {
+      "name": "Organization logo available",
+      "passed": true
+    },
+    {
+      "name": "No malformed social URLs",
+      "passed": true
+    },
+    {
+      "name": "Correct X profile in JSON-LD",
+      "passed": true
+    },
+    {
+      "name": "Robots HTTP 200, plain text",
+      "passed": true
+    },
+    {
+      "name": "Robots advertises working native sitemap",
+      "passed": true
+    },
+    {
+      "name": "Robots does not block whole site",
+      "passed": true
+    },
+    {
+      "name": "Native sitemap HTTP 200/XML",
+      "passed": true
+    },
+    {
+      "name": "Native sitemap contains only published page map",
+      "passed": true
+    },
+    {
+      "name": "Native page map HTTP 200/XML",
+      "passed": true
+    },
+    {
+      "name": "Only real homepage in sitemap, no drafts or removed pages",
+      "passed": true
+    },
+    {
+      "name": "/wp-sitemap.xsl HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "/wp-sitemap-index.xsl HTTP 200",
+      "passed": true
+    },
+    {
+      "name": "Old sitemap 301 to native page map",
+      "passed": true
+    },
+    {
+      "name": "/participants/agents 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/agents/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/providers 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/providers/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/suppliers 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/suppliers/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/retailers 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/retailers/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/representatives 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/representatives/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/gateways 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/gateways/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/advertisers 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "/participants/advertisers/ 301 to participants",
+      "passed": true
+    },
+    {
+      "name": "Unknown path remains real HTTP 404, noindex",
+      "passed": true
+    },
+    {
+      "name": "Search results noindex",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/plugins/carousel-block/build/carousel/view.js",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/plugins/carousel-block/build/vendor/swiper-custom.js",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/alfa-bank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/allvend-logo.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/archeage.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/avon.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/banner-allvend-20260914.webp",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/banner-finance-20260914.webp",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/banner-providers-20260914.webp",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/beeline-tv.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/crimea-water.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/domru.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/ekaterinodar.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/elektron-tv.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/emmanuel.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/faberlic.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/galaxy.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/garantstroy-yug.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/gis-zhkh.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/gorod-tv.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/gradostroy.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/health.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/iic.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/kmvtelecom.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/moneta.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/mts.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/my-world.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/ntv-plus.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/ok.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/otp-bank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-agents.jpg",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-gateways-no-xml-20260916.webp",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-providers.jpg",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-representatives.jpg",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-retail.jpg",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/partner-suppliers.jpg",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/perfect-world.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/reedlan-tv.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/reedlan.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/rline.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/rosselkhozbank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/sberbank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/sipnet.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/skysend-logo.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/sovcombank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/t-bank.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/taxi-soyuz.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/tbg.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/tns-energo.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/tricolor.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/upravdom.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/vk.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/volgogradenergosbyt.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/vsk.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/vtb.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/warface.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/win-mobile.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/xsolla.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-content/uploads/2026/09/zelenaya-tochka.png",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-includes/js/dist/script-modules/block-library/navigation/view.min.js",
+      "passed": true
+    },
+    {
+      "name": "Local asset HTTP 200: /wp-includes/js/dist/script-modules/block-library/tabs/view.min.js",
+      "passed": true
+    }
+  ],
+  "wordpress": "7.1.1",
+  "theme": "twentytwentyfive 1.5",
+  "activePlugins": {
+    "carousel-block": "2.1.5",
+    "wp-seopress": "10.2"
+  },
+  "contentHashes": {
+    "66": "7f74afac2d51db2b8ba8191f72518c66fa6f0c569ee587066befaf5242ed9452",
+    "67": "128cc29b7fba97c2ba75d484324e0a9f7486e2679de9d66f7f71a0860f321fa5",
+    "68": "9f017d5eef6928d757731ec573ba247b624b1d8d3705f2e791eb4ced77c751dc",
+    "69": "ad502d8099c0af7fb6a44a993df268bf2795145264f86a62dbc8f3d5b58a03b8",
+    "70": "ab88a8469ce1998d87470a82b7be195b6d09798882669a7970b1885cd2d96f82"
+  }
+}

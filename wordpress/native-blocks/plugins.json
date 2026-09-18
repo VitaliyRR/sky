@@ -5,5 +5,11 @@
     "source": "https://wordpress.org/plugins/carousel-block/",
     "blocks": ["cb/carousel-v2", "cb/slide-v2"],
     "scope": "Three homepage banners only"
+  },
+  {
+    "slug": "wp-seopress",
+    "version": "10.2",
+    "source": "https://wordpress.org/plugins/wp-seopress/",
+    "scope": "Editable SEO title/description, Open Graph/X Cards and Organization JSON-LD; XML sitemaps remain native WordPress"
   }
 ]
