@@ -1,0 +1,2 @@
+# Keep the source-VM packaging script executable by Bash after Windows checkouts.
+deploy/wordpress/build-package.sh text eol=lf

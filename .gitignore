@@ -35,6 +35,7 @@ next-env.d.ts
 /dist/
 /.wrangler/
 /outputs/
+/delivery/
 /work/
 
 # WordPress runtime data and secrets
