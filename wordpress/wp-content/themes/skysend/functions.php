@@ -146,10 +146,10 @@ function skysend_partners(): array
     return array(
         'agents' => array('title' => 'Платёжным агентам', 'image' => 'partner-agents.jpg'),
         'providers' => array('title' => 'Провайдерам услуг', 'image' => 'partner-providers.jpg'),
-        'suppliers' => array('title' => 'Поставщикам товаров', 'image' => 'partner-suppliers.jpg'),
+        'suppliers' => array('title' => 'Ресторанам быстрого питания', 'image' => 'partner-fast-food-20260921.jpg'),
         'retailers' => array('title' => 'Торговым сетям', 'image' => 'partner-retail.jpg'),
         'representatives' => array('title' => 'Представителям', 'image' => 'partner-representatives.jpg'),
-        'gateways' => array('title' => 'Шлюзовикам', 'image' => 'partner-gateways-no-xml-20260916.webp'),
+        'gateways' => array('title' => 'Шлюзовикам', 'image' => 'partner-gateways.jpg'),
     );
 }
 

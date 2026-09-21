@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 
-async function registerCarouselBlocks(w, origin) {
+export async function registerCarouselBlocks(w, origin) {
   const pluginRoot = `${origin}/wp-content/plugins/carousel-block/build`;
   for (const folder of ['carousel', 'slide']) {
     const metaResponse = await fetch(`${pluginRoot}/${folder}/block.json`);

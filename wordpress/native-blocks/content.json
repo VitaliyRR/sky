@@ -45,8 +45,8 @@
         "headingLevel": 2,
         "text": "Высокое вознаграждение, снижение расходов на обслуживание и отсутствие скрытых комиссий.",
         "image": {
-          "src": "assets/images/banner-finance-20260914.webp",
-          "alt": "Платежи и финансовые условия для партнёров",
+          "src": "assets/images/banner-finance-20260921.png",
+          "alt": "Платёжный терминал, доход и рост на 20 процентов",
           "width": 1774,
           "height": 887
         },
@@ -56,14 +56,13 @@
       {
         "title": "Уникальное программное обеспечение",
         "headingLevel": 2,
-        "text": "ALLVEND — единое решение для разных устройств самообслуживания.",
+        "text": "ALLVEND — единое ПО для разных типов устройств самообслуживания.",
         "image": {
-          "src": "assets/images/banner-allvend-20260914.webp",
-          "alt": "Платёжный терминал, настольный инфокиоск, информационная панель и паркомат на ПО ALLVEND",
+          "src": "assets/images/banner-allvend-diagram-20260921.png",
+          "alt": "Единое ПО ALLVEND связывает разные типы устройств самообслуживания",
           "width": 1774,
           "height": 887
         },
-        "brand": { "src": "assets/images/allvend-logo.png", "alt": "ALLVEND", "width": 320, "height": 200 },
         "action": { "label": "Подробнее", "url": "#allvend" },
         "paginationLabel": "Уникальное программное обеспечение"
       }
@@ -71,7 +70,7 @@
   },
   "partners": {
     "id": "participants",
-    "title": "Партнерам",
+    "title": "",
     "items": [
       {
         "slug": "agents",
@@ -87,14 +86,14 @@
       },
       {
         "slug": "suppliers",
-        "title": "Поставщикам товаров",
-        "offer": "Автоматизация клиентского обслуживания и продажи товаров.",
-        "image": { "src": "assets/images/partner-suppliers.jpg", "alt": "", "width": 453, "height": 367 }
+        "title": "Ресторанам быстрого питания",
+        "offer": "Автоматизация клиентского обслуживания",
+        "image": { "src": "assets/images/partner-fast-food-20260921.jpg", "alt": "", "width": 1393, "height": 1129 }
       },
       {
         "slug": "retailers",
         "title": "Торговым сетям",
-        "offer": "Самообслуживание, заказ товаров и оплата услуг на ALLVEND.",
+        "offer": "Внедрение самообслуживания",
         "image": { "src": "assets/images/partner-retail.jpg", "alt": "", "width": 453, "height": 367 }
       },
       {
@@ -107,16 +106,16 @@
         "slug": "gateways",
         "title": "Шлюзовикам",
         "offer": "Интеграция вашей платёжной системы со SkySend.",
-        "image": { "src": "assets/images/partner-gateways-no-xml-20260916.webp", "alt": "", "width": 453, "height": 367 }
+        "image": { "src": "assets/images/partner-gateways.jpg", "alt": "", "width": 453, "height": 367 }
       }
     ],
     "statisticsLabel": "Показатели группы компаний «Информ-Системы»"
   },
   "stats": [
-    { "label": "Опыт работы, лет", "value": "20" },
-    { "label": "Партнёров группы", "value": "1 800+" },
-    { "label": "Оборот через разработки, ₽", "value": "50 млрд+" },
-    { "label": "Проведённых транзакций", "value": "150 млн+" }
+    { "label": "Работаем с 2006 года", "value": "20 лет +" },
+    { "label": "Поставщиков и партнеров", "value": "1 800+" },
+    { "label": "Оборот системы, Р", "value": "50 млрд+" },
+    { "label": "Проведено транзакций", "value": "150 млн+" }
   ],
   "sections": [
     {

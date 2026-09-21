@@ -2,13 +2,11 @@
 /** SkySend landing page. @package SkySend */
 get_header();
 $partners = skysend_partners();
-// The group celebrates its anniversary on May 15 (official ISG news, 2024).
-$company_years = max(0, (int) wp_date('Y') - 2006 - (wp_date('m-d') < '05-15' ? 1 : 0));
 $partner_offers = array(
     'agents' => 'Лучшие условия и стабильная работа.',
     'providers' => 'Надёжный и качественный приём платежей.',
-    'suppliers' => 'Автоматизация клиентского обслуживания и продажи товаров.',
-    'retailers' => 'Самообслуживание, заказ товаров и оплата услуг на ALLVEND.',
+    'suppliers' => 'Автоматизация клиентского обслуживания',
+    'retailers' => 'Внедрение самообслуживания',
     'representatives' => 'Развитие региональной сети и подключение партнёров.',
     'gateways' => 'Интеграция вашей платёжной системы со SkySend.',
 );
@@ -42,7 +40,7 @@ $provider_categories = skysend_provider_categories();
                         <a class="button button--small button--line" href="#participants">Подробнее</a>
                     </div>
                     <div class="masthead-media">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-finance-20260914.webp')); ?>" width="1774" height="887" alt="Платежи и финансовые условия для партнёров" decoding="async">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-finance-20260921.png')); ?>" width="1774" height="887" alt="Платёжный терминал, доход и рост на 20 процентов" decoding="async">
                     </div>
                 </div>
             </article>
@@ -50,12 +48,11 @@ $provider_categories = skysend_provider_categories();
                 <div class="shell masthead-inner">
                     <div class="masthead-copy">
                         <h2>Уникальное программное обеспечение</h2>
-                        <p>ALLVEND — единое решение для разных устройств самообслуживания.</p>
+                        <p>ALLVEND — единое ПО для разных типов устройств самообслуживания.</p>
                         <a class="button button--small button--line" href="#allvend">Подробнее</a>
                     </div>
                     <div class="masthead-media masthead-media--allvend">
-                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-allvend-20260914.webp')); ?>" width="1774" height="887" alt="Платёжный терминал, настольный инфокиоск, информационная панель и паркомат на ПО ALLVEND" decoding="async">
-                        <img class="allvend-brand" src="<?php echo esc_url(get_theme_file_uri('/assets/images/allvend-logo.png')); ?>" width="320" height="200" alt="ALLVEND">
+                        <img src="<?php echo esc_url(get_theme_file_uri('/assets/images/banner-allvend-diagram-20260921.png')); ?>" width="1774" height="887" alt="Единое ПО ALLVEND связывает разные типы устройств самообслуживания" decoding="async">
                     </div>
                 </div>
             </article>
@@ -69,9 +66,8 @@ $provider_categories = skysend_provider_categories();
         </div>
     </section>
 
-    <section class="landing-panel landing-panel--partners" id="participants" aria-labelledby="partners-title">
+    <section class="landing-panel landing-panel--partners" id="participants" aria-label="Партнёры SkySend">
         <div class="shell landing-panel-inner partners-layout">
-            <header class="panel-heading reveal"><h2 id="partners-title">Партнерам</h2></header>
             <div class="partner-offers">
                 <?php foreach ($partners as $slug => $partner) : ?>
                     <article class="partner-offer reveal">
@@ -85,10 +81,10 @@ $provider_categories = skysend_provider_categories();
             </div>
             <div class="partner-proof reveal" role="group" aria-label="Показатели группы компаний «Информ-Системы»">
                 <dl class="partner-statistics">
-                    <div><dt>Опыт работы, лет</dt><dd><?php echo esc_html((string) $company_years); ?></dd></div>
-                    <div><dt>Партнёров группы</dt><dd>1 800+</dd></div>
-                    <div><dt>Оборот через разработки, ₽</dt><dd>50 млрд+</dd></div>
-                    <div><dt>Проведённых транзакций</dt><dd>150 млн+</dd></div>
+                    <div><dt>Работаем с 2006 года</dt><dd>20 лет +</dd></div>
+                    <div><dt>Поставщиков и партнеров</dt><dd>1 800+</dd></div>
+                    <div><dt>Оборот системы, Р</dt><dd>50 млрд+</dd></div>
+                    <div><dt>Проведено транзакций</dt><dd>150 млн+</dd></div>
                 </dl>
             </div>
         </div>

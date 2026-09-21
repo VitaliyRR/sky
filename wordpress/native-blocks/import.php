@@ -65,12 +65,43 @@ function skysend_native_validate(string $text): void {
     }
 }
 
+if ($mode === 'revision-media-20260921') {
+    require_once ABSPATH.'wp-admin/includes/file.php';
+    require_once ABSPATH.'wp-admin/includes/media.php';
+    require_once ABSPATH.'wp-admin/includes/image.php';
+    $names=['banner-finance-20260921.png','banner-allvend-diagram-20260921.png','partner-fast-food-20260921.jpg','partner-gateways.jpg'];
+    $map=is_file($base.'/media.json') ? json_decode(file_get_contents($base.'/media.json'),true) : [];
+    if (!is_array($map)) { WP_CLI::error('Invalid media.json'); }
+    $revision=[];
+    foreach ($names as $name) {
+        $found=get_posts(['post_type'=>'attachment','post_status'=>'inherit','numberposts'=>1,'meta_key'=>'_skysend_native_source','meta_value'=>$name]);
+        $id=$found?$found[0]->ID:0;
+        if (!$id) {
+            $source=WP_CONTENT_DIR.'/themes/skysend/assets/images/'.$name;
+            if (!is_file($source)) { WP_CLI::error('Missing source image '.$name); }
+            $tmp=wp_tempnam(basename($name));
+            if (!$tmp || !copy($source,$tmp)) { WP_CLI::error('Could not stage '.$name); }
+            $id=media_handle_sideload(['name'=>basename($name),'tmp_name'=>$tmp],0,pathinfo($name,PATHINFO_FILENAME));
+            if(is_wp_error($id)){WP_CLI::error($id->get_error_message());}
+            update_post_meta($id,'_skysend_native_source',$name);
+        }
+        skysend_native_media_permissions((int)$id);
+        $entry=['id'=>(int)$id,'url'=>wp_get_attachment_url($id)];
+        $map[$name]=$entry;
+        $revision[$name]=$entry;
+    }
+    file_put_contents($base.'/media.json',wp_json_encode($map,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+    file_put_contents($base.'/revision-media-20260921.json',wp_json_encode($revision,JSON_PRETTY_PRINT|JSON_UNESCAPED_SLASHES));
+    WP_CLI::success('Revision media library: '.count($revision).' attachments');
+    return;
+}
+
 if ($mode === 'media') {
     if (get_option('skysend_native_migration_complete')) { WP_CLI::error('Migration already published. Manage images in the Media Library.'); }
     require_once ABSPATH.'wp-admin/includes/file.php';
     require_once ABSPATH.'wp-admin/includes/media.php';
     require_once ABSPATH.'wp-admin/includes/image.php';
-    $names=['skysend-logo.png','allvend-logo.png','favicon.png','banner-providers-20260914.webp','banner-finance-20260914.webp','banner-allvend-20260914.webp','partner-agents.jpg','partner-providers.jpg','partner-suppliers.jpg','partner-retail.jpg','partner-representatives.jpg','partner-gateways-no-xml-20260916.webp'];
+    $names=['skysend-logo.png','allvend-logo.png','favicon.png','banner-providers-20260914.webp','banner-finance-20260914.webp','banner-allvend-20260914.webp','banner-finance-20260921.png','banner-allvend-diagram-20260921.png','partner-agents.jpg','partner-providers.jpg','partner-suppliers.jpg','partner-fast-food-20260921.jpg','partner-retail.jpg','partner-representatives.jpg','partner-gateways-no-xml-20260916.webp','partner-gateways.jpg'];
     foreach (glob(WP_CONTENT_DIR.'/themes/skysend/assets/images/providers/*.png') as $file) { $names[]='providers/'.basename($file); }
     $map=[];
     foreach ($names as $name) {

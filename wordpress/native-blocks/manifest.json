@@ -3,13 +3,19 @@
     "name": "page",
     "id": 67,
     "type": "page",
-    "beforeHash": "b516051b8b74bf344bd6a6aa2e4d800a7fc22ac0b9a67a2a87beb5b33597b47b",
-    "afterHash": "128cc29b7fba97c2ba75d484324e0a9f7486e2679de9d66f7f71a0860f321fa5",
-    "count": 354,
+    "beforeHash": "128cc29b7fba97c2ba75d484324e0a9f7486e2679de9d66f7f71a0860f321fa5",
+    "afterHash": "72d7f13ce5c05053992ae22db0b52fe8abc6b9326cbc53ecc02f9bfd15004a54",
+    "count": 352,
     "invalid": 0,
     "plugin": "carousel-block",
     "pluginVersion": "2.1.5",
-    "operation": "height",
-    "minHeight": 600
+    "operation": "customer-revision-20260921",
+    "bannerMinHeight": 500,
+    "media": {
+      "banner-finance-20260921.png": 95,
+      "banner-allvend-diagram-20260921.png": 96,
+      "partner-fast-food-20260921.jpg": 97,
+      "partner-gateways.jpg": 98
+    }
   }
 ]
