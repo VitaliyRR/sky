@@ -6,7 +6,7 @@ SOURCE=/var/www/skysend
 TOOLS="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STAMP="$(date -u +%Y%m%d_%H%M%S)"
 WORK="/opt/skysend-packages/${STAMP}"
-NAME="skysend-wordpress-$(date -u +%Y%m%d)"
+NAME="skysend-wordpress-${STAMP}"
 PAYLOAD="${WORK}/${NAME}"
 SITE="${PAYLOAD}/site"
 DB="skysend_pkg_${STAMP}"
@@ -24,6 +24,7 @@ cleanup() {
 trap cleanup EXIT
 [[ "$EUID" -eq 0 && "$SOURCE" == /var/www/skysend && -f "$SOURCE/wp-config.php" ]]
 [[ -f "$TOOLS/README-INSTALL.md" && -f "$TOOLS/package-snapshot.php" ]]
+[[ -d /opt/skysend/.git && -z "$(git -C /opt/skysend status --porcelain)" ]]
 php -r 'exit(class_exists("ZipArchive") ? 0 : 1);'
 [[ "$(wp --allow-root --path="$SOURCE" core version)" == 7.1.1 ]]
 wp --allow-root --path="$SOURCE" core verify-checksums --version=7.1.1 --locale=en_US
@@ -109,5 +110,10 @@ HTTP_PID=''
 rm -- "$SITE/wp-config.php"
 php "$TOOLS/package-archive.php" create "$PAYLOAD" "$WORK/source-before.json" "$WORK/blocks-check.json" "$WORK/http-check.json"
 chmod 600 "$WORK/$NAME.zip"
-sha256sum "$WORK/$NAME.zip"
+(
+    cd "$WORK"
+    sha256sum "$NAME.zip" | tee "$NAME.zip.sha256"
+)
+chmod 600 "$WORK/$NAME.zip.sha256"
 printf 'DELIVERY_ARCHIVE=%s\n' "$WORK/$NAME.zip"
+printf 'DELIVERY_CHECKSUM=%s\n' "$WORK/$NAME.zip.sha256"

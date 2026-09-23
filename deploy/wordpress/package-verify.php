@@ -25,8 +25,36 @@ $check('All blocks registered', !$unregistered);
 $check('No custom code blocks', !$custom);
 $carousel = $blocks[0]['innerBlocks'][0] ?? [];
 $check('Three autoplay banners', ($carousel['blockName'] ?? '') === 'cb/carousel-v2' && count($carousel['innerBlocks']) === 3 && ($carousel['attrs']['autoplay'] ?? false) && ($carousel['attrs']['autoplaySpeed'] ?? 0) === 6000);
-$check('Banner min-height 600', ($blocks[0]['attrs']['style']['dimensions']['minHeight'] ?? '') === '600px');
+$sections = array_values(array_filter($blocks, static fn($block) => ($block['blockName'] ?? '') === 'core/group'));
+$check('Eight landing sections', count($sections) === 8);
+$check('Banner min-height 500', ($sections[0]['attrs']['style']['dimensions']['minHeight'] ?? '') === '500px');
+$check('Seven content sections min-height 600', count($sections) === 8 && !array_filter(array_slice($sections, 1), static fn($section) => ($section['attrs']['style']['dimensions']['minHeight'] ?? '') !== '600px'));
 $check('Native tabs', WP_Block_Type_Registry::get_instance()->is_registered('core/tabs'));
+$findBlock = static function(array $items, string $wanted) use (&$findBlock): ?array {
+    foreach ($items as $item) {
+        if (($item['blockName'] ?? '') === $wanted) { return $item; }
+        $found = $findBlock($item['innerBlocks'] ?? [], $wanted);
+        if ($found) { return $found; }
+    }
+    return null;
+};
+$tabs = $findBlock($blocks, 'core/tabs');
+$tabList = $tabs['innerBlocks'][0] ?? [];
+$tabPanels = $tabs['innerBlocks'][1] ?? [];
+$expectedLabels = ['Связь и интернет','Телевидение','Банки и кошельки','Игры и соцсети','ЖКХ','Сервисы и прочие услуги'];
+$actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
+$check('Providers: native list and six panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
+    && ($tabPanels['blockName'] ?? '') === 'core/tab-panels' && $actualLabels === $expectedLabels);
+$providerImageIds = [];
+$collectImages = static function(array $items) use (&$collectImages, &$providerImageIds): void {
+    foreach ($items as $item) {
+        if (($item['blockName'] ?? '') === 'core/image') { $providerImageIds[] = (int) ($item['attrs']['id'] ?? 0); }
+        $collectImages($item['innerBlocks'] ?? []);
+    }
+};
+$collectImages($tabPanels['innerBlocks'] ?? []);
+$check('Providers: 46 unique media logos', count($providerImageIds) === 46
+    && count(array_unique($providerImageIds)) === 46 && !in_array(0, $providerImageIds, true));
 $check('Core sitemap enabled', wp_sitemaps_get_server()->sitemaps_enabled());
 $check('Native sitemap not replaced by SEO plugin', (get_option('seopress_toggle')['toggle-xml-sitemap'] ?? '') === '0');
 $attachmentCount = 0; $missing = [];

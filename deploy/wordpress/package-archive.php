@@ -42,7 +42,9 @@ if (preg_match('/(?:^|\n)\s*(?:CREATE DATABASE|USE\s|GRANT\s|CREATE USER|CREATE\
 file_put_contents($root.'/database.sql', $sql);
 $snapshot = $read($argv[3]); unset($snapshot['privateUserAuthHash']);
 $manifest = [
+    'packageId' => basename($root),
     'createdAtUtc' => gmdate('c'), 'sourceGitCommit' => trim(shell_exec('git -C /opt/skysend rev-parse HEAD')),
+    'sourceGitDirty' => trim((string) shell_exec('git -C /opt/skysend status --porcelain')) !== '',
     'type' => 'Functional WordPress migration, not Ubuntu/server image', 'snapshot' => $snapshot,
     'targetExample' => 'https://skysend.ru',
     'authentication' => 'All copied passwords randomized; sessions/application passwords/reset keys and source IndexNow key removed; IndexNow autosubmission disabled; target admin must set a new password. Source untouched.',
