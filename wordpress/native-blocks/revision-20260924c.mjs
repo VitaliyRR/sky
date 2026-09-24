@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 import { registerCarouselBlocks } from './carousel.mjs';
 
 const hash = value => crypto.createHash('sha256').update(value).digest('hex');
@@ -18,8 +19,9 @@ export async function revision20260924c(w, origin, mediaFile, providersFile, out
   if (!mediaFile || !providersFile || !outputDir) throw new Error('Usage: build.mjs --revision-20260924c media-ids.json providers.json output-dir');
   await registerCarouselBlocks(w, origin);
   const dir = path.dirname(fileURLToPath(import.meta.url));
+  const repo = path.resolve(dir, '../..');
   const sources = Object.fromEntries(Object.keys(expected).map(name => [name,
-    fs.readFileSync(path.join(dir, name + (name === 'styles' ? '.json' : '.html')), 'utf8')]));
+    execFileSync('git', ['-C', repo, 'show', `254edcf:wordpress/native-blocks/${name + (name === 'styles' ? '.json' : '.html')}`], { encoding: 'utf8' })]));
   for (const [name, content] of Object.entries(sources)) {
     if (hash(content) !== expected[name]) throw new Error(`Stale ${name}: ${hash(content)}`);
   }

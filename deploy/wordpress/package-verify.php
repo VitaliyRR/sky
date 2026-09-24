@@ -47,16 +47,16 @@ $tabs = $findBlock($blocks, 'core/tabs');
 $tabList = $tabs['innerBlocks'][0] ?? [];
 $tabPanels = $tabs['innerBlocks'][1] ?? [];
 $expectedProviders = [
-    'Связь и интернет' => 29,
-    'Телевидение' => 22,
+    'Операторы связи' => 13,
+    'Интернет-провайдеры' => 14,
+    'Телевидение' => 24,
     'Банки и кошельки' => 73,
-    'Игры' => 35,
-    'Социальные сети' => 4,
+    'Игры и соцсети' => 39,
     'ЖКХ' => 20,
-    'Штрафы и пошлины' => 53,
-    'Товары и услуги' => 14,
+    'ГИБДД и автоуслуги' => 18,
+    'Госуслуги и налоги' => 35,
+    'Товары и другие услуги' => 19,
     'Такси и транспорт' => 24,
-    'Страхование и благотворительность' => 5,
 ];
 $actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
 $check('Providers: native list and ten panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
@@ -82,8 +82,10 @@ foreach ($tabPanels['innerBlocks'] ?? [] as $panel) {
             $name = trim((string) ($card['attrs']['metadata']['name'] ?? ''));
             $image = $findBlock($card['innerBlocks'] ?? [], 'core/image');
             $id = (int) ($image['attrs']['id'] ?? 0);
+            $imageUrl = $id ? (string) wp_get_attachment_url($id) : '';
             if (($card['blockName'] ?? '') !== 'core/group' || $name === '' || $id < 1
-                || get_post_type($id) !== 'attachment' || !str_starts_with((string) get_post_mime_type($id), 'image/')) {
+                || get_post_type($id) !== 'attachment' || !str_starts_with((string) get_post_mime_type($id), 'image/')
+                || $imageUrl === '' || !str_contains($image['innerHTML'] ?? '', $imageUrl)) {
                 $providerStructureValid = false;
             }
             $names[] = $name;
@@ -94,7 +96,8 @@ foreach ($tabPanels['innerBlocks'] ?? [] as $panel) {
 }
 $check('Providers: navigable six-card slides', $providerStructureValid);
 $check('Providers: 279 historical catalogue cards', $actualProviderCounts === $expectedProviders
-    && count($providerImageIds) === 279 && !in_array(0, $providerImageIds, true));
+    && count($providerImageIds) === 279 && count(array_unique($providerImageIds)) === 279
+    && !in_array(0, $providerImageIds, true));
 $findNamedGroup = static function(array $items, string $wanted) use (&$findNamedGroup): ?array {
     foreach ($items as $item) {
         if (($item['blockName'] ?? '') === 'core/group' && ($item['attrs']['metadata']['name'] ?? '') === $wanted) { return $item; }

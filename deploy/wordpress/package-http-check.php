@@ -20,8 +20,10 @@ $checks['Carousel and native tabs scripts'] = str_contains($body, 'carousel-bloc
 $checks['Finance and FastSYS copy'] = str_contains($body, 'Доход') && str_contains($body, '+20%')
     && str_contains($body, 'обеспечивает стабильную работу устройств на протяжении десятилетий.');
 $checks['Obsolete disclaimer absent'] = !str_contains($body, 'Архивные материалы: условия и контакты');
-$checks['New provider categories visible'] = str_contains($body, 'Банки и кошельки')
-    && str_contains($body, 'Страхование и благотворительность');
+$checks['New provider categories visible'] = str_contains($body, 'Операторы связи')
+    && str_contains($body, 'Интернет-провайдеры')
+    && str_contains($body, 'Банки и кошельки')
+    && str_contains($body, 'Госуслуги и налоги');
 $checks['New brand and feature icons'] = !str_contains($body, '/skysend-logo.png')
     && str_contains($body, '/pos-terminal-20260924c.png')
     && str_contains($body, '/gear-20260924c.png');

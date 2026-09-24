@@ -8,10 +8,10 @@
   "selectedCount": 279,
   "retainedFromPreviousSelection": 108,
   "newSelectedCount": 171,
-  "selection": "All former 108 provider IDs retained. Added source catalogue items from communication, television, banking, games, government payments and services; no names or logos invented. Limited large groups to a readable excerpt.",
+  "selection": "All former 108 provider IDs retained; same 279 source IDs regrouped into ten meaningful categories, each with at least 12 entries and source names unchanged. Historical catalogue excerpt; no invented providers.",
   "categories": [
     {
-      "title": "Связь и интернет",
+      "title": "Операторы связи",
       "originalGroups": [
         "Сотовая связь",
         "Интернет"
@@ -46,6 +46,78 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-956.png"
         },
         {
+          "id": 6435,
+          "name": "Optilink. Ореховские телекоммуникационные услуги. (Крым)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6435",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6435.png"
+        },
+        {
+          "id": 9253,
+          "name": "sipnet",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9253",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sipnet.png"
+        },
+        {
+          "id": 9640,
+          "name": "Даймохк Телеком",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9640",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9640.png"
+        },
+        {
+          "id": 1082,
+          "name": "МТС. Домашний интернет, телефония 11 или 13 знаков",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1082",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1082.png"
+        },
+        {
+          "id": 9315,
+          "name": "МТС. Домашний интернет, телефония 12-значный",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9315",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9315.png"
+        },
+        {
+          "id": 9426,
+          "name": "Твинго Телеком RT",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9426",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9426.png"
+        },
+        {
+          "id": 813,
+          "name": "ТЕЛКО-интернет",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=813",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-813.png"
+        },
+        {
+          "id": 812,
+          "name": "ТЕЛКО-телефон",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=812",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-812.png"
+        },
+        {
+          "id": 713,
+          "name": "Формула Связи",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=713",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-713.png"
+        }
+      ]
+    },
+    {
+      "title": "Интернет-провайдеры",
+      "originalGroups": [
+        "Интернет",
+        "Кабельное ТВ"
+      ],
+      "items": [
+        {
           "id": 914,
           "name": "Эрлайн",
           "originalGroup": "Интернет",
@@ -67,20 +139,6 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9126.png"
         },
         {
-          "id": 6435,
-          "name": "Optilink. Ореховские телекоммуникационные услуги. (Крым)",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6435",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6435.png"
-        },
-        {
-          "id": 9253,
-          "name": "sipnet",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9253",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sipnet.png"
-        },
-        {
           "id": 3286,
           "name": "SuperSky Крым",
           "originalGroup": "Интернет",
@@ -93,20 +151,6 @@
           "originalGroup": "Интернет",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=24",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-24.png"
-        },
-        {
-          "id": 6902,
-          "name": "Город-ТВ. Первое цифровое телевидение Ставрополь",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6902",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6902.png"
-        },
-        {
-          "id": 9640,
-          "name": "Даймохк Телеком",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9640",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9640.png"
         },
         {
           "id": 4074,
@@ -137,20 +181,6 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6397.png"
         },
         {
-          "id": 1082,
-          "name": "МТС. Домашний интернет, телефония 11 или 13 знаков",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1082",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1082.png"
-        },
-        {
-          "id": 9315,
-          "name": "МТС. Домашний интернет, телефония 12-значный",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9315",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9315.png"
-        },
-        {
           "id": 3319,
           "name": "Оргтехсервис",
           "originalGroup": "Интернет",
@@ -163,34 +193,6 @@
           "originalGroup": "Интернет",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2250",
           "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan.png"
-        },
-        {
-          "id": 2249,
-          "name": "Ридлан (Телевидение). Крым",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2249",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan-tv.png"
-        },
-        {
-          "id": 9426,
-          "name": "Твинго Телеком RT",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9426",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9426.png"
-        },
-        {
-          "id": 813,
-          "name": "ТЕЛКО-интернет",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=813",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-813.png"
-        },
-        {
-          "id": 812,
-          "name": "ТЕЛКО-телефон",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=812",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-812.png"
         },
         {
           "id": 6404,
@@ -207,27 +209,42 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7330.png"
         },
         {
-          "id": 7331,
-          "name": "ТЦ Электрон (Кабельное ТВ)",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7331",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/elektron-tv.png"
-        },
-        {
-          "id": 713,
-          "name": "Формула Связи",
-          "originalGroup": "Интернет",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=713",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-713.png"
+          "id": 9798,
+          "name": "Триколор Спутниковый интернет",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9798",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9798.png"
         }
       ]
     },
     {
       "title": "Телевидение",
       "originalGroups": [
+        "Интернет",
         "Кабельное ТВ"
       ],
       "items": [
+        {
+          "id": 6902,
+          "name": "Город-ТВ. Первое цифровое телевидение Ставрополь",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6902",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6902.png"
+        },
+        {
+          "id": 2249,
+          "name": "Ридлан (Телевидение). Крым",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2249",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan-tv.png"
+        },
+        {
+          "id": 7331,
+          "name": "ТЦ Электрон (Кабельное ТВ)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7331",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/elektron-tv.png"
+        },
         {
           "id": 7,
           "name": "НТВ-Плюс",
@@ -360,13 +377,6 @@
           "originalGroup": "Кабельное ТВ",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9795",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9795.png"
-        },
-        {
-          "id": 9798,
-          "name": "Триколор Спутниковый интернет",
-          "originalGroup": "Кабельное ТВ",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9798",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9798.png"
         },
         {
           "id": 9793,
@@ -905,9 +915,10 @@
       ]
     },
     {
-      "title": "Игры",
+      "title": "Игры и соцсети",
       "originalGroups": [
-        "Игры"
+        "Игры",
+        "Социальные сети"
       ],
       "items": [
         {
@@ -1154,15 +1165,7 @@
           "originalGroup": "Игры",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=476",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-476.png"
-        }
-      ]
-    },
-    {
-      "title": "Социальные сети",
-      "originalGroups": [
-        "Социальные сети"
-      ],
-      "items": [
+        },
         {
           "id": 4816,
           "name": "Одноклассники. Купить ОКи",
@@ -1342,18 +1345,11 @@
       ]
     },
     {
-      "title": "Штрафы и пошлины",
+      "title": "ГИБДД и автоуслуги",
       "originalGroups": [
         "Штрафы, пошлины"
       ],
       "items": [
-        {
-          "id": 9816,
-          "name": "Госпошлина УФК (КБР) Постановка по месту пребывания",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9816",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9816.png"
-        },
         {
           "id": 8937,
           "name": "Госпошлина ГИБДД КЧР",
@@ -1381,6 +1377,119 @@
           "originalGroup": "Штрафы, пошлины",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8229",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8229.png"
+        },
+        {
+          "id": 9295,
+          "name": "Пошлина ГИБДД Гусь-Хрустальный выдача национального ВУ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9295",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9295.png"
+        },
+        {
+          "id": 4846,
+          "name": "ГИБДД. Штрафы за нарушение ПДД (Онлайн)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4846",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4846.png"
+        },
+        {
+          "id": 9604,
+          "name": "Госпошлины ГИБДД по РФ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9604",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9604.png"
+        },
+        {
+          "id": 8354,
+          "name": "Получение разрешения на перевозку крупногабаритных и тяжеловесных грузов",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8354",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8354.png"
+        },
+        {
+          "id": 8355,
+          "name": "Получение разрешения на перевозку опасных грузов",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8355",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8355.png"
+        },
+        {
+          "id": 9010,
+          "name": "Пошлина ГИБДД Жуковский Доплата",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9010",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9010.png"
+        },
+        {
+          "id": 9005,
+          "name": "Пошлина ГИБДД Жуковский за внесение изменений без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9005",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9005.png"
+        },
+        {
+          "id": 9006,
+          "name": "Пошлина ГИБДД Жуковский за внесение изменений с заменой ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9006",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9006.png"
+        },
+        {
+          "id": 9028,
+          "name": "Пошлина ГИБДД Жуковский за выдачу гос. номеров",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9028",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9028.png"
+        },
+        {
+          "id": 9007,
+          "name": "Пошлина ГИБДД Жуковский за выдачу транзитных знаков на бумажной основе",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9007",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9007.png"
+        },
+        {
+          "id": 9009,
+          "name": "Пошлина ГИБДД Жуковский за замену выдачу бланка водительского удостоверения",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9009",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9009.png"
+        },
+        {
+          "id": 8981,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию авто без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8981",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8981.png"
+        },
+        {
+          "id": 8987,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию авто с заменой ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8987",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8987.png"
+        },
+        {
+          "id": 8993,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию мото без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8993",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8993.png"
+        }
+      ]
+    },
+    {
+      "title": "Госуслуги и налоги",
+      "originalGroups": [
+        "Штрафы, пошлины"
+      ],
+      "items": [
+        {
+          "id": 9816,
+          "name": "Госпошлина УФК (КБР) Постановка по месту пребывания",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9816",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9816.png"
         },
         {
           "id": 9814,
@@ -1432,20 +1541,6 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9724.png"
         },
         {
-          "id": 9295,
-          "name": "Пошлина ГИБДД Гусь-Хрустальный выдача национального ВУ",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9295",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9295.png"
-        },
-        {
-          "id": 4846,
-          "name": "ГИБДД. Штрафы за нарушение ПДД (Онлайн)",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4846",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4846.png"
-        },
-        {
           "id": 9717,
           "name": "Госпошлина УФК (КБР) Гражданство",
           "originalGroup": "Штрафы, пошлины",
@@ -1479,13 +1574,6 @@
           "originalGroup": "Штрафы, пошлины",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9715",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9715.png"
-        },
-        {
-          "id": 9604,
-          "name": "Госпошлины ГИБДД по РФ",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9604",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9604.png"
         },
         {
           "id": 9669,
@@ -1614,83 +1702,6 @@
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8306.png"
         },
         {
-          "id": 8354,
-          "name": "Получение разрешения на перевозку крупногабаритных и тяжеловесных грузов",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8354",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8354.png"
-        },
-        {
-          "id": 8355,
-          "name": "Получение разрешения на перевозку опасных грузов",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8355",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8355.png"
-        },
-        {
-          "id": 9010,
-          "name": "Пошлина ГИБДД Жуковский Доплата",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9010",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9010.png"
-        },
-        {
-          "id": 9005,
-          "name": "Пошлина ГИБДД Жуковский за внесение изменений без замены ПТС",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9005",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9005.png"
-        },
-        {
-          "id": 9006,
-          "name": "Пошлина ГИБДД Жуковский за внесение изменений с заменой ПТС",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9006",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9006.png"
-        },
-        {
-          "id": 9028,
-          "name": "Пошлина ГИБДД Жуковский за выдачу гос. номеров",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9028",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9028.png"
-        },
-        {
-          "id": 9007,
-          "name": "Пошлина ГИБДД Жуковский за выдачу транзитных знаков на бумажной основе",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9007",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9007.png"
-        },
-        {
-          "id": 9009,
-          "name": "Пошлина ГИБДД Жуковский за замену выдачу бланка водительского удостоверения",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9009",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9009.png"
-        },
-        {
-          "id": 8981,
-          "name": "Пошлина ГИБДД Жуковский за регистрацию авто без замены ПТС",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8981",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8981.png"
-        },
-        {
-          "id": 8987,
-          "name": "Пошлина ГИБДД Жуковский за регистрацию авто с заменой ПТС",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8987",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8987.png"
-        },
-        {
-          "id": 8993,
-          "name": "Пошлина ГИБДД Жуковский за регистрацию мото без замены ПТС",
-          "originalGroup": "Штрафы, пошлины",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8993",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8993.png"
-        },
-        {
           "id": 9722,
           "name": "Штраф УФМС (КБР) ст.19.16 КоАП РФ",
           "originalGroup": "Штрафы, пошлины",
@@ -1721,9 +1732,11 @@
       ]
     },
     {
-      "title": "Товары и услуги",
+      "title": "Товары и другие услуги",
       "originalGroups": [
-        "Другие услуги"
+        "Другие услуги",
+        "Страхование",
+        "Добрые дела"
       ],
       "items": [
         {
@@ -1823,6 +1836,41 @@
           "originalGroup": "Другие услуги",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9136",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9136.png"
+        },
+        {
+          "id": 9151,
+          "name": "ВСК Страхование. Ростовский филиал",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9151",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vsk.png"
+        },
+        {
+          "id": 8459,
+          "name": "Оплата страховой премии МСК \"АйАйСи\"",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8459",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/iic.png"
+        },
+        {
+          "id": 8526,
+          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Добровольное медицинское страхование. Услуги сопровождения.",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8526",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/health.png"
+        },
+        {
+          "id": 9638,
+          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Оказание услуг по договору",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9638",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9638.png"
+        },
+        {
+          "id": 323,
+          "name": "Еммануил",
+          "originalGroup": "Добрые дела",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=323",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/emmanuel.png"
         }
       ]
     },
@@ -1999,50 +2047,6 @@
           "originalGroup": "Другие услуги",
           "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2101",
           "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2101.png"
-        }
-      ]
-    },
-    {
-      "title": "Страхование и благотворительность",
-      "originalGroups": [
-        "Страхование",
-        "Добрые дела"
-      ],
-      "items": [
-        {
-          "id": 9151,
-          "name": "ВСК Страхование. Ростовский филиал",
-          "originalGroup": "Страхование",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9151",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vsk.png"
-        },
-        {
-          "id": 8459,
-          "name": "Оплата страховой премии МСК \"АйАйСи\"",
-          "originalGroup": "Страхование",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8459",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/iic.png"
-        },
-        {
-          "id": 8526,
-          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Добровольное медицинское страхование. Услуги сопровождения.",
-          "originalGroup": "Страхование",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8526",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/health.png"
-        },
-        {
-          "id": 9638,
-          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Оказание услуг по договору",
-          "originalGroup": "Страхование",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9638",
-          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9638.png"
-        },
-        {
-          "id": 323,
-          "name": "Еммануил",
-          "originalGroup": "Добрые дела",
-          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=323",
-          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/emmanuel.png"
         }
       ]
     }
