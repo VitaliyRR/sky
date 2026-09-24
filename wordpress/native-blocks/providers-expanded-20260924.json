@@ -1,0 +1,695 @@
+{
+  "source": "Original SkySend provider catalogue",
+  "url": "https://skysend.ru/providers.php",
+  "retrievedAt": "2026-09-24",
+  "sourcePage": "https://skysend.ru/about/providers.html",
+  "retrievedOn": "2026-09-24",
+  "status": "Historical source catalogue. These names and images do not confirm that a particular payment is currently available; confirm with SkySend before advertising current acceptance.",
+  "logoUrlTemplate": "http://cluster.skysend.ru:6721/image.php?provider={id}",
+  "selection": "108 distinct source IDs with nonempty logo URLs, grouped for the landing page; 12 entries per category. Some original service variants share a brand/logo.",
+  "categories": [
+    {
+      "title": "Связь и интернет",
+      "originalGroups": [
+        "Сотовая связь",
+        "Интернет"
+      ],
+      "items": [
+        {
+          "id": 359,
+          "name": "МТС Оплата по лицевому счёту",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/mts.png"
+        },
+        {
+          "id": 1134,
+          "name": "Win Mobile (К-телеком)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/win-mobile.png"
+        },
+        {
+          "id": 8450,
+          "name": "КМВТелеком",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/kmvtelecom.png"
+        },
+        {
+          "id": 9253,
+          "name": "sipnet",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sipnet.png"
+        },
+        {
+          "id": 4074,
+          "name": "ДОМ.RU",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/domru.png"
+        },
+        {
+          "id": 6871,
+          "name": "Зеленая точка (Невинномысск)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/zelenaya-tochka.png"
+        },
+        {
+          "id": 914,
+          "name": "Эрлайн",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/rline.png"
+        },
+        {
+          "id": 2250,
+          "name": "Ридлан (Интернет). Крым",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan.png"
+        },
+        {
+          "id": 956,
+          "name": "Вайнах Телеком. Интернет",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-956.png"
+        },
+        {
+          "id": 6232,
+          "name": "BelNet (Крым)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-6232.png"
+        },
+        {
+          "id": 9126,
+          "name": "ITSNET",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9126.png"
+        },
+        {
+          "id": 3286,
+          "name": "SuperSky Крым",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3286.png"
+        }
+      ]
+    },
+    {
+      "title": "Телевидение",
+      "originalGroups": [
+        "Кабельное ТВ",
+        "Интернет"
+      ],
+      "items": [
+        {
+          "id": 7,
+          "name": "НТВ-Плюс",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/ntv-plus.png"
+        },
+        {
+          "id": 6581,
+          "name": "Билайн ТВ",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/beeline-tv.png"
+        },
+        {
+          "id": 4323,
+          "name": "Город-ТВ. Первое цифровое телевидение Ставрополь",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gorod-tv.png"
+        },
+        {
+          "id": 258,
+          "name": "Триколор Пополнить лицевой счет",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tricolor.png"
+        },
+        {
+          "id": 2249,
+          "name": "Ридлан (Телевидение). Крым",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan-tv.png"
+        },
+        {
+          "id": 7331,
+          "name": "ТЦ Электрон (Кабельное ТВ)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/elektron-tv.png"
+        },
+        {
+          "id": 9790,
+          "name": "Триколор Premier (месяц)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9790.png"
+        },
+        {
+          "id": 9788,
+          "name": "Триколор Ultra (год)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9788.png"
+        },
+        {
+          "id": 9783,
+          "name": "Триколор Взрослый (3 месяца)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9783.png"
+        },
+        {
+          "id": 9784,
+          "name": "Триколор Детский (год)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9784.png"
+        },
+        {
+          "id": 9786,
+          "name": "Триколор Единый / Единый Онлайн (год)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9786.png"
+        },
+        {
+          "id": 9797,
+          "name": "Триколор Добавь Кино (месяц)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9797.png"
+        }
+      ]
+    },
+    {
+      "title": "Банки",
+      "originalGroups": [
+        "Банки и кредиты"
+      ],
+      "items": [
+        {
+          "id": 631,
+          "name": "Сбербанк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sberbank.png"
+        },
+        {
+          "id": 241,
+          "name": "Т-Банк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/t-bank.png"
+        },
+        {
+          "id": 9858,
+          "name": "Озон Банк (Ozon)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9858.png"
+        },
+        {
+          "id": 168,
+          "name": "Альфа-Банк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/alfa-bank.png"
+        },
+        {
+          "id": 191,
+          "name": "Банк ВТБ Северо-Запад",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vtb.png"
+        },
+        {
+          "id": 232,
+          "name": "Россельхозбанк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/rosselkhozbank.png"
+        },
+        {
+          "id": 226,
+          "name": "ОТП Банк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/otp-bank.png"
+        },
+        {
+          "id": 1098,
+          "name": "Совкомбанк",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sovcombank.png"
+        },
+        {
+          "id": 9849,
+          "name": "Wildberries (Вайлдберриз Банк) WB",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9849.png"
+        },
+        {
+          "id": 2776,
+          "name": "ГАЗПРОМБАНК (АО)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2776.png"
+        },
+        {
+          "id": 4007,
+          "name": "МТС-Банк.",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4007.png"
+        },
+        {
+          "id": 180,
+          "name": "Промсвязьбанк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-180.png"
+        }
+      ]
+    },
+    {
+      "title": "Кредитные организации",
+      "originalGroups": [
+        "Банки и кредиты"
+      ],
+      "items": [
+        {
+          "id": 178,
+          "name": "Агропромкредит",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-178.png"
+        },
+        {
+          "id": 948,
+          "name": "Банк Ресо Кредит",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-948.png"
+        },
+        {
+          "id": 216,
+          "name": "Кредит Европа Банк (Россия)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-216.png"
+        },
+        {
+          "id": 2892,
+          "name": "КРЕДИТ УРАЛ БАНК (АО)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2892.png"
+        },
+        {
+          "id": 2938,
+          "name": "МЕЖДУНАРОДНЫЙ ФИНАНСОВЫЙ КЛУБ (ОАО)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2938.png"
+        },
+        {
+          "id": 2969,
+          "name": "МКБ (Московский кредитный банк)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2969.png"
+        },
+        {
+          "id": 944,
+          "name": "Ренессанс Кредит Банк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-944.png"
+        },
+        {
+          "id": 3105,
+          "name": "РОСТФИНАНС (ООО)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3105.png"
+        },
+        {
+          "id": 3251,
+          "name": "ЦЕНТРОКРЕДИТ (АО)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3251.png"
+        },
+        {
+          "id": 250,
+          "name": "ЮниКредит Банк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-250.png"
+        },
+        {
+          "id": 175,
+          "name": "Абсолют Банк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-175.png"
+        },
+        {
+          "id": 176,
+          "name": "Авангард",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-176.png"
+        }
+      ]
+    },
+    {
+      "title": "Игры и соцсети",
+      "originalGroups": [
+        "Игры",
+        "Социальные сети"
+      ],
+      "items": [
+        {
+          "id": 4755,
+          "name": "ArcheAge Mail.ru.",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/archeage.png"
+        },
+        {
+          "id": 4733,
+          "name": "Bloody World Mail.ru",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4733.png"
+        },
+        {
+          "id": 4757,
+          "name": "Cross Fire Mail.ru",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4757.png"
+        },
+        {
+          "id": 4814,
+          "name": "Ground War: Tanks Mail.ru",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4814.png"
+        },
+        {
+          "id": 4782,
+          "name": "Jade Dynasty Mail.ru",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4782.png"
+        },
+        {
+          "id": 4729,
+          "name": "Perfect World Mail.ru",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/perfect-world.png"
+        },
+        {
+          "id": 7499,
+          "name": "Revelation Mail.ru",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7499.png"
+        },
+        {
+          "id": 4675,
+          "name": "Warface. Mail.ru",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/warface.png"
+        },
+        {
+          "id": 252,
+          "name": "Xsolla",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/xsolla.png"
+        },
+        {
+          "id": 4819,
+          "name": "Вконтакте",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vk.png"
+        },
+        {
+          "id": 4816,
+          "name": "Одноклассники. Купить ОКи",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/ok.png"
+        },
+        {
+          "id": 4820,
+          "name": "Мой Мир",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/my-world.png"
+        }
+      ]
+    },
+    {
+      "title": "ЖКХ",
+      "originalGroups": [
+        "ЖКХ"
+      ],
+      "items": [
+        {
+          "id": 9416,
+          "name": "Волгоградэнергосбыт ПАО",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/volgogradenergosbyt.png"
+        },
+        {
+          "id": 1152,
+          "name": "ГарантСтрой-Юг УК",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/garantstroy-yug.png"
+        },
+        {
+          "id": 1148,
+          "name": "Градострой ООО",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gradostroy.png"
+        },
+        {
+          "id": 8270,
+          "name": "Детский сад с. Фрунзе «Сказка»",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8270.png"
+        },
+        {
+          "id": 8271,
+          "name": "Крымская Водная Компания ООО (Первомайский район)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/crimea-water.png"
+        },
+        {
+          "id": 8325,
+          "name": "Крымская Водная Компания ООО (Раздольненский район)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8325.png"
+        },
+        {
+          "id": 8257,
+          "name": "Крымская Водная Компания ООО (Сакский район)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8257.png"
+        },
+        {
+          "id": 678,
+          "name": "Лорис ТСЖ",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-678.png"
+        },
+        {
+          "id": 8652,
+          "name": "ООО «УК N 99» оплата ЖКУ (ИНН 2623804155)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8652.png"
+        },
+        {
+          "id": 8640,
+          "name": "Оплата ЖКУ по ИНН (ГИС ЖКХ)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gis-zhkh.png"
+        },
+        {
+          "id": 253,
+          "name": "ТНС энерго Кубань (Ранее Кубаньэнергосбыт)",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tns-energo.png"
+        },
+        {
+          "id": 1160,
+          "name": "УК «Управдом» ООО",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/upravdom.png"
+        }
+      ]
+    },
+    {
+      "title": "Штрафы и пошлины",
+      "originalGroups": [
+        "Штрафы, пошлины"
+      ],
+      "items": [
+        {
+          "id": 4846,
+          "name": "ГИБДД. Штрафы за нарушение ПДД (Онлайн)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4846.png"
+        },
+        {
+          "id": 9670,
+          "name": "Госпошлины и штрафы ФМС по РФ",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9670.png"
+        },
+        {
+          "id": 9728,
+          "name": "Оплата штрафов по УИН",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9728.png"
+        },
+        {
+          "id": 9722,
+          "name": "Штраф УФМС (КБР) ст.19.16 КоАП РФ",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9722.png"
+        },
+        {
+          "id": 9654,
+          "name": "Штрафы УФМС (г. Ростов-на-Дону)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9654.png"
+        },
+        {
+          "id": 9544,
+          "name": "Штрафы УФМС (КБР)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9544.png"
+        },
+        {
+          "id": 8743,
+          "name": "Штрафы УФМС (РСО-Алания)",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8743.png"
+        },
+        {
+          "id": 9816,
+          "name": "Госпошлина УФК (КБР) Постановка по месту пребывания",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9816.png"
+        },
+        {
+          "id": 8937,
+          "name": "Госпошлина ГИБДД КЧР",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8937.png"
+        },
+        {
+          "id": 9288,
+          "name": "Госпошлины ГИБДД. ГУ МВД России по Нижегородской обл.",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9288.png"
+        },
+        {
+          "id": 9326,
+          "name": "Пошлина ГИБДД Гусь-Хрустальный",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9326.png"
+        },
+        {
+          "id": 8229,
+          "name": "Госпошлина ГИБДД по Белгородской области",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8229.png"
+        }
+      ]
+    },
+    {
+      "title": "Товары и услуги",
+      "originalGroups": [
+        "Другие услуги",
+        "Страхование",
+        "Добрые дела"
+      ],
+      "items": [
+        {
+          "id": 630,
+          "name": "AVON",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/avon.png"
+        },
+        {
+          "id": 644,
+          "name": "Faberlic",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/faberlic.png"
+        },
+        {
+          "id": 7961,
+          "name": "Армед-Юг ООО",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7961.png"
+        },
+        {
+          "id": 255,
+          "name": "Кредитный брокер",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-255.png"
+        },
+        {
+          "id": 2268,
+          "name": "Центр бронирования туров ТБГ",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tbg.png"
+        },
+        {
+          "id": 2024,
+          "name": "Юнипаркс двухкомпонентный ресурс",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2024.png"
+        },
+        {
+          "id": 2102,
+          "name": "Юнипаркс дополнительные услуги",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2102.png"
+        },
+        {
+          "id": 9151,
+          "name": "ВСК Страхование. Ростовский филиал",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vsk.png"
+        },
+        {
+          "id": 8459,
+          "name": "Оплата страховой премии МСК «АйАйСи»",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/iic.png"
+        },
+        {
+          "id": 8526,
+          "name": "ЦСМТ «ЗДОРОВЬЕ». Добровольное медицинское страхование. Услуги сопровождения.",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/health.png"
+        },
+        {
+          "id": 9638,
+          "name": "ЦСМТ «ЗДОРОВЬЕ». Оказание услуг по договору",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9638.png"
+        },
+        {
+          "id": 323,
+          "name": "Еммануил",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/emmanuel.png"
+        }
+      ]
+    },
+    {
+      "title": "Такси и транспорт",
+      "originalGroups": [
+        "Другие услуги"
+      ],
+      "items": [
+        {
+          "id": 7629,
+          "name": "Такси «22222» Ейск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7629.png"
+        },
+        {
+          "id": 7503,
+          "name": "Такси «22222» Крымск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7503.png"
+        },
+        {
+          "id": 7626,
+          "name": "Такси «24000» Туапсе",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7626.png"
+        },
+        {
+          "id": 7623,
+          "name": "Такси «2622226» с. Лазаревское",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7623.png"
+        },
+        {
+          "id": 7504,
+          "name": "Такси «44444» Славянск-на-Кубани",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7504.png"
+        },
+        {
+          "id": 7630,
+          "name": "Такси «55555» Тимашевск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7630.png"
+        },
+        {
+          "id": 7505,
+          "name": "Такси «55555» Темрюк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7505.png"
+        },
+        {
+          "id": 7625,
+          "name": "Такси «55555» Тихорецк",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7625.png"
+        },
+        {
+          "id": 9008,
+          "name": "Такси «70000» Курганинск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9008.png"
+        },
+        {
+          "id": 7508,
+          "name": "Такси 21111 г. Новошахтинск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7508.png"
+        },
+        {
+          "id": 7687,
+          "name": "Такси 240240 г. Шахты",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7687.png"
+        },
+        {
+          "id": 7509,
+          "name": "Такси 55555 г. Сальск",
+          "image": null,
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7509.png"
+        }
+      ]
+    }
+  ]
+}
