@@ -109,6 +109,20 @@ if (process.argv.includes('--revision-20260924d')) {
   dom.window.close();
   process.exit(0);
 }
+if (process.argv.includes('--revision-20260924g')) {
+  const index = process.argv.indexOf('--revision-20260924g');
+  const { revision20260924g } = await import('./revision-20260924g.mjs');
+  await revision20260924g(w, origin, process.argv[index + 1]);
+  dom.window.close();
+  process.exit(0);
+}
+if (process.argv.includes('--revision-20260924f')) {
+  const index = process.argv.indexOf('--revision-20260924f');
+  const { revision20260924f } = await import('./revision-20260924f.mjs');
+  await revision20260924f(w, origin, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 if (process.argv.includes('--revision-20260924e')) {
   const index = process.argv.indexOf('--revision-20260924e');
   const { revision20260924e } = await import('./revision-20260924e.mjs');

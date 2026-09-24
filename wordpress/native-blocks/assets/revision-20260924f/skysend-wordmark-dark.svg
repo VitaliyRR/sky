@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="446" height="112" viewBox="0 0 446 112" role="img" aria-labelledby="title">
+  <title id="title">SkySend</title>
+  <svg x="8" y="8" width="96" height="96" viewBox="0 0 512 512" aria-hidden="true">
+    <rect x="24" y="24" width="464" height="464" rx="108" fill="#0B63F6"/>
+    <path d="M111 205C166 142 275 132 351 163M334 127L398 181L331 220M401 307C346 370 237 380 161 349M178 385L114 331L181 292" fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+  <text x="125" y="79" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="700" letter-spacing="-3.5">Sky</text>
+  <text x="236" y="79" fill="#82C8FF" font-family="Arial, Helvetica, sans-serif" font-size="65" font-weight="700" letter-spacing="-3.5">Send</text>
+</svg>

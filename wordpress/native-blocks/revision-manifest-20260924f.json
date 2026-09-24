@@ -1,0 +1,44 @@
+{
+  "revision": "2026-09-24f",
+  "origin": "http://31.129.98.28",
+  "categories": 10,
+  "providers": 279,
+  "previousIconId": 207,
+  "mediaNames": {
+    "logoLight": "skysend-wordmark-light-20260924f.png",
+    "logoDark": "skysend-wordmark-dark-20260924f.png",
+    "icon": "skysend-site-icon-20260924f.png",
+    "cluster": "cluster-official-20260924f-scaled.jpeg"
+  },
+  "mediaIds": {
+    "skysend-wordmark-light-20260924f.png": 390,
+    "skysend-wordmark-dark-20260924f.png": 391,
+    "skysend-site-icon-20260924f.png": 392,
+    "cluster-official-20260924f-scaled.jpeg": 393
+  },
+  "report": {
+    "page": {
+      "id": 67,
+      "beforeHash": "8a6b5709c08a7a8b6c37a9f1471bd8add7c40989dbb5c4ba0f6319ef647da53b",
+      "afterHash": "302304c984bc0e486f5669b39f05f75c4d61792347727aa6cb88a48df79a7057",
+      "blocks": 1151
+    },
+    "header": {
+      "id": 68,
+      "beforeHash": "627dda41580bd5d5825adf64e0713f982fbf8a1073c5f6feff390ce25317422f",
+      "afterHash": "c524814f3520696f179b69588e38ce8f281373ccc7ff2a2af5b46f6d1a236c89",
+      "blocks": 13
+    },
+    "footer": {
+      "id": 69,
+      "beforeHash": "01c7d3b23253879a0c56e9cbdd279180a4bd8eeeebc9a7d0f475fe53304a4fdc",
+      "afterHash": "b547296b7a003a388b40f63a228f7fd46c768be5b674bd298d196cc71d1e3fd6",
+      "blocks": 53
+    },
+    "styles": {
+      "id": 66,
+      "beforeHash": "c88b0a4196fe8b1b6d5088dbf14496c11ee6b4f6221dd2a31d70f7838c23dd95",
+      "afterHash": "72157eea8aff9985fc0505ba8a86659c098feb47cbb9a73068a98722f75c23c6"
+    }
+  }
+}
