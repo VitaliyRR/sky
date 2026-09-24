@@ -41,10 +41,14 @@ $findBlock = static function(array $items, string $wanted) use (&$findBlock): ?a
 $tabs = $findBlock($blocks, 'core/tabs');
 $tabList = $tabs['innerBlocks'][0] ?? [];
 $tabPanels = $tabs['innerBlocks'][1] ?? [];
-$expectedLabels = ['Связь и интернет','Телевидение','Банки и кошельки','Игры и соцсети','ЖКХ','Сервисы и прочие услуги'];
+$expectedLabels = ['Связь и интернет','Телевидение','Банки','Кредитные организации','Игры и соцсети','ЖКХ','Штрафы и пошлины','Товары и услуги','Такси и транспорт'];
 $actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
-$check('Providers: native list and six panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
+$check('Providers: native list and nine panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
     && ($tabPanels['blockName'] ?? '') === 'core/tab-panels' && $actualLabels === $expectedLabels);
+$carousels = array_map(static fn($panel) => $panel['innerBlocks'][0] ?? [], $tabPanels['innerBlocks'] ?? []);
+$check('Providers: two navigable pages per category', count($carousels) === 9 && !array_filter($carousels, static fn($item) =>
+    ($item['blockName'] ?? '') !== 'cb/carousel-v2' || count($item['innerBlocks'] ?? []) !== 2
+    || !($item['attrs']['navigation'] ?? false) || !($item['attrs']['pagination'] ?? false)));
 $providerImageIds = [];
 $collectImages = static function(array $items) use (&$collectImages, &$providerImageIds): void {
     foreach ($items as $item) {
@@ -53,8 +57,8 @@ $collectImages = static function(array $items) use (&$collectImages, &$providerI
     }
 };
 $collectImages($tabPanels['innerBlocks'] ?? []);
-$check('Providers: 46 unique media logos', count($providerImageIds) === 46
-    && count(array_unique($providerImageIds)) === 46 && !in_array(0, $providerImageIds, true));
+$check('Providers: 108 unique local media logos', count($providerImageIds) === 108
+    && count(array_unique($providerImageIds)) === 108 && !in_array(0, $providerImageIds, true));
 $check('Core sitemap enabled', wp_sitemaps_get_server()->sitemaps_enabled());
 $check('Native sitemap not replaced by SEO plugin', (get_option('seopress_toggle')['toggle-xml-sitemap'] ?? '') === '0');
 $attachmentCount = 0; $missing = [];
