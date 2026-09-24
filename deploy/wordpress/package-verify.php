@@ -47,7 +47,7 @@ $financeImage = $findBlock($financeSlide['innerBlocks'] ?? [], 'core/image');
 $financeId = (int) ($financeImage['attrs']['id'] ?? 0);
 $financeUrl = $financeId ? (string) wp_get_attachment_url($financeId) : '';
 $check('Finance income embedded in banner image', $financeId > 0
-    && basename((string) parse_url($financeUrl, PHP_URL_PATH)) === 'banner-finance-income-20260924.webp'
+    && basename((string) parse_url($financeUrl, PHP_URL_PATH)) === 'banner-finance-bag-income-20260924.webp'
     && get_post_type($financeId) === 'attachment'
     && is_file((string) get_attached_file($financeId))
     && str_contains($financeImage['innerHTML'] ?? '', 'Доход +20%')

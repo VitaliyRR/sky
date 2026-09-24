@@ -109,6 +109,13 @@ if (process.argv.includes('--revision-20260924d')) {
   dom.window.close();
   process.exit(0);
 }
+if (process.argv.includes('--revision-20260924e')) {
+  const index = process.argv.indexOf('--revision-20260924e');
+  const { revision20260924e } = await import('./revision-20260924e.mjs');
+  await revision20260924e(w, origin, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 const raw = JSON.parse(fs.readFileSync(path.join(dir, 'content.json'), 'utf8'));
 const sourceImage = src => src.replace(/^assets\/images\//, '');
 const fromSection = id => {const x=raw.sections.find(x=>x.id===id);return {...x,text:x.lead,url:x.action?.url,features:x.features || x.cards};};
