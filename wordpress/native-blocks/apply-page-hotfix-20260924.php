@@ -1,12 +1,12 @@
 <?php
-/** Narrow follow-up: correct the ALLVEND crop and remove the old XML label in the gateway picture. */
+/** Narrow follow-up: restore the approved Partners heading and section proportions. */
 if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
     exit( 1 );
 }
 $base = $args[0] ?? null;
 $manifest = $base ? json_decode( file_get_contents( $base . '/manifest.json' ), true ) : null;
 $file = $base ? $base . '/page.html' : null;
-$before_hash = '5b37eac2d7a2cdf1b95b1229f07a4e04ec39da20cd548dc68e99d73c48010bf3';
+$before_hash = 'b8cb36d9ef01fd3c275f37426ebd5ed0bc3e52f7e9bd28f24e5616a5f2902d06';
 if ( ! $manifest || ! is_readable( $file ) || hash( 'sha256', get_post( 67 )->post_content ) !== $before_hash ) {
     WP_CLI::error( 'Current page does not match the first 24.09 revision; no change made.' );
 }

@@ -2,10 +2,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { registerCarouselBlocks } from './carousel.mjs';
 
 const dir = path.dirname(fileURLToPath(import.meta.url));
+const repo = path.resolve(dir, '..', '..');
+const originalSnapshot = file => execFileSync('git', ['-C', repo, 'show', `be00436:wordpress/native-blocks/${file}`], { encoding: 'utf8' });
 const expected = {
   page: '72d7f13ce5c05053992ae22db0b52fe8abc6b9326cbc53ecc02f9bfd15004a54',
   header: '9f017d5eef6928d757731ec573ba247b624b1d8d3705f2e791eb4ced77c751dc',
@@ -20,9 +23,9 @@ export async function revision20260924(w, origin, pageFile, mediaFile, outputDir
   await registerCarouselBlocks(w, origin);
   const sources = {
     page: fs.readFileSync(pageFile, 'utf8'),
-    header: fs.readFileSync(path.join(dir, 'header.html'), 'utf8'),
-    footer: fs.readFileSync(path.join(dir, 'footer.html'), 'utf8'),
-    styles: fs.readFileSync(path.join(dir, 'styles.json'), 'utf8'),
+    header: originalSnapshot('header.html'),
+    footer: originalSnapshot('footer.html'),
+    styles: originalSnapshot('styles.json'),
   };
   for (const [name, source] of Object.entries(sources)) {
     if (digest(source) !== expected[name]) throw new Error(`Stale ${name} source: ${digest(source)}`);
@@ -73,10 +76,11 @@ export async function revision20260924(w, origin, pageFile, mediaFile, outputDir
   partners.attributes.style.spacing.padding.top = '24px';
   partners.attributes.style.spacing.padding.bottom = '24px';
   const partnerInner = partners.innerBlocks[0];
-  partnerInner.attributes.style.spacing.blockGap = '14px';
+  partnerInner.attributes.style.spacing.blockGap = '12px';
   const partnerGrid = partnerInner.innerBlocks.find(block => block.attributes.layout?.type === 'grid');
   if (!partnerGrid || partnerGrid.innerBlocks.length !== 6) throw new Error('Expected six partner cards');
-  partnerGrid.attributes.style.spacing.blockGap = '14px';
+  partnerInner.innerBlocks.unshift(b('heading', { content: 'Партнерам', level: 2, style: { typography: { textAlign: 'center' } } }));
+  partnerGrid.attributes.style.spacing.blockGap = '12px';
   const offers = [
     ['Платёжным агентам', 'full_offer_agent.pdf', '331 КБ', '2015', 'Скачать архивное КП'],
     ['Провайдерам услуг', 'connection_provider.pdf', '175 КБ', '2016', 'Скачать архивный документ'],
@@ -87,7 +91,10 @@ export async function revision20260924(w, origin, pageFile, mediaFile, outputDir
   ];
   for (const [label, file, size, year, action] of offers) {
     const card = find([partnerGrid], block => block.attributes.metadata?.name === label);
-    card.attributes.style.dimensions.minHeight = '185px';
+    card.attributes.style.dimensions.minHeight = '160px';
+    card.attributes.style.spacing.blockGap = '6px';
+    const cardPhoto = find([card], block => block.name === 'core/image');
+    Object.assign(cardPhoto.attributes, { width: '80px', height: '64px', scale: 'cover' });
     if (label === 'Торговым сетям') {
       const copy = find([card], block => block.name === 'core/paragraph' && String(block.attributes.content).normalize('NFC').replace(/\s+/gu, ' ').trim() === 'Внедрение самообслуживания');
       copy.attributes.content = 'Внедрение систем самообслуживания';
