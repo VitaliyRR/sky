@@ -29,7 +29,9 @@ $check('Three autoplay banners', ($carousel['blockName'] ?? '') === 'cb/carousel
 $sections = array_values(array_filter($blocks, static fn($block) => ($block['blockName'] ?? '') === 'core/group'));
 $check('Eight landing sections', count($sections) === 8);
 $check('Banner min-height 500', ($sections[0]['attrs']['style']['dimensions']['minHeight'] ?? '') === '500px');
-$check('Seven content sections min-height 600', count($sections) === 8 && !array_filter(array_slice($sections, 1), static fn($section) => ($section['attrs']['style']['dimensions']['minHeight'] ?? '') !== '600px'));
+$check('Compact partners and six full-height content sections', count($sections) === 8
+    && !isset($sections[1]['attrs']['style']['dimensions']['minHeight'])
+    && !array_filter(array_slice($sections, 2), static fn($section) => ($section['attrs']['style']['dimensions']['minHeight'] ?? '') !== '600px'));
 $pageContent = get_post_field('post_content', 67);
 $check('Obsolete archive disclaimer removed', !str_contains($pageContent, 'Архивные материалы: условия и контакты'));
 $check('FastSYS 5 approved copy', str_contains($pageContent, 'FastSYS 5 поставляется с ПО ALLVEND как готовое решение в виде ISO образа и обеспечивает стабильную работу устройств на протяжении десятилетий.'));
@@ -79,14 +81,14 @@ foreach ($tabPanels['innerBlocks'] ?? [] as $panel) {
     if (($carousel['blockName'] ?? '') !== 'cb/carousel-v2'
         // True is the block's built-in default, so Gutenberg omits these attributes.
         || !($carousel['attrs']['navigation'] ?? true) || !($carousel['attrs']['pagination'] ?? true)
-        || count($slides) !== (int) ceil($expectedCount / 6)) { $providerStructureValid = false; }
+        || count($slides) !== (int) ceil($expectedCount / 9)) { $providerStructureValid = false; }
     $names = [];
     foreach ($slides as $slide) {
         $grid = $slide['innerBlocks'][0] ?? [];
         $cards = $grid['innerBlocks'] ?? [];
         if (($slide['blockName'] ?? '') !== 'cb/slide-v2' || ($grid['blockName'] ?? '') !== 'core/group'
             || !str_contains($grid['attrs']['className'] ?? '', 'sky-provider-grid')
-            || count($cards) < 1 || count($cards) > 6) { $providerStructureValid = false; }
+            || count($cards) < 1 || count($cards) > 9) { $providerStructureValid = false; }
         foreach ($cards as $card) {
             $name = trim((string) ($card['attrs']['metadata']['name'] ?? ''));
             $image = $findBlock($card['innerBlocks'] ?? [], 'core/image');
@@ -103,7 +105,7 @@ foreach ($tabPanels['innerBlocks'] ?? [] as $panel) {
     }
     $actualProviderCounts[$label] = count($names);
 }
-$check('Providers: navigable six-card slides', $providerStructureValid);
+$check('Providers: navigable nine-card slides', $providerStructureValid);
 $check('Providers: 279 historical catalogue cards', $actualProviderCounts === $expectedProviders
     // The original catalogue lists different services under the same brand, so
     // reusing that brand's media attachment is valid and avoids duplicate files.
