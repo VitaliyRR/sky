@@ -11,14 +11,26 @@ $request = static function($path) use ($base): array {
 };
 [$status, $body] = $request('/');
 $body = is_string($body) ? $body : '';
+$hasImage = static function(string $html, string $filename, string $altFragment): bool {
+    preg_match_all('~<img\b[^>]*>~iu', $html, $tags);
+    foreach ($tags[0] as $tag) {
+        if (!preg_match('~\bsrc=["\']([^"\']+)["\']~iu', $tag, $src)
+            || !preg_match('~\balt=["\']([^"\']*)["\']~iu', $tag, $alt)) { continue; }
+        $path = parse_url(html_entity_decode($src[1], ENT_QUOTES | ENT_HTML5, 'UTF-8'), PHP_URL_PATH);
+        if (basename((string) $path) === $filename
+            && str_contains(html_entity_decode($alt[1], ENT_QUOTES | ENT_HTML5, 'UTF-8'), $altFragment)) { return true; }
+    }
+    return false;
+};
 $checks['Homepage 200'] = $status === 200;
 $checks['One H1'] = preg_match_all('/<h1\b/i', $body) === 1;
 $checks['Title/description'] = str_contains($body, '<title>SkySend — система приёма платежей</title>') && preg_match('/<meta name="description" content="SkySend/', $body) === 1;
 $checks['Canonical rewritten'] = str_contains($body, '<link rel="canonical" href="'.$base.'/">');
 $checks['JSON-LD/OG'] = str_contains($body, '"@type":"Organization"') && str_contains($body, '<meta property="og:image"');
 $checks['Carousel and native tabs scripts'] = str_contains($body, 'carousel-block/build/carousel/view.js') && str_contains($body, 'block-library/tabs/view.min.js');
-$checks['Finance and FastSYS copy'] = str_contains($body, 'Доход') && str_contains($body, '+20%')
-    && str_contains($body, 'обеспечивает стабильную работу устройств на протяжении десятилетий.');
+$checks['Finance banner graphic with income'] = $hasImage($body, 'banner-finance-income-20260924.webp', 'Доход +20%');
+$checks['Gateway XML graphic'] = $hasImage($body, 'partner-gateways-xml-20260924.webp', 'XML-шлюза');
+$checks['FastSYS copy'] = str_contains($body, 'обеспечивает стабильную работу устройств на протяжении десятилетий.');
 $checks['Obsolete disclaimer absent'] = !str_contains($body, 'Архивные материалы: условия и контакты');
 $checks['New provider categories visible'] = str_contains($body, 'Операторы связи')
     && str_contains($body, 'Интернет-провайдеры')

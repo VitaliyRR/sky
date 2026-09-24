@@ -31,7 +31,6 @@ $check('Eight landing sections', count($sections) === 8);
 $check('Banner min-height 500', ($sections[0]['attrs']['style']['dimensions']['minHeight'] ?? '') === '500px');
 $check('Seven content sections min-height 600', count($sections) === 8 && !array_filter(array_slice($sections, 1), static fn($section) => ($section['attrs']['style']['dimensions']['minHeight'] ?? '') !== '600px'));
 $pageContent = get_post_field('post_content', 67);
-$check('Finance banner income restored', str_contains($pageContent, 'Доход') && str_contains($pageContent, '+20%'));
 $check('Obsolete archive disclaimer removed', !str_contains($pageContent, 'Архивные материалы: условия и контакты'));
 $check('FastSYS 5 approved copy', str_contains($pageContent, 'FastSYS 5 поставляется с ПО ALLVEND как готовое решение в виде ISO образа и обеспечивает стабильную работу устройств на протяжении десятилетий.'));
 $check('Native tabs', WP_Block_Type_Registry::get_instance()->is_registered('core/tabs'));
@@ -43,6 +42,16 @@ $findBlock = static function(array $items, string $wanted) use (&$findBlock): ?a
     }
     return null;
 };
+$financeSlide = $carousel['innerBlocks'][1] ?? [];
+$financeImage = $findBlock($financeSlide['innerBlocks'] ?? [], 'core/image');
+$financeId = (int) ($financeImage['attrs']['id'] ?? 0);
+$financeUrl = $financeId ? (string) wp_get_attachment_url($financeId) : '';
+$check('Finance income embedded in banner image', $financeId > 0
+    && basename((string) parse_url($financeUrl, PHP_URL_PATH)) === 'banner-finance-income-20260924.webp'
+    && get_post_type($financeId) === 'attachment'
+    && is_file((string) get_attached_file($financeId))
+    && str_contains($financeImage['innerHTML'] ?? '', 'Доход +20%')
+    && !str_contains($pageContent, '"name":"Доход +20%"'));
 $tabs = $findBlock($blocks, 'core/tabs');
 $tabList = $tabs['innerBlocks'][0] ?? [];
 $tabPanels = $tabs['innerBlocks'][1] ?? [];
@@ -108,6 +117,16 @@ $findNamedGroup = static function(array $items, string $wanted) use (&$findNamed
     }
     return null;
 };
+$gatewayGroup = $findNamedGroup($blocks, 'Шлюзовикам');
+$gatewayImage = $findBlock($gatewayGroup['innerBlocks'] ?? [], 'core/image');
+$gatewayId = (int) ($gatewayImage['attrs']['id'] ?? 0);
+$gatewayUrl = $gatewayId ? (string) wp_get_attachment_url($gatewayId) : '';
+$check('Gateway image includes XML', $gatewayId > 0
+    && basename((string) parse_url($gatewayUrl, PHP_URL_PATH)) === 'partner-gateways-xml-20260924.webp'
+    && get_post_type($gatewayId) === 'attachment'
+    && is_file((string) get_attached_file($gatewayId))
+    && str_contains($gatewayImage['innerHTML'] ?? '', 'XML-шлюза')
+    && !str_contains($gatewayImage['innerHTML'] ?? '', 'partner-gateways-no-xml-20260924.webp'));
 $posGroup = $findNamedGroup($blocks, 'Безналичная оплата');
 $gearGroup = $findNamedGroup($blocks, 'Настройка интерфейса');
 $posImage = $findBlock($posGroup['innerBlocks'] ?? [], 'core/image');
