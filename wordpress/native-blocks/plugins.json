@@ -11,5 +11,11 @@
     "version": "10.2",
     "source": "https://wordpress.org/plugins/wp-seopress/",
     "scope": "Editable SEO title/description, Open Graph/X Cards and Organization JSON-LD; XML sitemaps remain native WordPress"
+  },
+  {
+    "slug": "wp-super-cache",
+    "version": "3.1.3",
+    "source": "https://wordpress.org/plugins/wp-super-cache/",
+    "scope": "Generated-page cache for anonymous visitors; page, template and global-style edits remain editable in WordPress"
   }
 ]

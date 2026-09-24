@@ -18,7 +18,7 @@ if ($mode === 'check-source') {
     $snapshot = $read($argv[2]);
     if ($snapshot['wordpress'] !== '7.1.1' || $snapshot['theme'] !== 'twentytwentyfive' || $snapshot['themeVersion'] !== '1.5'
         || $snapshot['prefix'] !== 'wp_' || $snapshot['sourceUrl'] !== 'http://31.129.98.28'
-        || $snapshot['plugins'] !== ['carousel-block/plugin.php'=>'2.1.5', 'wp-seopress/seopress.php'=>'10.2']) { $fail('Unexpected source versions/settings; review before packaging'); }
+        || $snapshot['plugins'] !== ['carousel-block/plugin.php'=>'2.1.5', 'wp-seopress/seopress.php'=>'10.2', 'wp-super-cache/wp-cache.php'=>'3.1.3']) { $fail('Unexpected source versions/settings; review before packaging'); }
     exit;
 }
 if ($mode === 'scan') { $scan(realpath($argv[2])); exit; }

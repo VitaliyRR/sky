@@ -28,7 +28,7 @@ trap cleanup EXIT
 php -r 'exit(class_exists("ZipArchive") ? 0 : 1);'
 [[ "$(wp --allow-root --path="$SOURCE" core version)" == 7.1.1 ]]
 wp --allow-root --path="$SOURCE" core verify-checksums --version=7.1.1 --locale=en_US
-wp --allow-root --path="$SOURCE" plugin verify-checksums carousel-block wp-seopress
+wp --allow-root --path="$SOURCE" plugin verify-checksums carousel-block wp-seopress wp-super-cache
 [[ -z "$(find "$SOURCE/wp-content/uploads" -type l -print -quit)" ]]
 [[ -z "$(find "$SOURCE/wp-content/uploads" -type f | grep -Ei '\.(php[0-9]?|phtml|phar|sql|log|zip|gz|pem|key|env|bak)$' || true)" ]]
 mkdir -p /opt/skysend-packages
@@ -47,7 +47,7 @@ for filename in index.php license.txt readme.html wp-activate.php wp-blog-header
 done
 cp -a "$SOURCE/wp-content/index.php" "$SITE/wp-content/"
 cp -a "$SOURCE/wp-content/themes/twentytwentyfive" "$SITE/wp-content/themes/"
-cp -a "$SOURCE/wp-content/plugins/carousel-block" "$SOURCE/wp-content/plugins/wp-seopress" "$SITE/wp-content/plugins/"
+cp -a "$SOURCE/wp-content/plugins/carousel-block" "$SOURCE/wp-content/plugins/wp-seopress" "$SOURCE/wp-content/plugins/wp-super-cache" "$SITE/wp-content/plugins/"
 cp -a "$SOURCE/wp-content/uploads" "$SITE/wp-content/"
 if [[ -d "$SOURCE/wp-content/languages" ]]; then cp -a "$SOURCE/wp-content/languages" "$SITE/wp-content/"; fi
 cp -a "$SOURCE/.htaccess" "$SOURCE/robots.txt" "$SITE/"
@@ -88,7 +88,7 @@ wp --allow-root --path="$SITE" db reset --yes
 wp --allow-root --path="$SITE" db import "$PAYLOAD/database.sql"
 wp --allow-root --path="$SITE" db check
 wp --allow-root --path="$SITE" core verify-checksums --version=7.1.1 --locale=en_US
-wp --allow-root --path="$SITE" plugin verify-checksums carousel-block wp-seopress
+wp --allow-root --path="$SITE" plugin verify-checksums carousel-block wp-seopress wp-super-cache
 wp --allow-root --path="$SITE" --skip-plugins --skip-themes eval-file "$TOOLS/package-snapshot.php" > "$WORK/restored.json"
 wp --allow-root --path="$SOURCE" --skip-plugins --skip-themes eval-file "$TOOLS/package-snapshot.php" > "$WORK/source-after.json"
 php "$TOOLS/package-archive.php" compare "$WORK/source-before.json" "$WORK/restored.json" "$WORK/source-after.json"

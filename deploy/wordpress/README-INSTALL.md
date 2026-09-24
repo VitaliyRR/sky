@@ -7,7 +7,8 @@
 В пакете:
 
 - `site/` — ядро WordPress 7.1.1, медиатека, русские переводы, активная тема
-  Twenty Twenty-Five 1.5, Carousel Slider Block 2.1.5 и SEOPress Free 10.2;
+  Twenty Twenty-Five 1.5, Carousel Slider Block 2.1.5, SEOPress Free 10.2
+  и WP Super Cache 3.1.3;
 - `database.sql` — актуальная база сайта: страницы и ревизии, изображения,
   шапка, футер, меню, шаблоны, стили, SEO и настройки плагинов;
 - `robots-production.txt` — robots для `https://skysend.ru`;
@@ -22,8 +23,10 @@
 Ключ IndexNow исходной ВМ также очищен, автоматическая отправка IndexNow отключена;
 при необходимости компания включит её со своим ключом после публикации.
 Администратор задаёт новый пароль после импорта. Пользователи/авторство сохранены.
-Неактивная старая тема SkySend, кеши, drop-ins, логи и серверные конфигурации Ubuntu
-не включены: функциональный сайт полный, резервная копия ОС — нет.
+Неактивная старая тема SkySend, готовые файлы кеша, cache drop-ins, логи и серверные
+конфигурации Ubuntu не включены: функциональный сайт полный, резервная копия ОС — нет.
+Страничный кеш активируется на целевом сервере **после** смены URL и проверки сайта,
+чтобы в него не попали адреса исходной ВМ.
 
 Архив и SQL конфиденциальны: база содержит учётки, email, черновики и историю.
 Передавать адресно закрытым каналом. Не выкладывать в публичный каталог, GitHub
@@ -235,13 +238,13 @@ wp --path="$DOCROOT" core version
 wp --path="$DOCROOT" core verify-checksums --version=7.1.1 --locale=en_US
 wp --path="$DOCROOT" theme list
 wp --path="$DOCROOT" plugin list
-wp --path="$DOCROOT" plugin verify-checksums carousel-block wp-seopress
+wp --path="$DOCROOT" plugin verify-checksums carousel-block wp-seopress wp-super-cache
 wp --path="$DOCROOT" option get page_on_front
 wp --path="$DOCROOT" option get stylesheet
 ```
 
-Ожидается ядро 7.1.1, активная Twenty Twenty-Five 1.5, два активных плагина:
-`carousel-block` 2.1.5 и `wp-seopress` 10.2; главная **67**, stylesheet
+Ожидается ядро 7.1.1, активная Twenty Twenty-Five 1.5, три активных плагина:
+`carousel-block` 2.1.5, `wp-seopress` 10.2 и `wp-super-cache` 3.1.3; главная **67**, stylesheet
 **twentytwentyfive**. Ядро en_US, язык интерфейса ru_RU — это штатный вариант.
 MU-плагинов и CSS в Customizer нет. Единое голубое состояние наведения для кнопок и
 вкладок находится в штатных Global Styles WordPress (раздел CSS редактора сайта).
@@ -261,7 +264,8 @@ SEO-плагин. Не повторять первоначальную наст�
 ## 8. Права и безопасность только для SkySend
 
 Администратор назначает владельца и группу **только нового `$DOCROOT`**:
-PHP должен читать `wp-config.php` и сайт, писать в `wp-content/uploads`;
+PHP должен читать `wp-config.php` и сайт, писать в `wp-content/uploads` и
+**только внутри** `wp-content/cache` после включения страничного кеша;
 core/plugins/themes не должны быть доступны на запись другим сайтам.
 Предпочтительно отдельный системный пользователь/PHP-FPM-пул SkySend.
 Не применять Ubuntu-пользователя `www-data` вслепую, `chmod 777` или рекурсивный
@@ -338,6 +342,51 @@ curl --resolve skysend.ru:443:NEW_FRONT_IP https://skysend.ru/
 
 Сохранение пробной правки проверять на черновике/ревизии и возвращать утверждённый
 контент. Проверка файла/SQL внутри пакета не заменяет эти проверки на целевом jail.
+
+### Включить кеш готовых страниц после проверки сайта
+
+Плагин WP Super Cache находится в пакете, но кеш-файлы, `advanced-cache.php` и
+`wp-cache-config.php` намеренно не переносятся: они зависят от пути и домена.
+После корректной замены URL и проверки сайта администратор должен выделить
+**только SkySend** отдельный каталог `$DOCROOT/wp-content/cache`, доступный на запись
+PHP-пользователю этого сайта. Не открывать на запись весь `wp-content` или общий jail.
+Определить фактического PHP-пользователя и проверить права `wp-config.php`:
+он должен быть читаем этим пользователем. При использовании WP-CLI от root
+файл конфигурации может сменить группу на `root`; после команд вернуть группу
+по политике сайта. Сначала сделайте снимок БД и `wp-config.php` в закрытом месте.
+
+Ниже `wp` запускается от пользователя сайта. Если используется root, добавить
+`--allow-root`. Реактивация создаёт конфигурацию кеша **на целевом сервере**:
+
+```sh
+wp --path="$DOCROOT" plugin deactivate wp-super-cache
+wp --path="$DOCROOT" plugin activate wp-super-cache
+wp --path="$DOCROOT" config get WP_CACHE
+wp --path="$DOCROOT" eval 'wp_cache_setting("wp_cache_clear_on_post_edit", 1); wp_cache_setting("wp_cache_not_logged_in", 2); wp_cache_setting("wp_cache_no_cache_for_get", 1); wp_cache_setting("cache_max_time", 1800); wp_cache_enable();'
+```
+
+`WP_CACHE` должен вернуть `true` или `1`. Если константа не создана при активации,
+администратор задаёт её через `wp config set WP_CACHE true --raw` и снова проверяет
+чтение `wp-config.php` PHP-пользователем. Кеш должен храниться только в новом
+`$DOCROOT/wp-content/cache`; все вложенные каталоги, созданные WP-CLI от root,
+нужно передать PHP-пользователю **в пределах именно этого каталога**.
+
+Проверить анонимную главную **дважды**: оба ответа HTTP 200, второй быстрее;
+в HTML второго ответа есть метка `Cached page generated by WP-Super-Cache`.
+Карусели, категории провайдеров, SEO-теги и ссылки должны быть на месте.
+Запросы с авторизацией, `/wp-admin/`, предпросмотр и XML-карта не должны получать
+публичную кеш-копию. После сохранения страницы 67, шапки/футера или стилей
+убедиться, что кеш очищается. После ручной смены домена, SEO-настроек или
+медиафайлов очистить его явно:
+
+```sh
+wp --path="$DOCROOT" eval 'wp_cache_clear_cache();'
+```
+
+Холодный запрос всё ещё выполняет WordPress; кеш ускоряет повторные анонимные
+просмотры. Если активация привела к HTTP 500, сразу отключить плагин через
+WP-CLI, проверить права `wp-config.php` и журнал PHP. Не сравнивать время 500 с
+временем рабочей страницы.
 
 ## 11. robots, индексация, DNS и итоговая проверка
 
