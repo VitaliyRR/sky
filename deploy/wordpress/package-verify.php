@@ -48,7 +48,8 @@ $check('Providers: native list and nine panels', ($tabList['blockName'] ?? '') =
 $carousels = array_map(static fn($panel) => $panel['innerBlocks'][0] ?? [], $tabPanels['innerBlocks'] ?? []);
 $check('Providers: two navigable pages per category', count($carousels) === 9 && !array_filter($carousels, static fn($item) =>
     ($item['blockName'] ?? '') !== 'cb/carousel-v2' || count($item['innerBlocks'] ?? []) !== 2
-    || !($item['attrs']['navigation'] ?? false) || !($item['attrs']['pagination'] ?? false)));
+    // True is the block's built-in default, so Gutenberg omits these attributes.
+    || !($item['attrs']['navigation'] ?? true) || !($item['attrs']['pagination'] ?? true)));
 $providerImageIds = [];
 $collectImages = static function(array $items) use (&$collectImages, &$providerImageIds): void {
     foreach ($items as $item) {
