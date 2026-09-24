@@ -9,7 +9,7 @@ $check('Front page 67', get_option('show_on_front') === 'page' && (int) get_opti
 $check('Administrator available', (bool) get_user_by('login', 'skysend_admin'));
 $check('Sessions and app passwords cleared', !(int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->usermeta} WHERE meta_key IN ('session_tokens','_application_passwords')"));
 $check('Reset keys cleared', !(int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->users} WHERE user_activation_key<>''"));
-$check('No custom CSS/MU plugins', wp_get_custom_css() === '' && count(wp_get_mu_plugins()) === 0);
+$check('No Customizer CSS/MU plugins', wp_get_custom_css() === '' && count(wp_get_mu_plugins()) === 0);
 $blocks = parse_blocks(get_post_field('post_content', 67));
 $queue = $blocks; $count = 0; $unregistered = []; $custom = [];
 while ($queue) {

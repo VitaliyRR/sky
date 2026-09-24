@@ -129,6 +129,15 @@
             "left": "20px",
             "right": "20px"
           }
+        },
+        ":hover": {
+          "color": {
+            "background": "#8ed0ff",
+            "text": "#071426"
+          },
+          "border": {
+            "color": "#8ed0ff"
+          }
         }
       }
     },
@@ -143,6 +152,7 @@
           "fontSize": "14px"
         }
       }
-    }
+    },
+    "css": ".wp-block-button__link:hover, .wp-block-button__link:focus-visible, .wp-block-tab-list button:hover, .wp-block-tab-list button:focus-visible { background-color: #8ed0ff !important; border-color: #8ed0ff !important; color: #071426 !important; transition: background-color .18s ease, border-color .18s ease, color .18s ease; }"
   }
 }
