@@ -8,7 +8,9 @@ $dry_run = in_array( 'dry-run', $args, true );
 if ( ! $base || ! is_dir( $base ) ) {
     WP_CLI::error( 'Usage: wp eval-file apply-revision-20260924c.php OUTPUT_DIR [dry-run]' );
 }
-$manifest = json_decode( file_get_contents( $base . '/manifest.json' ), true );
+$manifest_file = is_readable( $base . '/revision-manifest-20260924c.json' )
+    ? $base . '/revision-manifest-20260924c.json' : $base . '/manifest.json';
+$manifest = is_readable( $manifest_file ) ? json_decode( file_get_contents( $manifest_file ), true ) : null;
 if ( ! is_array( $manifest ) || ( $manifest['revision'] ?? '' ) !== '2026-09-24c' ||
     (int) ( $manifest['categories'] ?? 0 ) !== 10 || (int) ( $manifest['providers'] ?? 0 ) !== 279 ) {
     WP_CLI::error( 'Invalid revision manifest' );
