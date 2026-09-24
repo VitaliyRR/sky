@@ -1,0 +1,2050 @@
+{
+  "source": "Original SkySend provider catalogue",
+  "sourcePage": "https://skysend.ru/about/providers.html",
+  "sourceEndpoint": "https://skysend.ru/providers.php",
+  "retrievedOn": "2026-09-24",
+  "status": "Historical catalogue excerpt. Listing a service here does not confirm that its payment is currently available; confirm active services with SkySend before advertising current acceptance.",
+  "sourceUniqueLogoCount": 534,
+  "selectedCount": 279,
+  "retainedFromPreviousSelection": 108,
+  "newSelectedCount": 171,
+  "selection": "All former 108 provider IDs retained. Added source catalogue items from communication, television, banking, games, government payments and services; no names or logos invented. Limited large groups to a readable excerpt.",
+  "categories": [
+    {
+      "title": "Связь и интернет",
+      "originalGroups": [
+        "Сотовая связь",
+        "Интернет"
+      ],
+      "items": [
+        {
+          "id": 359,
+          "name": "МТС Оплата по лицевому счёту",
+          "originalGroup": "Сотовая связь",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=359",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/mts.png"
+        },
+        {
+          "id": 1134,
+          "name": "Win Mobile (К-телеком)",
+          "originalGroup": "Сотовая связь",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1134",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/win-mobile.png"
+        },
+        {
+          "id": 8450,
+          "name": "КМВТелеком",
+          "originalGroup": "Сотовая связь",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8450",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/kmvtelecom.png"
+        },
+        {
+          "id": 956,
+          "name": "Вайнах Телеком. Интернет",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=956",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-956.png"
+        },
+        {
+          "id": 914,
+          "name": "Эрлайн",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=914",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/rline.png"
+        },
+        {
+          "id": 6232,
+          "name": "BelNet (Крым)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6232",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-6232.png"
+        },
+        {
+          "id": 9126,
+          "name": "ITSNET",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9126",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9126.png"
+        },
+        {
+          "id": 6435,
+          "name": "Optilink. Ореховские телекоммуникационные услуги. (Крым)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6435",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6435.png"
+        },
+        {
+          "id": 9253,
+          "name": "sipnet",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9253",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sipnet.png"
+        },
+        {
+          "id": 3286,
+          "name": "SuperSky Крым",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=3286",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3286.png"
+        },
+        {
+          "id": 24,
+          "name": "Вист он Лайн. Volgaspot",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=24",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-24.png"
+        },
+        {
+          "id": 6902,
+          "name": "Город-ТВ. Первое цифровое телевидение Ставрополь",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6902",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6902.png"
+        },
+        {
+          "id": 9640,
+          "name": "Даймохк Телеком",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9640",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9640.png"
+        },
+        {
+          "id": 4074,
+          "name": "ДОМ.RU",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4074",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/domru.png"
+        },
+        {
+          "id": 6871,
+          "name": "Зеленая точка (Невинномысск)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6871",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/zelenaya-tochka.png"
+        },
+        {
+          "id": 7590,
+          "name": "Зеленая точка Ставрополь",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7590",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7590.png"
+        },
+        {
+          "id": 6397,
+          "name": "Крыминфоком (Крым)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6397",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6397.png"
+        },
+        {
+          "id": 1082,
+          "name": "МТС. Домашний интернет, телефония 11 или 13 знаков",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1082",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1082.png"
+        },
+        {
+          "id": 9315,
+          "name": "МТС. Домашний интернет, телефония 12-значный",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9315",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9315.png"
+        },
+        {
+          "id": 3319,
+          "name": "Оргтехсервис",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=3319",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-3319.png"
+        },
+        {
+          "id": 2250,
+          "name": "Ридлан (Интернет). Крым",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2250",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan.png"
+        },
+        {
+          "id": 2249,
+          "name": "Ридлан (Телевидение). Крым",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2249",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/reedlan-tv.png"
+        },
+        {
+          "id": 9426,
+          "name": "Твинго Телеком RT",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9426",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9426.png"
+        },
+        {
+          "id": 813,
+          "name": "ТЕЛКО-интернет",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=813",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-813.png"
+        },
+        {
+          "id": 812,
+          "name": "ТЕЛКО-телефон",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=812",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-812.png"
+        },
+        {
+          "id": 6404,
+          "name": "Тонус ТРК. Ваш провайдер - ИНТЕРНЕТ (Крым)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6404",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6404.png"
+        },
+        {
+          "id": 7330,
+          "name": "ТЦ Электрон (Интернет)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7330",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7330.png"
+        },
+        {
+          "id": 7331,
+          "name": "ТЦ Электрон (Кабельное ТВ)",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7331",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/elektron-tv.png"
+        },
+        {
+          "id": 713,
+          "name": "Формула Связи",
+          "originalGroup": "Интернет",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=713",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-713.png"
+        }
+      ]
+    },
+    {
+      "title": "Телевидение",
+      "originalGroups": [
+        "Кабельное ТВ"
+      ],
+      "items": [
+        {
+          "id": 7,
+          "name": "НТВ-Плюс",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/ntv-plus.png"
+        },
+        {
+          "id": 6581,
+          "name": "Билайн ТВ",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6581",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/beeline-tv.png"
+        },
+        {
+          "id": 4323,
+          "name": "Город-ТВ. Первое цифровое телевидение Ставрополь",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4323",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gorod-tv.png"
+        },
+        {
+          "id": 9790,
+          "name": "Триколор Premier (месяц)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9790",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9790.png"
+        },
+        {
+          "id": 9788,
+          "name": "Триколор Ultra (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9788",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9788.png"
+        },
+        {
+          "id": 9783,
+          "name": "Триколор Взрослый (3 месяца)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9783",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9783.png"
+        },
+        {
+          "id": 9781,
+          "name": "Триколор Взрослый (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9781",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9781.png"
+        },
+        {
+          "id": 9782,
+          "name": "Триколор Взрослый (месяц)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9782",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9782.png"
+        },
+        {
+          "id": 9784,
+          "name": "Триколор Детский (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9784",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9784.png"
+        },
+        {
+          "id": 9785,
+          "name": "Триколор Детский (месяц)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9785",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9785.png"
+        },
+        {
+          "id": 9797,
+          "name": "Триколор Добавь Кино (месяц)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9797",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9797.png"
+        },
+        {
+          "id": 9791,
+          "name": "Триколор Добавь Кино и 4К (месяц)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9791",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9791.png"
+        },
+        {
+          "id": 9786,
+          "name": "Триколор Единый / Единый Онлайн (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9786",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9786.png"
+        },
+        {
+          "id": 9789,
+          "name": "Триколор Единый Ultra / Единый Ultra Онлайн (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9789",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9789.png"
+        },
+        {
+          "id": 9796,
+          "name": "Триколор Единый Мульти / Экстра (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9796",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9796.png"
+        },
+        {
+          "id": 9794,
+          "name": "Триколор Максимум (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9794",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9794.png"
+        },
+        {
+          "id": 9787,
+          "name": "Триколор Мультирум (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9787",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9787.png"
+        },
+        {
+          "id": 258,
+          "name": "Триколор Пополнить лицевой счет",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=258",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tricolor.png"
+        },
+        {
+          "id": 9795,
+          "name": "Триколор Премиум (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9795",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9795.png"
+        },
+        {
+          "id": 9798,
+          "name": "Триколор Спутниковый интернет",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9798",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9798.png"
+        },
+        {
+          "id": 9793,
+          "name": "Триколор Супер Ultra Взрослый (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9793",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9793.png"
+        },
+        {
+          "id": 9792,
+          "name": "Триколор Супер Ultra Детский (год)",
+          "originalGroup": "Кабельное ТВ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9792",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9792.png"
+        }
+      ]
+    },
+    {
+      "title": "Банки и кошельки",
+      "originalGroups": [
+        "Кошельки",
+        "Банки и кредиты"
+      ],
+      "items": [
+        {
+          "id": 144,
+          "name": "МОНЕТА.РУ",
+          "originalGroup": "Кошельки",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=144",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-144.png"
+        },
+        {
+          "id": 274,
+          "name": "Он-Лайн Партнер",
+          "originalGroup": "Кошельки",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=274",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-274.png"
+        },
+        {
+          "id": 631,
+          "name": "Сбербанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=631",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sberbank.png"
+        },
+        {
+          "id": 241,
+          "name": "Т-Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=241",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/t-bank.png"
+        },
+        {
+          "id": 9858,
+          "name": "Озон Банк (Ozon)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9858",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9858.png"
+        },
+        {
+          "id": 168,
+          "name": "Альфа-Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=168",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/alfa-bank.png"
+        },
+        {
+          "id": 191,
+          "name": "Банк ВТБ Северо-Запад",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=191",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vtb.png"
+        },
+        {
+          "id": 232,
+          "name": "Россельхозбанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=232",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/rosselkhozbank.png"
+        },
+        {
+          "id": 226,
+          "name": "ОТП Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=226",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/otp-bank.png"
+        },
+        {
+          "id": 1098,
+          "name": "Совкомбанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1098",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/sovcombank.png"
+        },
+        {
+          "id": 9849,
+          "name": "Wildberries (Вайлдберриз Банк) WB",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9849",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9849.png"
+        },
+        {
+          "id": 2776,
+          "name": "ГАЗПРОМБАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2776",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2776.png"
+        },
+        {
+          "id": 4007,
+          "name": "МТС-Банк.",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4007",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4007.png"
+        },
+        {
+          "id": 180,
+          "name": "Промсвязьбанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=180",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-180.png"
+        },
+        {
+          "id": 209,
+          "name": "Райффайзенбанк (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=209",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-209.png"
+        },
+        {
+          "id": 175,
+          "name": "Абсолют Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=175",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-175.png"
+        },
+        {
+          "id": 176,
+          "name": "Авангард",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=176",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-176.png"
+        },
+        {
+          "id": 2617,
+          "name": "АВЕРС (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2617",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2617.png"
+        },
+        {
+          "id": 2621,
+          "name": "АВТОТОРГБАНК (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2621",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2621.png"
+        },
+        {
+          "id": 178,
+          "name": "Агропромкредит",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=178",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-178.png"
+        },
+        {
+          "id": 2623,
+          "name": "АГРОРОС (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2623",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2623.png"
+        },
+        {
+          "id": 661,
+          "name": "Азиатско-Тихоокеанский банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=661",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-661.png"
+        },
+        {
+          "id": 179,
+          "name": "АК Барс Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=179",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-179.png"
+        },
+        {
+          "id": 2629,
+          "name": "АКИБАНК (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2629",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2629.png"
+        },
+        {
+          "id": 2667,
+          "name": "АКЦЕПТ (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2667",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2667.png"
+        },
+        {
+          "id": 187,
+          "name": "Акционерный Банк РОССИЯ",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=187",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-187.png"
+        },
+        {
+          "id": 2669,
+          "name": "АЛЕКСАНДРОВСКИЙ (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2669",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2669.png"
+        },
+        {
+          "id": 2670,
+          "name": "АЛЕФ-БАНК (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2670",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2670.png"
+        },
+        {
+          "id": 2672,
+          "name": "АЛМАЗЭРГИЭНБАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2672",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2672.png"
+        },
+        {
+          "id": 2684,
+          "name": "АРЕСБАНК (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2684",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2684.png"
+        },
+        {
+          "id": 193,
+          "name": "Банк ЗЕНИТ",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=193",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-193.png"
+        },
+        {
+          "id": 946,
+          "name": "Банк Интеза",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=946",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-946.png"
+        },
+        {
+          "id": 2704,
+          "name": "БАНК КАЗАНИ (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2704",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2704.png"
+        },
+        {
+          "id": 2710,
+          "name": "БАНК ОРЕНБУРГ (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2710",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2710.png"
+        },
+        {
+          "id": 2715,
+          "name": "БАНК РАУНД (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2715",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2715.png"
+        },
+        {
+          "id": 948,
+          "name": "Банк Ресо Кредит",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=948",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-948.png"
+        },
+        {
+          "id": 194,
+          "name": "Банк Русский Стандарт (по номеру договора, онлайн)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=194",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-194.png"
+        },
+        {
+          "id": 195,
+          "name": "Банк Санкт-Петербург",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=195",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-195.png"
+        },
+        {
+          "id": 2718,
+          "name": "БАНК СГБ (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2718",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2718.png"
+        },
+        {
+          "id": 2720,
+          "name": "БАНК ФИНАМ (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2720",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2720.png"
+        },
+        {
+          "id": 2727,
+          "name": "БЕЛГОРОДСОЦБАНК (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2727",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2727.png"
+        },
+        {
+          "id": 2744,
+          "name": "БЫСТРОБАНК (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2744",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2744.png"
+        },
+        {
+          "id": 3145,
+          "name": "ВБРР Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=3145",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-3145.png"
+        },
+        {
+          "id": 2750,
+          "name": "ВЕНЕЦ (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2750",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2750.png"
+        },
+        {
+          "id": 2759,
+          "name": "ВЛАДБИЗНЕСБАНК (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2759",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2759.png"
+        },
+        {
+          "id": 2762,
+          "name": "ВНЕШФИНБАНК (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2762",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2762.png"
+        },
+        {
+          "id": 2778,
+          "name": "ГАЗТРАНСБАНК (ГТ Банк)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2778",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2778.png"
+        },
+        {
+          "id": 2779,
+          "name": "ГАЗЭНЕРГОБАНК (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2779",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2779.png"
+        },
+        {
+          "id": 2782,
+          "name": "ГЕНБАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2782",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2782.png"
+        },
+        {
+          "id": 2787,
+          "name": "ГОРБАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2787",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2787.png"
+        },
+        {
+          "id": 2794,
+          "name": "ДАЛЬНЕВОСТОЧНЫЙ БАНК (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2794",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2794.png"
+        },
+        {
+          "id": 6773,
+          "name": "Датабанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6773",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6773.png"
+        },
+        {
+          "id": 2798,
+          "name": "ДЕРЖАВА (ПАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2798",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2798.png"
+        },
+        {
+          "id": 2805,
+          "name": "ДОМ.РФ Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2805",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2805.png"
+        },
+        {
+          "id": 2823,
+          "name": "ЕКАТЕРИНБУРГ (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2823",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2823.png"
+        },
+        {
+          "id": 2826,
+          "name": "ЕНИСЕЙСКИЙ ОБЪЕДИНЕННЫЙ БАНК (ЗАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2826",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2826.png"
+        },
+        {
+          "id": 2830,
+          "name": "ЗАРЕЧЬЕ (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2830",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2830.png"
+        },
+        {
+          "id": 2833,
+          "name": "ЗЕМСКИЙ БАНК (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2833",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2833.png"
+        },
+        {
+          "id": 2840,
+          "name": "ИК БАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2840",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2840.png"
+        },
+        {
+          "id": 2862,
+          "name": "ИТУРУП (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2862",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2862.png"
+        },
+        {
+          "id": 2863,
+          "name": "ИШБАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2863",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2863.png"
+        },
+        {
+          "id": 953,
+          "name": "КБ Локо-Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=953",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-953.png"
+        },
+        {
+          "id": 211,
+          "name": "КБ Москоммерцбанк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=211",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-211.png"
+        },
+        {
+          "id": 2889,
+          "name": "КОШЕЛЕВ-БАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2889",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2889.png"
+        },
+        {
+          "id": 216,
+          "name": "Кредит Европа Банк (Россия)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=216",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-216.png"
+        },
+        {
+          "id": 2892,
+          "name": "КРЕДИТ УРАЛ БАНК (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2892",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2892.png"
+        },
+        {
+          "id": 2898,
+          "name": "КРЕМЛЕВСКИЙ (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2898",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2898.png"
+        },
+        {
+          "id": 2938,
+          "name": "МЕЖДУНАРОДНЫЙ ФИНАНСОВЫЙ КЛУБ (ОАО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2938",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2938.png"
+        },
+        {
+          "id": 2969,
+          "name": "МКБ (Московский кредитный банк)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2969",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2969.png"
+        },
+        {
+          "id": 944,
+          "name": "Ренессанс Кредит Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=944",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-944.png"
+        },
+        {
+          "id": 3105,
+          "name": "РОСТФИНАНС (ООО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=3105",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3105.png"
+        },
+        {
+          "id": 3251,
+          "name": "ЦЕНТРОКРЕДИТ (АО)",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=3251",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-3251.png"
+        },
+        {
+          "id": 250,
+          "name": "ЮниКредит Банк",
+          "originalGroup": "Банки и кредиты",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=250",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-250.png"
+        }
+      ]
+    },
+    {
+      "title": "Игры",
+      "originalGroups": [
+        "Игры"
+      ],
+      "items": [
+        {
+          "id": 4755,
+          "name": "ArcheAge Mail.ru.",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4755",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/archeage.png"
+        },
+        {
+          "id": 4733,
+          "name": "Bloody World Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4733",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4733.png"
+        },
+        {
+          "id": 4757,
+          "name": "Cross Fire Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4757",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4757.png"
+        },
+        {
+          "id": 4814,
+          "name": "Ground War: Tanks Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4814",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4814.png"
+        },
+        {
+          "id": 4782,
+          "name": "Jade Dynasty Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4782",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4782.png"
+        },
+        {
+          "id": 4730,
+          "name": "Jade Dynasty Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4730",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-4730.png"
+        },
+        {
+          "id": 4729,
+          "name": "Perfect World Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4729",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/perfect-world.png"
+        },
+        {
+          "id": 7499,
+          "name": "Revelation Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7499",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7499.png"
+        },
+        {
+          "id": 4675,
+          "name": "Warface. Mail.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4675",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/warface.png"
+        },
+        {
+          "id": 252,
+          "name": "Xsolla",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=252",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/xsolla.png"
+        },
+        {
+          "id": 1341,
+          "name": "Xsolla. 101XP.com",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1341",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1341.png"
+        },
+        {
+          "id": 503,
+          "name": "Xsolla. 11x11",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=503",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-503.png"
+        },
+        {
+          "id": 1035,
+          "name": "Xsolla. 9 Драконов",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1035",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1035.png"
+        },
+        {
+          "id": 536,
+          "name": "Xsolla. Arena",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=536",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-536.png"
+        },
+        {
+          "id": 910,
+          "name": "Xsolla. AtomFishing Возвращение",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=910",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-910.png"
+        },
+        {
+          "id": 911,
+          "name": "Xsolla. AtomFishing Экстрим",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=911",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-911.png"
+        },
+        {
+          "id": 541,
+          "name": "Xsolla. BananaWars",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=541",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-541.png"
+        },
+        {
+          "id": 589,
+          "name": "Xsolla. Encounter",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=589",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-589.png"
+        },
+        {
+          "id": 1025,
+          "name": "Xsolla. Fantastic Fishing",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1025",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1025.png"
+        },
+        {
+          "id": 504,
+          "name": "Xsolla. Gladiators",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=504",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-504.png"
+        },
+        {
+          "id": 509,
+          "name": "Xsolla. Haddan",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=509",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-509.png"
+        },
+        {
+          "id": 2643,
+          "name": "Xsolla. Lost Magic",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2643",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2643.png"
+        },
+        {
+          "id": 477,
+          "name": "Xsolla. My Lands: Black Gem Hunting",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=477",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-477.png"
+        },
+        {
+          "id": 494,
+          "name": "Xsolla. Neverlands",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=494",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-494.png"
+        },
+        {
+          "id": 1026,
+          "name": "Xsolla. PANZAR.RU",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1026",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1026.png"
+        },
+        {
+          "id": 498,
+          "name": "Xsolla. Sky2Fly",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=498",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-498.png"
+        },
+        {
+          "id": 485,
+          "name": "Xsolla. spases.ru",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=485",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-485.png"
+        },
+        {
+          "id": 2634,
+          "name": "Xsolla. Stalker Online",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2634",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2634.png"
+        },
+        {
+          "id": 500,
+          "name": "Xsolla. UNIT",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=500",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-500.png"
+        },
+        {
+          "id": 876,
+          "name": "Xsolla. War Thunder",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=876",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-876.png"
+        },
+        {
+          "id": 587,
+          "name": "Xsolla. XNOVA 2.0",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=587",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-587.png"
+        },
+        {
+          "id": 550,
+          "name": "Xsolla. Z-WAR",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=550",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-550.png"
+        },
+        {
+          "id": 2604,
+          "name": "Xsolla. Битва Титанов",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2604",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2604.png"
+        },
+        {
+          "id": 483,
+          "name": "Xsolla. Варвары",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=483",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-483.png"
+        },
+        {
+          "id": 476,
+          "name": "Xsolla. Викинги",
+          "originalGroup": "Игры",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=476",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-476.png"
+        }
+      ]
+    },
+    {
+      "title": "Социальные сети",
+      "originalGroups": [
+        "Социальные сети"
+      ],
+      "items": [
+        {
+          "id": 4816,
+          "name": "Одноклассники. Купить ОКи",
+          "originalGroup": "Социальные сети",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4816",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/ok.png"
+        },
+        {
+          "id": 4819,
+          "name": "Вконтакте",
+          "originalGroup": "Социальные сети",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4819",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vk.png"
+        },
+        {
+          "id": 1074,
+          "name": "Галактика знакомств. Galaxy",
+          "originalGroup": "Социальные сети",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1074",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1074.png"
+        },
+        {
+          "id": 4820,
+          "name": "Мой Мир",
+          "originalGroup": "Социальные сети",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4820",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/my-world.png"
+        }
+      ]
+    },
+    {
+      "title": "ЖКХ",
+      "originalGroups": [
+        "ЖКХ"
+      ],
+      "items": [
+        {
+          "id": 9416,
+          "name": "Волгоградэнергосбыт ПАО",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9416",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/volgogradenergosbyt.png"
+        },
+        {
+          "id": 1152,
+          "name": "ГарантСтрой-Юг УК",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1152",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/garantstroy-yug.png"
+        },
+        {
+          "id": 1148,
+          "name": "Градострой ООО",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1148",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gradostroy.png"
+        },
+        {
+          "id": 8270,
+          "name": "Детский сад с. Фрунзе \"Сказка\"",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8270",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8270.png"
+        },
+        {
+          "id": 8271,
+          "name": "Крымская Водная Компания ООО (Первомайский район)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8271",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/crimea-water.png"
+        },
+        {
+          "id": 8325,
+          "name": "Крымская Водная Компания ООО (Раздольненский район)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8325",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8325.png"
+        },
+        {
+          "id": 8257,
+          "name": "Крымская Водная Компания ООО (Сакский район)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8257",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8257.png"
+        },
+        {
+          "id": 678,
+          "name": "Лорис ТСЖ",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=678",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-678.png"
+        },
+        {
+          "id": 8652,
+          "name": "ООО \"УК N 99\" оплата ЖКУ (ИНН 2623804155)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8652",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8652.png"
+        },
+        {
+          "id": 8640,
+          "name": "Оплата ЖКУ по ИНН (ГИС ЖКХ)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8640",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/gis-zhkh.png"
+        },
+        {
+          "id": 9362,
+          "name": "Расчеты пайщика с СКПК Черкасофф сбережения",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9362",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9362.png"
+        },
+        {
+          "id": 253,
+          "name": "ТНС энерго Кубань (Ранее Кубаньэнергосбыт)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=253",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tns-energo.png"
+        },
+        {
+          "id": 1160,
+          "name": "УК \"Управдом\" ООО",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1160",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/upravdom.png"
+        },
+        {
+          "id": 1164,
+          "name": "УК Екатеринодар",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1164",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1164.png"
+        },
+        {
+          "id": 1229,
+          "name": "УО \"Адмирал\"",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1229",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1229.png"
+        },
+        {
+          "id": 1159,
+          "name": "Управляющая компания ООО",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1159",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1159.png"
+        },
+        {
+          "id": 8933,
+          "name": "Цветущий сад СНТ (без запроса суммы)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8933",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8933.png"
+        },
+        {
+          "id": 8739,
+          "name": "Цветущий сад СНТ (запрос суммы)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8739",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8739.png"
+        },
+        {
+          "id": 6688,
+          "name": "Чеченэнерго (АО)",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6688",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6688.png"
+        },
+        {
+          "id": 7750,
+          "name": "Чистый Мир ООО",
+          "originalGroup": "ЖКХ",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7750",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7750.png"
+        }
+      ]
+    },
+    {
+      "title": "Штрафы и пошлины",
+      "originalGroups": [
+        "Штрафы, пошлины"
+      ],
+      "items": [
+        {
+          "id": 9816,
+          "name": "Госпошлина УФК (КБР) Постановка по месту пребывания",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9816",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9816.png"
+        },
+        {
+          "id": 8937,
+          "name": "Госпошлина ГИБДД КЧР",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8937",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8937.png"
+        },
+        {
+          "id": 9288,
+          "name": "Госпошлины ГИБДД. ГУ МВД России по Нижегородской обл.",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9288",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9288.png"
+        },
+        {
+          "id": 9326,
+          "name": "Пошлина ГИБДД Гусь-Хрустальный",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9326",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9326.png"
+        },
+        {
+          "id": 8229,
+          "name": "Госпошлина ГИБДД по Белгородской области",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8229",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8229.png"
+        },
+        {
+          "id": 9814,
+          "name": "Госпошлина УФК (КБР) Продление срока ВП",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9814",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9814.png"
+        },
+        {
+          "id": 9711,
+          "name": "Госпошлина УФК (КБР) ЗП Нов. обр. взрослый",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9711",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9711.png"
+        },
+        {
+          "id": 9322,
+          "name": "Госпошлина за загран.паспорт нового образца - взрослый (г. Краснодар)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9322",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9322.png"
+        },
+        {
+          "id": 8309,
+          "name": "Госпошлина за загран.паспорт нового образца - детский (г. Краснодар)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8309",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8309.png"
+        },
+        {
+          "id": 9710,
+          "name": "Госпошлина УФК (КБР) ЗП Ст. обр. взрослый",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9710",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9710.png"
+        },
+        {
+          "id": 9712,
+          "name": "Госпошлина УФК (КБР) ЗП Ст. обр. детский",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9712",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9712.png"
+        },
+        {
+          "id": 9724,
+          "name": "Госпошлина УФК (КБР) за выдачу паспорта",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9724",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9724.png"
+        },
+        {
+          "id": 9295,
+          "name": "Пошлина ГИБДД Гусь-Хрустальный выдача национального ВУ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9295",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9295.png"
+        },
+        {
+          "id": 4846,
+          "name": "ГИБДД. Штрафы за нарушение ПДД (Онлайн)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=4846",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-4846.png"
+        },
+        {
+          "id": 9717,
+          "name": "Госпошлина УФК (КБР) Гражданство",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9717",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9717.png"
+        },
+        {
+          "id": 9713,
+          "name": "Госпошлина УФК (КБР) ЗП Нов. обр. детский",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9713",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9713.png"
+        },
+        {
+          "id": 9819,
+          "name": "Госпошлина УФК (КБР) Патент",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9819",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9819.png"
+        },
+        {
+          "id": 9718,
+          "name": "Госпошлина УФК (КБР) Приглашение",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9718",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9718.png"
+        },
+        {
+          "id": 9715,
+          "name": "Госпошлина УФК (КБР) РВП",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9715",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9715.png"
+        },
+        {
+          "id": 9604,
+          "name": "Госпошлины ГИБДД по РФ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9604",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9604.png"
+        },
+        {
+          "id": 9669,
+          "name": "Госпошлины и налоги ФНС по РФ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9669",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9669.png"
+        },
+        {
+          "id": 9670,
+          "name": "Госпошлины и штрафы ФМС по РФ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9670",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9670.png"
+        },
+        {
+          "id": 8319,
+          "name": "Государственная регистрация юридических лиц, ИП, хозяйств",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8319",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8319.png"
+        },
+        {
+          "id": 8600,
+          "name": "Государственная регистрация юридических лиц, ИП, хозяйств (по РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8600",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8600.png"
+        },
+        {
+          "id": 8755,
+          "name": "Гражданство РФ (ФМС РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8755",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8755.png"
+        },
+        {
+          "id": 9542,
+          "name": "Земельный налог. ИФНС по Пригородному району по РСО-Алания",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9542",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9542.png"
+        },
+        {
+          "id": 9543,
+          "name": "Имущественный налог. ИФНС по Пригородному району по РСО-Алания",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9543",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9543.png"
+        },
+        {
+          "id": 7063,
+          "name": "НДФЛ. Фиксированные авансовые платежи иностранных граждан",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7063",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7063.png"
+        },
+        {
+          "id": 9291,
+          "name": "Оплата госпошлин по QR-коду. МФЦ Краснодар",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9291",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9291.png"
+        },
+        {
+          "id": 8973,
+          "name": "Оплата государственных пошлин по УИН",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8973",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8973.png"
+        },
+        {
+          "id": 9605,
+          "name": "Оплата налогов ФНС по ИНН налогоплательщика (Квитанция без УИН)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9605",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9605.png"
+        },
+        {
+          "id": 8623,
+          "name": "Оплата налогов ФНС по УИН (индексу документа)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8623",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8623.png"
+        },
+        {
+          "id": 9066,
+          "name": "Оплата пошлин по QR-коду",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9066",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9066.png"
+        },
+        {
+          "id": 9728,
+          "name": "Оплата штрафов по УИН",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9728",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9728.png"
+        },
+        {
+          "id": 8759,
+          "name": "Патент для работы иностранного гражданина (ФМС РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8759",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8759.png"
+        },
+        {
+          "id": 8597,
+          "name": "Получение (замена) паспорта гражданина РФ (МФЦ по РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8597",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8597.png"
+        },
+        {
+          "id": 8744,
+          "name": "Получение (замена) паспорта гражданина РФ (ФМС РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8744",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8744.png"
+        },
+        {
+          "id": 8306,
+          "name": "Получение (замена) паспорта гражданина РФ г.Краснодар",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8306",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8306.png"
+        },
+        {
+          "id": 8354,
+          "name": "Получение разрешения на перевозку крупногабаритных и тяжеловесных грузов",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8354",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8354.png"
+        },
+        {
+          "id": 8355,
+          "name": "Получение разрешения на перевозку опасных грузов",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8355",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8355.png"
+        },
+        {
+          "id": 9010,
+          "name": "Пошлина ГИБДД Жуковский Доплата",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9010",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9010.png"
+        },
+        {
+          "id": 9005,
+          "name": "Пошлина ГИБДД Жуковский за внесение изменений без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9005",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9005.png"
+        },
+        {
+          "id": 9006,
+          "name": "Пошлина ГИБДД Жуковский за внесение изменений с заменой ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9006",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9006.png"
+        },
+        {
+          "id": 9028,
+          "name": "Пошлина ГИБДД Жуковский за выдачу гос. номеров",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9028",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9028.png"
+        },
+        {
+          "id": 9007,
+          "name": "Пошлина ГИБДД Жуковский за выдачу транзитных знаков на бумажной основе",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9007",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9007.png"
+        },
+        {
+          "id": 9009,
+          "name": "Пошлина ГИБДД Жуковский за замену выдачу бланка водительского удостоверения",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9009",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9009.png"
+        },
+        {
+          "id": 8981,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию авто без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8981",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8981.png"
+        },
+        {
+          "id": 8987,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию авто с заменой ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8987",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8987.png"
+        },
+        {
+          "id": 8993,
+          "name": "Пошлина ГИБДД Жуковский за регистрацию мото без замены ПТС",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8993",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8993.png"
+        },
+        {
+          "id": 9722,
+          "name": "Штраф УФМС (КБР) ст.19.16 КоАП РФ",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9722",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9722.png"
+        },
+        {
+          "id": 9654,
+          "name": "Штрафы УФМС (г. Ростов-на-Дону)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9654",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9654.png"
+        },
+        {
+          "id": 9544,
+          "name": "Штрафы УФМС (КБР)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9544",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9544.png"
+        },
+        {
+          "id": 8743,
+          "name": "Штрафы УФМС (РСО-Алания)",
+          "originalGroup": "Штрафы, пошлины",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8743",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-8743.png"
+        }
+      ]
+    },
+    {
+      "title": "Товары и услуги",
+      "originalGroups": [
+        "Другие услуги"
+      ],
+      "items": [
+        {
+          "id": 630,
+          "name": "AVON",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=630",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/avon.png"
+        },
+        {
+          "id": 644,
+          "name": "Faberlic",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=644",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/faberlic.png"
+        },
+        {
+          "id": 9142,
+          "name": "Американо",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9142",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9142.png"
+        },
+        {
+          "id": 7961,
+          "name": "Армед-Юг ООО",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7961",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7961.png"
+        },
+        {
+          "id": 9135,
+          "name": "Горячий Шоколад",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9135",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9135.png"
+        },
+        {
+          "id": 9141,
+          "name": "Капучино",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9141",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9141.png"
+        },
+        {
+          "id": 255,
+          "name": "Кредитный брокер",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=255",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-255.png"
+        },
+        {
+          "id": 9140,
+          "name": "Латте",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9140",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9140.png"
+        },
+        {
+          "id": 9139,
+          "name": "Моккачино",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9139",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9139.png"
+        },
+        {
+          "id": 8008,
+          "name": "Партнер 10 (Симферополь)",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8008",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8008.png"
+        },
+        {
+          "id": 8007,
+          "name": "Партнер 11 (Севастополь)",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8007",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8007.png"
+        },
+        {
+          "id": 2268,
+          "name": "Центр бронирования туров ТБГ",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2268",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/tbg.png"
+        },
+        {
+          "id": 9138,
+          "name": "Чай",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9138",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9138.png"
+        },
+        {
+          "id": 9136,
+          "name": "Эспрессо",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9136",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-9136.png"
+        }
+      ]
+    },
+    {
+      "title": "Такси и транспорт",
+      "originalGroups": [
+        "Другие услуги"
+      ],
+      "items": [
+        {
+          "id": 7629,
+          "name": "Такси \"22222\"  Ейск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7629",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7629.png"
+        },
+        {
+          "id": 7503,
+          "name": "Такси \"22222\"  Крымск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7503",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7503.png"
+        },
+        {
+          "id": 7626,
+          "name": "Такси \"24000\" Туапсе",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7626",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7626.png"
+        },
+        {
+          "id": 7623,
+          "name": "Такси \"2622226\" с. Лазаревское",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7623",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7623.png"
+        },
+        {
+          "id": 7504,
+          "name": "Такси \"44444\"  Славянск - на - Кубани",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7504",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7504.png"
+        },
+        {
+          "id": 7630,
+          "name": "Такси \"55555\"  Тимашевск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7630",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7630.png"
+        },
+        {
+          "id": 7505,
+          "name": "Такси \"55555\" Темрюк",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7505",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7505.png"
+        },
+        {
+          "id": 7625,
+          "name": "Такси \"55555\" Тихорецк",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7625",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7625.png"
+        },
+        {
+          "id": 9008,
+          "name": "Такси \"70000\" Курганинск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9008",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9008.png"
+        },
+        {
+          "id": 7508,
+          "name": "Такси 21111 г. Новошахтинск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7508",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7508.png"
+        },
+        {
+          "id": 7687,
+          "name": "Такси 240240 г. Шахты",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7687",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7687.png"
+        },
+        {
+          "id": 7509,
+          "name": "Такси 55555 г. Сальск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7509",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-7509.png"
+        },
+        {
+          "id": 7507,
+          "name": "Такси 72222 г. Каменск - Шахтинский",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7507",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7507.png"
+        },
+        {
+          "id": 7506,
+          "name": "Такси 75866  г. Волгодонск",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=7506",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-7506.png"
+        },
+        {
+          "id": 674,
+          "name": "Такси Пятерочка г. Гулькевичи",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=674",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-674.png"
+        },
+        {
+          "id": 6869,
+          "name": "Такси Сатурн Воронеж",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=6869",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-6869.png"
+        },
+        {
+          "id": 8455,
+          "name": "Такси Союз Краснодар",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8455",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8455.png"
+        },
+        {
+          "id": 8476,
+          "name": "Такси Союз Севастополь",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8476",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8476.png"
+        },
+        {
+          "id": 8474,
+          "name": "Такси Союз Симферополь",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8474",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-8474.png"
+        },
+        {
+          "id": 1400,
+          "name": "Такси СРО МОАТП",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=1400",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-1400.png"
+        },
+        {
+          "id": 2024,
+          "name": "Юнипаркс двухкомпонентный ресурс",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2024",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2024.png"
+        },
+        {
+          "id": 2102,
+          "name": "Юнипаркс дополнительные услуги",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2102",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-2102.png"
+        },
+        {
+          "id": 2100,
+          "name": "Юнипаркс комплексное обслуживание",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2100",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2100.png"
+        },
+        {
+          "id": 2101,
+          "name": "Юнипаркс платный проезд",
+          "originalGroup": "Другие услуги",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=2101",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924c/providers/provider-2101.png"
+        }
+      ]
+    },
+    {
+      "title": "Страхование и благотворительность",
+      "originalGroups": [
+        "Страхование",
+        "Добрые дела"
+      ],
+      "items": [
+        {
+          "id": 9151,
+          "name": "ВСК Страхование. Ростовский филиал",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9151",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/vsk.png"
+        },
+        {
+          "id": 8459,
+          "name": "Оплата страховой премии МСК \"АйАйСи\"",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8459",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/iic.png"
+        },
+        {
+          "id": 8526,
+          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Добровольное медицинское страхование. Услуги сопровождения.",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=8526",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/health.png"
+        },
+        {
+          "id": 9638,
+          "name": "ЦСМТ \"ЗДОРОВЬЕ\". Оказание услуг по договору",
+          "originalGroup": "Страхование",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=9638",
+          "mediaFile": "wordpress/native-blocks/assets/revision-20260924/providers/provider-9638.png"
+        },
+        {
+          "id": 323,
+          "name": "Еммануил",
+          "originalGroup": "Добрые дела",
+          "sourceLogoUrl": "http://cluster.skysend.ru:6721/image.php?provider=323",
+          "image": "wordpress/wp-content/themes/skysend/assets/images/providers/emmanuel.png"
+        }
+      ]
+    }
+  ]
+}
