@@ -5,10 +5,24 @@
 
 @media (min-width: 960px) {
   #provider-categories .wp-block-tab-list {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
+    gap: 4px !important;
     max-height: 394px;
-    overflow-y: auto;
-    align-content: flex-start;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     scrollbar-width: thin;
+  }
+
+  #provider-categories .wp-block-tab-list > [role="tab"] {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    width: 100%;
+    min-width: 0;
+    padding: 8px 12px !important;
+    white-space: normal;
   }
 }
 
