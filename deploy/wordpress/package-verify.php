@@ -9,7 +9,9 @@ $check('Front page 67', get_option('show_on_front') === 'page' && (int) get_opti
 $check('Administrator available', (bool) get_user_by('login', 'skysend_admin'));
 $check('Sessions and app passwords cleared', !(int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->usermeta} WHERE meta_key IN ('session_tokens','_application_passwords')"));
 $check('Reset keys cleared', !(int) $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->users} WHERE user_activation_key<>''"));
-$check('No Customizer CSS/MU plugins', wp_get_custom_css() === '' && count(wp_get_mu_plugins()) === 0);
+$check('No Customizer CSS', wp_get_custom_css() === '');
+$check('Provider catalog MU plugin', count(wp_get_mu_plugins()) === 1
+    && is_file(WPMU_PLUGIN_DIR.'/skysend-provider-catalog.php'));
 $check('Page cache plugin installed', in_array('wp-super-cache/wp-cache.php', get_option('active_plugins', []), true));
 $blocks = parse_blocks(get_post_field('post_content', 67));
 $queue = $blocks; $count = 0; $unregistered = []; $custom = [];
@@ -57,60 +59,76 @@ $check('Finance income embedded in banner image', $financeId > 0
 $tabs = $findBlock($blocks, 'core/tabs');
 $tabList = $tabs['innerBlocks'][0] ?? [];
 $tabPanels = $tabs['innerBlocks'][1] ?? [];
-$expectedProviders = [
-    'Операторы связи' => 13,
-    'Интернет-провайдеры' => 14,
-    'Телевидение' => 24,
-    'Банки и кошельки' => 73,
-    'Игры и соцсети' => 39,
-    'ЖКХ' => 20,
-    'ГИБДД и автоуслуги' => 18,
-    'Госуслуги и налоги' => 35,
-    'Товары и другие услуги' => 19,
-    'Такси и транспорт' => 24,
-];
-$actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
-$check('Providers: native list and ten panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
-    && ($tabPanels['blockName'] ?? '') === 'core/tab-panels' && $actualLabels === array_keys($expectedProviders));
-$actualProviderCounts = []; $providerImageIds = []; $providerStructureValid = true;
-foreach ($tabPanels['innerBlocks'] ?? [] as $panel) {
-    $label = $panel['attrs']['label'] ?? '';
-    $carousel = $panel['innerBlocks'][0] ?? [];
-    $slides = $carousel['innerBlocks'] ?? [];
-    $expectedCount = $expectedProviders[$label] ?? 0;
-    if (($carousel['blockName'] ?? '') !== 'cb/carousel-v2'
-        // True is the block's built-in default, so Gutenberg omits these attributes.
-        || !($carousel['attrs']['navigation'] ?? true) || !($carousel['attrs']['pagination'] ?? true)
-        || count($slides) !== (int) ceil($expectedCount / 9)) { $providerStructureValid = false; }
-    $names = [];
-    foreach ($slides as $slide) {
-        $grid = $slide['innerBlocks'][0] ?? [];
-        $cards = $grid['innerBlocks'] ?? [];
-        if (($slide['blockName'] ?? '') !== 'cb/slide-v2' || ($grid['blockName'] ?? '') !== 'core/group'
-            || !str_contains($grid['attrs']['className'] ?? '', 'sky-provider-grid')
-            || count($cards) < 1 || count($cards) > 9) { $providerStructureValid = false; }
-        foreach ($cards as $card) {
-            $name = trim((string) ($card['attrs']['metadata']['name'] ?? ''));
-            $image = $findBlock($card['innerBlocks'] ?? [], 'core/image');
-            $id = (int) ($image['attrs']['id'] ?? 0);
-            $imageUrl = $id ? (string) wp_get_attachment_url($id) : '';
-            if (($card['blockName'] ?? '') !== 'core/group' || $name === '' || $id < 1
-                || get_post_type($id) !== 'attachment' || !str_starts_with((string) get_post_mime_type($id), 'image/')
-                || $imageUrl === '' || !str_contains($image['innerHTML'] ?? '', $imageUrl)) {
-                $providerStructureValid = false;
-            }
-            $names[] = $name;
-            $providerImageIds[] = $id;
-        }
+$catalogPath = WPMU_PLUGIN_DIR.'/skysend-provider-catalog/catalog.json';
+$catalog = is_file($catalogPath) ? json_decode((string) file_get_contents($catalogPath), true) : null;
+$categories = is_array($catalog['categories'] ?? null) ? $catalog['categories'] : [];
+$categoryKeys = array_keys($categories);
+$categoryLabels = []; $categoryStructureValid = !array_is_list($categories);
+$uploadRoot = wp_get_upload_dir()['basedir'].'/skysend-providers-20260925';
+$providerIds = []; $missingLogos = []; $providerRecordsValid = true; $providerCount = 0;
+foreach ($categories as $slug => $category) {
+    $label = $category['label'] ?? null;
+    $items = $category['items'] ?? null;
+    if (!is_string($slug) || !preg_match('/^[a-z0-9_-]{1,64}$/', $slug)
+        || !is_string($label) || trim($label) === ''
+        || !is_array($items) || !$items || !array_is_list($items)) {
+        $categoryStructureValid = false;
+        continue;
     }
-    $actualProviderCounts[$label] = count($names);
+    $categoryLabels[] = $label;
+    foreach ($items as $provider) {
+        $providerCount++;
+        if (!is_array($provider)) { $providerRecordsValid = false; continue; }
+        $id = $provider['id'] ?? null;
+        $name = $provider['name'] ?? null;
+        $logo = $provider['logo'] ?? null;
+        if (!is_string($id) || !preg_match('/^archive-([0-9]{4})$/', $id, $idMatch)
+            || !is_string($name) || trim($name) === ''
+            || $logo !== '/wp-content/uploads/skysend-providers-20260925/'.$idMatch[1].'.webp'
+            || isset($providerIds[$id])) {
+            $providerRecordsValid = false;
+            continue;
+        }
+        $providerIds[$id] = true;
+        if (!is_file($uploadRoot.'/'.$idMatch[1].'.webp')) { $missingLogos[] = $id; }
+    }
 }
-$check('Providers: navigable nine-card slides', $providerStructureValid);
-$check('Providers: 279 historical catalogue cards', $actualProviderCounts === $expectedProviders
-    // The original catalogue lists different services under the same brand, so
-    // reusing that brand's media attachment is valid and avoids duplicate files.
-    && count($providerImageIds) === 279
-    && !in_array(0, $providerImageIds, true));
+$check('Providers: catalogue has 15 categories and 5000 records', ($catalog['version'] ?? null) === '2026-09-25'
+    && count($categories) === 15 && $categoryStructureValid
+    && count(array_unique($categoryLabels)) === 15 && $providerCount === 5000);
+$logoFiles = is_dir($uploadRoot) ? glob($uploadRoot.'/*.webp') : false;
+$check('Providers: 5000 valid records and 5000 local logos', $providerRecordsValid
+    && count($providerIds) === 5000 && !$missingLogos
+    && is_array($logoFiles) && count($logoFiles) === 5000);
+$actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
+$check('Providers: native list and 15 panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
+    && ($tabPanels['blockName'] ?? '') === 'core/tab-panels' && $actualLabels === $categoryLabels);
+$findCatalogShells = static function(array $items) use (&$findCatalogShells): array {
+    $shells = [];
+    foreach ($items as $item) {
+        if (($item['blockName'] ?? '') === 'core/group'
+            && preg_match('/(?:^|\s)sky-provider-catalog(?:\s|$)/', $item['attrs']['className'] ?? '')) {
+            $shells[] = $item;
+        }
+        array_push($shells, ...$findCatalogShells($item['innerBlocks'] ?? []));
+    }
+    return $shells;
+};
+$providerStructureValid = true;
+foreach ($tabPanels['innerBlocks'] ?? [] as $index => $panel) {
+    $shells = $findCatalogShells($panel['innerBlocks'] ?? []);
+    $grid = $shells[0]['innerBlocks'][0] ?? [];
+    if (($panel['blockName'] ?? '') !== 'core/tab-panel' || count($shells) !== 1
+        || ($shells[0]['attrs']['anchor'] ?? '') !== 'provider-catalog-'.($categoryKeys[$index] ?? '')
+        || count($shells[0]['innerBlocks'] ?? []) !== 1
+        || ($grid['blockName'] ?? '') !== 'core/group'
+        || !preg_match('/(?:^|\s)sky-provider-grid(?:\s|$)/', $grid['attrs']['className'] ?? '')
+        || !empty($grid['innerBlocks'])
+        || $findBlock($panel['innerBlocks'] ?? [], 'cb/carousel-v2') !== null) {
+        $providerStructureValid = false;
+    }
+}
+$check('Providers: one empty dynamic catalogue shell per panel', $providerStructureValid);
 $findNamedGroup = static function(array $items, string $wanted) use (&$findNamedGroup): ?array {
     foreach ($items as $item) {
         if (($item['blockName'] ?? '') === 'core/group' && ($item['attrs']['metadata']['name'] ?? '') === $wanted) { return $item; }

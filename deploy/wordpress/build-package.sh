@@ -23,6 +23,25 @@ cleanup() {
 }
 trap cleanup EXIT
 [[ "$EUID" -eq 0 && "$SOURCE" == /var/www/skysend && -f "$SOURCE/wp-config.php" ]]
+REPO=/opt/skysend
+ASSETS="$REPO/wordpress/native-blocks/assets/provider-catalog-20260925"
+[[ -f "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog.php" ]]
+for filename in catalog.js catalog.css catalog.json; do
+    [[ -f "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog/$filename" ]]
+done
+[[ -d "$SOURCE/wp-content/uploads/skysend-providers-20260925" ]]
+[[ "$(find "$SOURCE/wp-content/uploads/skysend-providers-20260925" -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5000 ]]
+[[ "$(find "$ASSETS/logos" -maxdepth 1 -type f -name '*.webp' | wc -l)" -eq 5000 ]]
+cmp -s "$REPO/wordpress/wp-content/mu-plugins/skysend-provider-catalog.php" "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog.php"
+for filename in catalog.js catalog.css catalog.json; do
+    cmp -s "$REPO/wordpress/wp-content/mu-plugins/skysend-provider-catalog/$filename" "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog/$filename"
+done
+while IFS= read -r -d '' logo; do
+    cmp -s "$logo" "$SOURCE/wp-content/uploads/skysend-providers-20260925/${logo##*/}" || {
+        echo "Provider logo differs from committed asset: ${logo##*/}" >&2
+        exit 1
+    }
+done < <(find "$ASSETS/logos" -maxdepth 1 -type f -name '*.webp' -print0)
 [[ -f "$TOOLS/README-INSTALL.md" && -f "$TOOLS/package-snapshot.php" ]]
 [[ -d /opt/skysend/.git && -z "$(git -C /opt/skysend status --porcelain)" ]]
 php -r 'exit(class_exists("ZipArchive") ? 0 : 1);'
@@ -34,7 +53,7 @@ wp --allow-root --path="$SOURCE" plugin verify-checksums carousel-block wp-seopr
 mkdir -p /opt/skysend-packages
 chmod 700 /opt/skysend-packages
 mkdir -m 700 "$WORK"
-mkdir -p "$SITE/wp-content/plugins" "$SITE/wp-content/themes"
+mkdir -p "$SITE/wp-content/plugins" "$SITE/wp-content/themes" "$SITE/wp-content/mu-plugins"
 wp --allow-root --path="$SOURCE" --skip-plugins --skip-themes eval-file "$TOOLS/package-snapshot.php" > "$WORK/source-before.json"
 php "$TOOLS/package-archive.php" check-source "$WORK/source-before.json"
 wp --allow-root --path="$SOURCE" db export "$WORK/source-private.sql" \
@@ -48,6 +67,7 @@ done
 cp -a "$SOURCE/wp-content/index.php" "$SITE/wp-content/"
 cp -a "$SOURCE/wp-content/themes/twentytwentyfive" "$SITE/wp-content/themes/"
 cp -a "$SOURCE/wp-content/plugins/carousel-block" "$SOURCE/wp-content/plugins/wp-seopress" "$SOURCE/wp-content/plugins/wp-super-cache" "$SITE/wp-content/plugins/"
+cp -a "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog.php" "$SOURCE/wp-content/mu-plugins/skysend-provider-catalog" "$SITE/wp-content/mu-plugins/"
 cp -a "$SOURCE/wp-content/uploads" "$SITE/wp-content/"
 if [[ -d "$SOURCE/wp-content/languages" ]]; then cp -a "$SOURCE/wp-content/languages" "$SITE/wp-content/"; fi
 cp -a "$SOURCE/.htaccess" "$SOURCE/robots.txt" "$SITE/"
@@ -101,7 +121,7 @@ wp --allow-root --path="$SITE" rewrite flush
 php -S 127.0.0.1:58081 -t "$SITE" "$TOOLS/package-router.php" > "$WORK/http-private.log" 2>&1 &
 HTTP_PID=$!
 sleep 1
-php "$TOOLS/package-http-check.php" > "$WORK/http-check.json"
+php "$TOOLS/package-http-check.php" "$SITE" > "$WORK/http-check.json"
 kill "$HTTP_PID"
 wait "$HTTP_PID" 2>/dev/null || true
 HTTP_PID=''

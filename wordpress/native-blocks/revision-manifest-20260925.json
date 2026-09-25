@@ -1,0 +1,15 @@
+{
+  "revision": "2026-09-25",
+  "origin": "http://31.129.98.28",
+  "sourceArchiveSha256": "df2c5280fb1786a84607ec938c2ba33a19ba66616eba83521699a3ed640f1c72",
+  "categories": 15,
+  "entries": 5000,
+  "report": {
+    "page": {
+      "id": 67,
+      "beforeHash": "02fe69e830d52c883f72aaebf23355b0fefd6357238903533bf3be9bf45e8df9",
+      "afterHash": "b29edeba1404e7f84a593043b56de1827ab8fd1a6056d247f49216cb0f5f7528",
+      "blocks": 266
+    }
+  }
+}
