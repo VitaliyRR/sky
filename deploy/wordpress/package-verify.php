@@ -49,10 +49,19 @@ $financeSlide = $carousel['innerBlocks'][1] ?? [];
 $financeImage = $findBlock($financeSlide['innerBlocks'] ?? [], 'core/image');
 $financeId = (int) ($financeImage['attrs']['id'] ?? 0);
 $financeUrl = $financeId ? (string) wp_get_attachment_url($financeId) : '';
+$financeFile = $financeId ? (string) get_attached_file($financeId) : '';
+$financeTransparent = false;
+if ($financeFile && is_file($financeFile) && function_exists('imagecreatefrompng')) {
+    $financeRaster = @imagecreatefrompng($financeFile);
+    if ($financeRaster) {
+        $financeTransparent = imagecolorsforindex($financeRaster, imagecolorat($financeRaster, 0, 0))['alpha'] === 127;
+        imagedestroy($financeRaster);
+    }
+}
 $check('Finance income embedded in banner image', $financeId > 0
-    && basename((string) parse_url($financeUrl, PHP_URL_PATH)) === 'banner-finance-bag-income-20260924.webp'
+    && basename((string) parse_url($financeUrl, PHP_URL_PATH)) === 'banner-finance-transparent-20260925.png'
     && get_post_type($financeId) === 'attachment'
-    && is_file((string) get_attached_file($financeId))
+    && $financeTransparent
     && str_contains($financeImage['innerHTML'] ?? '', 'Доход +20%')
     && !str_contains($pageContent, '"name":"Доход +20%"'));
 $tabs = $findBlock($blocks, 'core/tabs');

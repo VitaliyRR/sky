@@ -37,7 +37,7 @@ $checks['Title/description'] = str_contains($body, '<title>SkySend — сист�
 $checks['Canonical rewritten'] = str_contains($body, '<link rel="canonical" href="'.$base.'/">');
 $checks['JSON-LD/OG'] = str_contains($body, '"@type":"Organization"') && str_contains($body, '<meta property="og:image"');
 $checks['Carousel and native tabs scripts'] = str_contains($body, 'carousel-block/build/carousel/view.js') && str_contains($body, 'block-library/tabs/view.min.js');
-$checks['Finance banner graphic with income'] = $hasImage($body, 'banner-finance-bag-income-20260924.webp', 'Доход +20%');
+$checks['Finance banner graphic with income'] = $hasImage($body, 'banner-finance-transparent-20260925.png', 'Доход +20%');
 $checks['Gateway XML graphic'] = $hasImage($body, 'partner-gateways-xml-20260924.webp', 'XML-шлюза');
 $checks['FastSYS copy'] = str_contains($body, 'обеспечивает стабильную работу устройств на протяжении десятилетий.');
 $checks['Obsolete disclaimer absent'] = !str_contains($body, 'Архивные материалы: условия и контакты');

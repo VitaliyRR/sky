@@ -28,12 +28,11 @@ export async function revision20260925b(w, origin, mediaFile, outputDir) {
   }
   const blocks = w.wp.blocks.parse(source);
   const images = [];
-  const walk = tree => tree.forEach(block => {
+  const walk = (tree, visitor) => tree.forEach(block => { visitor(block); walk(block.innerBlocks, visitor); });
+  walk(blocks, block => {
     if (!block.isValid) throw new Error('Invalid source block: ' + block.name);
     if (block.name === 'core/image' && String(block.attributes.url).endsWith('/' + oldFile)) images.push(block);
-    walk(block.innerBlocks);
   });
-  walk(blocks);
   if (images.length !== 1 || images[0].attributes.id !== 388) throw new Error('Unexpected finance image block');
   Object.assign(images[0].attributes, {
     id,
@@ -42,7 +41,10 @@ export async function revision20260925b(w, origin, mediaFile, outputDir) {
   });
   const content = w.wp.blocks.serialize(blocks);
   let count = 0;
-  walk(w.wp.blocks.parse(content), block => { count++; if (!block.isValid) throw new Error('Invalid generated block'); });
+  walk(w.wp.blocks.parse(content), block => {
+    count++;
+    if (!block.isValid) throw new Error('Invalid generated block: ' + block.name);
+  });
   fs.mkdirSync(outputDir, { recursive: true });
   fs.writeFileSync(path.join(outputDir, 'page.html'), content);
   const manifest = { revision: '2026-09-25b', origin, mediaIds: ids, assetHash,

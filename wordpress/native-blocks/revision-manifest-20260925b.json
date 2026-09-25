@@ -1,0 +1,16 @@
+{
+  "revision": "2026-09-25b",
+  "origin": "http://31.129.98.28",
+  "mediaIds": {
+    "banner-finance-transparent-20260925.png": 417
+  },
+  "assetHash": "83059de6a269059237377103589bef679d9c448fd11bdf31940390eb454b879a",
+  "report": {
+    "page": {
+      "id": 67,
+      "beforeHash": "b29edeba1404e7f84a593043b56de1827ab8fd1a6056d247f49216cb0f5f7528",
+      "afterHash": "54281d067b0ef4bdf101e50d5b42fa1f155b1c0acc2b498904c4afcae4639256",
+      "blocks": 266
+    }
+  }
+}
