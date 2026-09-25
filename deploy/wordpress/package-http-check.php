@@ -144,15 +144,16 @@ foreach ($sampleLogos as $logoPath) {
 }
 $checks['Provider logos HTTP 200 in all categories'] = $logoHttpValid;
 $checks['New brand graphics'] = !str_contains($body, '/skysend-logo.png');
-$featureNames = [
-    'Оплата услуг', 'Самообслуживание', 'Трансляция рекламы', 'Безналичная оплата',
-    'Считывание QR', 'Биометрическая идентификация', 'Настройка интерфейса',
-    'Удалённое управление', 'Продажа товаров',
-];
-$oldFeatureImages = [
-    'beeline.png', 'mcdonalds.png', 'video-20260924.png', 'pos-terminal-20260924c.png',
-    'qr-20260924.png', 'biometric-20260924.png', 'gear-20260924c.png',
-    'remote-20260924.png', 'magnit.png',
+$featureIcons = [
+    'Оплата услуг' => [119, 'beeline.png', true],
+    'Самообслуживание' => [121, 'mcdonalds.png', true],
+    'Трансляция рекламы' => [422, 'advertising-video.png', false],
+    'Безналичная оплата' => [423, 'cashless-pos.png', false],
+    'Считывание QR' => [424, 'qr-scan.png', false],
+    'Биометрическая идентификация' => [425, 'biometric.png', false],
+    'Настройка интерфейса' => [426, 'interface-settings.png', false],
+    'Удалённое управление' => [115, 'remote-20260924.png', false],
+    'Продажа товаров' => [120, 'magnit.png', true],
 ];
 $featuresValid = class_exists('DOMDocument');
 if ($featuresValid) {
@@ -163,20 +164,36 @@ if ($featuresValid) {
     libxml_use_internal_errors($previous);
     $xpath = new DOMXPath($document);
     $featureUrls = [];
-    foreach ($featureNames as $name) {
+    foreach ($featureIcons as $name => [$expectedId, $filename, $usesDuotone]) {
         $nodes = $xpath->query('//div[contains(concat(" ", normalize-space(@class), " "), " wp-block-group ")][figure/img and p[normalize-space(.)="'.$name.'"]]/figure/img');
         if (!$nodes || $nodes->length !== 1) { $featuresValid = false; continue; }
-        $imageUrl = html_entity_decode($nodes->item(0)->getAttribute('src'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $image = $nodes->item(0);
+        $imageUrl = html_entity_decode($image->getAttribute('src'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         $imagePath = parse_url($imageUrl, PHP_URL_PATH);
-        if (!str_starts_with($imageUrl, $base.'/wp-content/uploads/') || !preg_match('/\.png$/i', (string) $imagePath)
-            || in_array(basename((string) $imagePath), $oldFeatureImages, true)) {
+        $imageClass = $image->getAttribute('class');
+        $figure = $image->parentNode;
+        $figureClass = $figure instanceof DOMElement ? $figure->getAttribute('class') : '';
+        $hasDuotoneClass = (bool) preg_match('/(?:^|\s)wp-duotone-[a-z0-9-]+(?:\s|$)/i', $figureClass);
+        if (!str_starts_with($imageUrl, $base.'/wp-content/uploads/')
+            || basename((string) $imagePath) !== $filename
+            || !preg_match('/(?:^|\s)wp-image-'. $expectedId .'(?:\s|$)/', $imageClass)
+            || $hasDuotoneClass !== $usesDuotone) {
             $featuresValid = false;
         }
         $featureUrls[] = $imageUrl;
+        if (is_string($imagePath) && str_starts_with($imagePath, '/wp-content/uploads/')) {
+            [$iconStatus, $iconBody] = $request($imagePath);
+            if ($iconStatus !== 200 || !is_string($iconBody)
+                || !str_starts_with($iconBody, "\x89PNG\r\n\x1a\n")) {
+                $featuresValid = false;
+            }
+        } else {
+            $featuresValid = false;
+        }
     }
     $featuresValid = $featuresValid && count(array_unique($featureUrls)) === 9;
 }
-$checks['Nine new local ALLVEND PNG icons rendered'] = $featuresValid;
+$checks['Nine specified ALLVEND PNG icons render and return HTTP 200'] = $featuresValid;
 $brandImages = [];
 preg_match_all('~<img\b(?=[^>]*\balt=["\']SkySend["\'])[^>]*\bsrc=["\']([^"\']+)~i', $body, $brandMatches);
 foreach ($brandMatches[1] as $imageUrl) { $brandImages[] = html_entity_decode($imageUrl); }

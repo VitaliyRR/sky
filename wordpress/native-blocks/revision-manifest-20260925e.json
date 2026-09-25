@@ -1,0 +1,56 @@
+{
+  "revision": "2026-09-25e",
+  "origin": "http://31.129.98.28",
+  "replacements": [
+    {
+      "label": "Оплата услуг",
+      "beforeId": 420,
+      "id": 119,
+      "filename": "beeline.png",
+      "duotone": [
+        "#0b2b61",
+        "#0b63f6"
+      ]
+    },
+    {
+      "label": "Самообслуживание",
+      "beforeId": 421,
+      "id": 121,
+      "filename": "mcdonalds.png",
+      "duotone": [
+        "#0b63f6",
+        "#0b63f6"
+      ]
+    },
+    {
+      "label": "Удалённое управление",
+      "beforeId": 427,
+      "id": 115,
+      "filename": "remote-20260924.png"
+    },
+    {
+      "label": "Продажа товаров",
+      "beforeId": 428,
+      "id": 120,
+      "filename": "magnit.png",
+      "duotone": [
+        "#0b63f6",
+        "#0b63f6"
+      ]
+    }
+  ],
+  "assetHashes": {
+    "beeline.png": "4f48fcb264fb198af2039060ba2465635ab9dcad84cb8b64220be443fc435f00",
+    "mcdonalds.png": "df8a48dbafcf11fad9d75e9cff0f9428c5a9f9e5eae81552256572c7e2c7fd1b",
+    "remote-20260924.png": "899c37eed99bd0a51a23a019dde4380240450a8fd97238feafaaa2b87b5db821",
+    "magnit.png": "cfdfa727bf848f4586b115328ca9979db7290b001185cd3adbf90142190abc61"
+  },
+  "report": {
+    "page": {
+      "id": 67,
+      "beforeHash": "fb3fc5ed07ea5bf93ba910de8a7c6d743b1f7cf8020be4f4ddbb2636014ee965",
+      "afterHash": "29fd015fc8095d45a5dc447f6aad677f2d9bacd20c86cd27394bb1ebf7de17df",
+      "blocks": 250
+    }
+  }
+}

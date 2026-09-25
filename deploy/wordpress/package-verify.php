@@ -206,26 +206,37 @@ $posId = (int) ($posImage['attrs']['id'] ?? 0);
 $gearId = (int) ($gearImage['attrs']['id'] ?? 0);
 $check('ALLVEND POS and gear icons replaced', $posId > 0 && $gearId > 0 && $posId !== 113 && $gearId !== 116
     && get_post_type($posId) === 'attachment' && get_post_type($gearId) === 'attachment');
-$featureNames = [
-    'Оплата услуг', 'Самообслуживание', 'Трансляция рекламы', 'Безналичная оплата',
-    'Считывание QR', 'Биометрическая идентификация', 'Настройка интерфейса',
-    'Удалённое управление', 'Продажа товаров',
+$featureIcons = [
+    'Оплата услуг' => [119, 'beeline.png', ['#0b2b61', '#0b63f6']],
+    'Самообслуживание' => [121, 'mcdonalds.png', ['#0b63f6', '#0b63f6']],
+    'Трансляция рекламы' => [422, 'advertising-video.png', null],
+    'Безналичная оплата' => [423, 'cashless-pos.png', null],
+    'Считывание QR' => [424, 'qr-scan.png', null],
+    'Биометрическая идентификация' => [425, 'biometric.png', null],
+    'Настройка интерфейса' => [426, 'interface-settings.png', null],
+    'Удалённое управление' => [115, 'remote-20260924.png', null],
+    'Продажа товаров' => [120, 'magnit.png', ['#0b63f6', '#0b63f6']],
 ];
-$previousFeatureIds = [119, 121, 117, 208, 114, 112, 209, 115, 120];
 $featureIds = []; $featureIconsValid = true;
-foreach ($featureNames as $featureName) {
+foreach ($featureIcons as $featureName => [$expectedId, $expectedFile, $expectedDuotone]) {
     $featureGroup = $findNamedGroup($blocks, $featureName);
     $featureImage = $findBlock($featureGroup['innerBlocks'] ?? [], 'core/image');
     $featureId = (int) ($featureImage['attrs']['id'] ?? 0);
     $featureIds[] = $featureId;
-    if ($featureId <= 0 || in_array($featureId, $previousFeatureIds, true)
+    $attached = $featureId ? get_attached_file($featureId) : false;
+    $url = $featureId ? wp_get_attachment_url($featureId) : false;
+    $duotone = $featureImage['attrs']['style']['color']['duotone'] ?? null;
+    if ($featureId !== $expectedId || $duotone !== $expectedDuotone
         || get_post_type($featureId) !== 'attachment'
         || get_post_mime_type($featureId) !== 'image/png'
-        || !is_file((string) get_attached_file($featureId))) {
+        || !$attached || !is_file($attached) || basename($attached) !== $expectedFile
+        || !is_string($url) || basename((string) parse_url($url, PHP_URL_PATH)) !== $expectedFile
+        || !str_contains($featureImage['innerHTML'] ?? '', '/'.$expectedFile)) {
         $featureIconsValid = false;
     }
 }
-$check('Nine new local ALLVEND PNG icons', $featureIconsValid && count(array_unique($featureIds)) === 9);
+$check('Nine specified editable ALLVEND PNG icons and blue brand duotones', $featureIconsValid
+    && count(array_unique($featureIds)) === 9);
 $headerBlocks = parse_blocks(get_post_field('post_content', 68));
 $headerLogo = $findBlock($headerBlocks, 'core/image');
 $footerLogo = $findBlock(parse_blocks(get_post_field('post_content', 69)), 'core/image');
