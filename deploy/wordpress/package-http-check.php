@@ -9,7 +9,7 @@ if (!$site || !is_file($site.'/wp-content/mu-plugins/skysend-provider-catalog/ca
 }
 $catalog = json_decode((string) file_get_contents($site.'/wp-content/mu-plugins/skysend-provider-catalog/catalog.json'), true);
 $categories = is_array($catalog['categories'] ?? null) ? $catalog['categories'] : [];
-$categoryLabels = array_map(static fn($category) => is_array($category) ? ($category['label'] ?? '') : '', $categories);
+$categoryLabels = array_values(array_map(static fn($category) => is_array($category) ? ($category['label'] ?? '') : '', $categories));
 $providerCount = array_sum(array_map(static fn($category) => is_array($category['items'] ?? null) ? count($category['items']) : 0, $categories));
 $expectedCategories = [
     'mobile' => 'Операторы связи',
