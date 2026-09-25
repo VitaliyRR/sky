@@ -3,6 +3,16 @@
   min-width: 0;
 }
 
+/* Native tab panels are focusable; suppress the browser's black mouse-focus ring. */
+#provider-categories .wp-block-tab-panel:focus:not(:focus-visible) {
+  outline: none;
+}
+
+#provider-categories .wp-block-tab-panel:focus-visible {
+  outline: 2px solid #0b63f6;
+  outline-offset: 2px;
+}
+
 @media (min-width: 960px) {
   #provider-categories .wp-block-tab-list {
     display: flex !important;

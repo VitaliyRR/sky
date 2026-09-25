@@ -36,6 +36,21 @@ $check('Seven full-height content sections', count($sections) === 8
 $pageContent = get_post_field('post_content', 67);
 $check('Obsolete archive disclaimer removed', !str_contains($pageContent, 'Архивные материалы: условия и контакты'));
 $check('FastSYS 5 approved copy', str_contains($pageContent, 'FastSYS 5 поставляется с ПО ALLVEND как готовое решение в виде ISO образа и обеспечивает стабильную работу устройств на протяжении десятилетий.'));
+$check('IPSEC architecture item removed', !str_contains($pageContent, 'Распределённая архитектура — серверы в разных центрах обработки данных связаны шифрованными туннелями IPSEC.'));
+$partnerPdfs = [
+    'full_offer_agent.pdf', 'connection_provider.pdf', 'presentation_self-order_kiosks_ru.pdf',
+    'buy_terminal_chain.pdf', 'offer_dealer.pdf', 'gateway_payment.pdf',
+];
+$partnerLinksValid = true;
+foreach ($partnerPdfs as $pdf) {
+    $pattern = '~<a\b[^>]*\bhref=["\'][^"\']*/'.preg_quote($pdf, '~').'["\'][^>]*>(.*?)</a>~su';
+    if (!preg_match($pattern, $pageContent, $match)) { $partnerLinksValid = false; continue; }
+    $label = html_entity_decode(strip_tags($match[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    if (!str_contains($label, 'Скачать презентацию') || preg_match('/\b(?:19|20)\d{2}\b/u', $label)) {
+        $partnerLinksValid = false;
+    }
+}
+$check('Six partner PDF links renamed without years', $partnerLinksValid);
 $check('Native tabs', WP_Block_Type_Registry::get_instance()->is_registered('core/tabs'));
 $findBlock = static function(array $items, string $wanted) use (&$findBlock): ?array {
     foreach ($items as $item) {
@@ -72,8 +87,22 @@ $catalog = is_file($catalogPath) ? json_decode((string) file_get_contents($catal
 $categories = is_array($catalog['categories'] ?? null) ? $catalog['categories'] : [];
 $categoryKeys = array_keys($categories);
 $categoryLabels = []; $categoryStructureValid = !array_is_list($categories);
+$expectedCategories = [
+    'mobile' => 'Операторы связи',
+    'internet' => 'Интернет-провайдеры',
+    'tv' => 'Телевидение',
+    'banks' => 'Банки и кошельки',
+    'games' => 'Игры и соцсети',
+    'utilities' => 'ЖКХ',
+    'auto' => 'ГИБДД и автоуслуги',
+    'government' => 'Госуслуги и налоги',
+    'other' => 'Товары и другие услуги',
+    'transport' => 'Такси и транспорт',
+];
 $uploadRoot = wp_get_upload_dir()['basedir'].'/skysend-providers-20260925';
-$providerIds = []; $missingLogos = []; $providerRecordsValid = true; $providerCount = 0;
+$uploadsBase = wp_get_upload_dir()['basedir'];
+$providerIds = []; $missingLogos = []; $providerRecordsValid = true;
+$providerCount = 0; $originalCount = 0; $archiveCount = 0; $originalWithoutLogo = 0;
 foreach ($categories as $slug => $category) {
     $label = $category['label'] ?? null;
     $items = $category['items'] ?? null;
@@ -90,26 +119,40 @@ foreach ($categories as $slug => $category) {
         $id = $provider['id'] ?? null;
         $name = $provider['name'] ?? null;
         $logo = $provider['logo'] ?? null;
-        if (!is_string($id) || !preg_match('/^archive-([0-9]{4})$/', $id, $idMatch)
-            || !is_string($name) || trim($name) === ''
-            || $logo !== '/wp-content/uploads/skysend-providers-20260925/'.$idMatch[1].'.webp'
-            || isset($providerIds[$id])) {
+        if (!is_string($id) || !preg_match('/^[a-z0-9_-]{1,100}$/D', $id)
+            || !is_string($name) || trim($name) === '' || isset($providerIds[$id])) {
             $providerRecordsValid = false;
             continue;
         }
         $providerIds[$id] = true;
-        if (!is_file($uploadRoot.'/'.$idMatch[1].'.webp')) { $missingLogos[] = $id; }
+        if (str_starts_with($id, 'archive-')) {
+            $archiveCount++;
+            if (!preg_match('/^archive-([0-9]{4})$/D', $id, $idMatch)
+                || $logo !== '/wp-content/uploads/skysend-providers-20260925/'.$idMatch[1].'.webp') {
+                $providerRecordsValid = false;
+                continue;
+            }
+        } else {
+            $originalCount++;
+            if ($logo === null) { $originalWithoutLogo++; continue; }
+        }
+        if (!is_string($logo)
+            || !preg_match('~^/wp-content/uploads/[A-Za-z0-9/_-]+\.(?:png|jpe?g|webp|svg)$~iD', $logo)
+            || !is_file($uploadsBase.'/'.substr($logo, strlen('/wp-content/uploads/')))) {
+            $missingLogos[] = $id;
+        }
     }
 }
-$check('Providers: catalogue has 15 categories and 5000 records', ($catalog['version'] ?? null) === '2026-09-25'
-    && count($categories) === 15 && $categoryStructureValid
-    && count(array_unique($categoryLabels)) === 15 && $providerCount === 5000);
+$check('Providers: ten original categories and 2600 records', $categoryStructureValid
+    && $categoryKeys === array_keys($expectedCategories)
+    && $categoryLabels === array_values($expectedCategories)
+    && $providerCount === 2600 && $originalCount === 600 && $archiveCount === 2000);
 $logoFiles = is_dir($uploadRoot) ? glob($uploadRoot.'/*.webp') : false;
-$check('Providers: 5000 valid records and 5000 local logos', $providerRecordsValid
-    && count($providerIds) === 5000 && !$missingLogos
+$check('Providers: referenced logos valid; 5000 WebP files retained', $providerRecordsValid
+    && count($providerIds) === 2600 && $originalWithoutLogo <= 66 && !$missingLogos
     && is_array($logoFiles) && count($logoFiles) === 5000);
 $actualLabels = array_map(static fn($panel) => $panel['attrs']['label'] ?? '', $tabPanels['innerBlocks'] ?? []);
-$check('Providers: native list and 15 panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
+$check('Providers: native list and ten panels', ($tabList['blockName'] ?? '') === 'core/tab-list'
     && ($tabPanels['blockName'] ?? '') === 'core/tab-panels' && $actualLabels === $categoryLabels);
 $findCatalogShells = static function(array $items) use (&$findCatalogShells): array {
     $shells = [];
@@ -163,6 +206,26 @@ $posId = (int) ($posImage['attrs']['id'] ?? 0);
 $gearId = (int) ($gearImage['attrs']['id'] ?? 0);
 $check('ALLVEND POS and gear icons replaced', $posId > 0 && $gearId > 0 && $posId !== 113 && $gearId !== 116
     && get_post_type($posId) === 'attachment' && get_post_type($gearId) === 'attachment');
+$featureNames = [
+    'Оплата услуг', 'Самообслуживание', 'Трансляция рекламы', 'Безналичная оплата',
+    'Считывание QR', 'Биометрическая идентификация', 'Настройка интерфейса',
+    'Удалённое управление', 'Продажа товаров',
+];
+$previousFeatureIds = [119, 121, 117, 208, 114, 112, 209, 115, 120];
+$featureIds = []; $featureIconsValid = true;
+foreach ($featureNames as $featureName) {
+    $featureGroup = $findNamedGroup($blocks, $featureName);
+    $featureImage = $findBlock($featureGroup['innerBlocks'] ?? [], 'core/image');
+    $featureId = (int) ($featureImage['attrs']['id'] ?? 0);
+    $featureIds[] = $featureId;
+    if ($featureId <= 0 || in_array($featureId, $previousFeatureIds, true)
+        || get_post_type($featureId) !== 'attachment'
+        || get_post_mime_type($featureId) !== 'image/png'
+        || !is_file((string) get_attached_file($featureId))) {
+        $featureIconsValid = false;
+    }
+}
+$check('Nine new local ALLVEND PNG icons', $featureIconsValid && count(array_unique($featureIds)) === 9);
 $headerBlocks = parse_blocks(get_post_field('post_content', 68));
 $headerLogo = $findBlock($headerBlocks, 'core/image');
 $footerLogo = $findBlock(parse_blocks(get_post_field('post_content', 69)), 'core/image');

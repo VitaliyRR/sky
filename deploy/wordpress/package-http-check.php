@@ -11,6 +11,18 @@ $catalog = json_decode((string) file_get_contents($site.'/wp-content/mu-plugins/
 $categories = is_array($catalog['categories'] ?? null) ? $catalog['categories'] : [];
 $categoryLabels = array_map(static fn($category) => is_array($category) ? ($category['label'] ?? '') : '', $categories);
 $providerCount = array_sum(array_map(static fn($category) => is_array($category['items'] ?? null) ? count($category['items']) : 0, $categories));
+$expectedCategories = [
+    'mobile' => 'Операторы связи',
+    'internet' => 'Интернет-провайдеры',
+    'tv' => 'Телевидение',
+    'banks' => 'Банки и кошельки',
+    'games' => 'Игры и соцсети',
+    'utilities' => 'ЖКХ',
+    'auto' => 'ГИБДД и автоуслуги',
+    'government' => 'Госуслуги и налоги',
+    'other' => 'Товары и другие услуги',
+    'transport' => 'Такси и транспорт',
+];
 $checks = [];
 $request = static function($path) use ($base): array {
     $curl = curl_init($base.$path);
@@ -41,13 +53,29 @@ $checks['Finance banner graphic with income'] = $hasImage($body, 'banner-finance
 $checks['Gateway XML graphic'] = $hasImage($body, 'partner-gateways-xml-20260924.webp', 'XML-шлюза');
 $checks['FastSYS copy'] = str_contains($body, 'обеспечивает стабильную работу устройств на протяжении десятилетий.');
 $checks['Obsolete disclaimer absent'] = !str_contains($body, 'Архивные материалы: условия и контакты');
-$checks['All 15 provider categories visible'] = count($categories) === 15 && $providerCount === 5000
+$checks['IPSEC architecture item absent'] = !str_contains($body, 'Распределённая архитектура — серверы в разных центрах обработки данных связаны шифрованными туннелями IPSEC.');
+$partnerPdfs = [
+    'full_offer_agent.pdf', 'connection_provider.pdf', 'presentation_self-order_kiosks_ru.pdf',
+    'buy_terminal_chain.pdf', 'offer_dealer.pdf', 'gateway_payment.pdf',
+];
+$partnerLinksValid = true;
+foreach ($partnerPdfs as $pdf) {
+    $pattern = '~<a\b[^>]*\bhref=["\'][^"\']*/'.preg_quote($pdf, '~').'["\'][^>]*>(.*?)</a>~su';
+    if (!preg_match($pattern, $body, $match)) { $partnerLinksValid = false; continue; }
+    $label = html_entity_decode(strip_tags($match[1]), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    if (!str_contains($label, 'Скачать презентацию') || preg_match('/\b(?:19|20)\d{2}\b/u', $label)) {
+        $partnerLinksValid = false;
+    }
+}
+$checks['Six partner PDF links renamed without years'] = $partnerLinksValid;
+$checks['Ten original provider categories visible'] = array_keys($categories) === array_keys($expectedCategories)
+    && $categoryLabels === array_values($expectedCategories) && $providerCount === 2600
     && !array_filter($categoryLabels, static fn($label) => !is_string($label) || $label === '' || !str_contains($body, $label));
 preg_match_all('~<button\b(?=[^>]*\brole=["\']tab["\'])[^>]*>(.*?)</button>~siu', $body, $tabMatches);
 $visibleTabLabels = array_map(static fn($html) => trim(html_entity_decode(strip_tags($html), ENT_QUOTES | ENT_HTML5, 'UTF-8')), $tabMatches[1]);
 $checks['Provider tab labels contain no counts'] = $visibleTabLabels === array_values($categoryLabels);
 preg_match_all('~\bclass=["\'][^"\']*\bsky-provider-catalog\b[^"\']*["\']~i', $body, $catalogShells);
-$checks['All 15 provider catalogue shells rendered'] = count($catalogShells[0]) === 15;
+$checks['All ten provider catalogue shells rendered'] = count($catalogShells[0]) === 10;
 $checks['Provider catalogue assets enqueued'] = str_contains($body, '/mu-plugins/skysend-provider-catalog/catalog.js')
     && str_contains($body, '/mu-plugins/skysend-provider-catalog/catalog.css');
 foreach (['catalog.js', 'catalog.css'] as $filename) {
@@ -55,11 +83,14 @@ foreach (['catalog.js', 'catalog.css'] as $filename) {
     $checks['Provider '.$filename.' HTTP 200'] = $assetStatus === 200;
 }
 $sampleLogos = [];
-$providerApiValid = count($categories) === 15;
+$providerApiValid = count($categories) === 10;
 foreach ($categories as $slug => $category) {
     $entries = $category['items'] ?? [];
     if (!is_array($entries) || !$entries) { $providerApiValid = false; continue; }
-    $sampleLogos[$slug] = $entries[0]['logo'] ?? '';
+    foreach ($entries as $entry) {
+        if (!empty($entry['logo'])) { $sampleLogos[$slug] = $entry['logo']; break; }
+    }
+    if (!isset($sampleLogos[$slug])) { $providerApiValid = false; }
     $pages = (int) ceil(count($entries) / 9);
     [$firstStatus, $firstBody] = $request('/wp-json/skysend/v1/providers?category='.rawurlencode($slug).'&page=1');
     $first = is_string($firstBody) ? json_decode($firstBody, true) : null;
@@ -67,7 +98,9 @@ foreach ($categories as $slug => $category) {
         || ($first['category'] ?? null) !== $slug
         || ($first['page'] ?? null) !== 1 || ($first['total'] ?? null) !== count($entries)
         || ($first['pages'] ?? null) !== $pages || count($first['items'] ?? []) !== min(9, count($entries))
-        || ($first['items'][0] ?? null) !== $entries[0]) {
+        || ($first['items'][0] ?? null) !== [
+            'id' => $entries[0]['id'], 'name' => $entries[0]['name'], 'logo' => $entries[0]['logo'] ?? null,
+        ]) {
         $providerApiValid = false;
     }
     if ($pages > 1) {
@@ -77,7 +110,11 @@ foreach ($categories as $slug => $category) {
         if ($lastStatus !== 200 || !is_array($last) || ($last['category'] ?? null) !== $slug
             || ($last['page'] ?? null) !== $pages || ($last['total'] ?? null) !== count($entries)
             || ($last['pages'] ?? null) !== $pages || count($lastItems) !== count($entries) - 9 * ($pages - 1)
-            || (!$lastItems || $lastItems[count($lastItems) - 1] !== $entries[count($entries) - 1])) {
+            || (!$lastItems || $lastItems[count($lastItems) - 1] !== [
+                'id' => $entries[count($entries) - 1]['id'],
+                'name' => $entries[count($entries) - 1]['name'],
+                'logo' => $entries[count($entries) - 1]['logo'] ?? null,
+            ])) {
             $providerApiValid = false;
         }
     }
@@ -86,24 +123,60 @@ $checks['Provider API serves nine per page in all categories'] = $providerApiVal
 if ($categories) {
     $lastCategory = end($categories);
     $lastEntries = $lastCategory['items'] ?? [];
-    $sampleLogos['last-record'] = is_array($lastEntries) && $lastEntries ? (end($lastEntries)['logo'] ?? '') : '';
+    if (is_array($lastEntries)) {
+        foreach (array_reverse($lastEntries) as $entry) {
+            if (!empty($entry['logo'])) { $sampleLogos['last-record'] = $entry['logo']; break; }
+        }
+    }
 }
-$logoHttpValid = count($sampleLogos) === 16;
+$logoHttpValid = count($sampleLogos) === 11;
 foreach ($sampleLogos as $logoPath) {
-    if (!is_string($logoPath) || !preg_match('~^/wp-content/uploads/skysend-providers-20260925/[0-9]{4}\.webp$~', $logoPath)) {
+    if (!is_string($logoPath) || !preg_match('~^/wp-content/uploads/[A-Za-z0-9/_-]+\.(?:png|jpe?g|webp|svg)$~iD', $logoPath)) {
         $logoHttpValid = false;
         continue;
     }
     [$logoStatus, $logoBody] = $request($logoPath);
-    if ($logoStatus !== 200 || !is_string($logoBody)
-        || substr($logoBody, 0, 4) !== 'RIFF' || substr($logoBody, 8, 4) !== 'WEBP') {
+    $isWebp = str_ends_with(strtolower($logoPath), '.webp');
+    if ($logoStatus !== 200 || !is_string($logoBody) || $logoBody === ''
+        || ($isWebp && (substr($logoBody, 0, 4) !== 'RIFF' || substr($logoBody, 8, 4) !== 'WEBP'))) {
         $logoHttpValid = false;
     }
 }
 $checks['Provider logos HTTP 200 in all categories'] = $logoHttpValid;
-$checks['New brand and feature icons'] = !str_contains($body, '/skysend-logo.png')
-    && str_contains($body, '/pos-terminal-20260924c.png')
-    && str_contains($body, '/gear-20260924c.png');
+$checks['New brand graphics'] = !str_contains($body, '/skysend-logo.png');
+$featureNames = [
+    'Оплата услуг', 'Самообслуживание', 'Трансляция рекламы', 'Безналичная оплата',
+    'Считывание QR', 'Биометрическая идентификация', 'Настройка интерфейса',
+    'Удалённое управление', 'Продажа товаров',
+];
+$oldFeatureImages = [
+    'beeline.png', 'mcdonalds.png', 'video-20260924.png', 'pos-terminal-20260924c.png',
+    'qr-20260924.png', 'biometric-20260924.png', 'gear-20260924c.png',
+    'remote-20260924.png', 'magnit.png',
+];
+$featuresValid = class_exists('DOMDocument');
+if ($featuresValid) {
+    $document = new DOMDocument();
+    $previous = libxml_use_internal_errors(true);
+    $featuresValid = (bool) $document->loadHTML('<?xml encoding="UTF-8">'.$body);
+    libxml_clear_errors();
+    libxml_use_internal_errors($previous);
+    $xpath = new DOMXPath($document);
+    $featureUrls = [];
+    foreach ($featureNames as $name) {
+        $nodes = $xpath->query('//div[contains(concat(" ", normalize-space(@class), " "), " wp-block-group ")][figure/img and p[normalize-space(.)="'.$name.'"]]/figure/img');
+        if (!$nodes || $nodes->length !== 1) { $featuresValid = false; continue; }
+        $imageUrl = html_entity_decode($nodes->item(0)->getAttribute('src'), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $imagePath = parse_url($imageUrl, PHP_URL_PATH);
+        if (!str_starts_with($imageUrl, $base.'/wp-content/uploads/') || !preg_match('/\.png$/i', (string) $imagePath)
+            || in_array(basename((string) $imagePath), $oldFeatureImages, true)) {
+            $featuresValid = false;
+        }
+        $featureUrls[] = $imageUrl;
+    }
+    $featuresValid = $featuresValid && count(array_unique($featureUrls)) === 9;
+}
+$checks['Nine new local ALLVEND PNG icons rendered'] = $featuresValid;
 $brandImages = [];
 preg_match_all('~<img\b(?=[^>]*\balt=["\']SkySend["\'])[^>]*\bsrc=["\']([^"\']+)~i', $body, $brandMatches);
 foreach ($brandMatches[1] as $imageUrl) { $brandImages[] = html_entity_decode($imageUrl); }

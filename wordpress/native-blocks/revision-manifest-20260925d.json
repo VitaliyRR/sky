@@ -1,0 +1,37 @@
+{
+  "revision": "2026-09-25d",
+  "origin": "http://31.129.98.28",
+  "mediaIds": {
+    "payment-services.png": 420,
+    "self-service.png": 421,
+    "advertising-video.png": 422,
+    "cashless-pos.png": 423,
+    "qr-scan.png": 424,
+    "biometric.png": 425,
+    "interface-settings.png": 426,
+    "remote-console.png": 427,
+    "goods-sales.png": 428
+  },
+  "iconHashes": {
+    "payment-services.png": "19dd8aa450c32b8788178f3f471ee910bcfeee03ae2f30fd390ab899c66895cc",
+    "self-service.png": "82b30b78a509b0db30cf3e01429902b215c5d9b2f8311533cb79b41836b83cf3",
+    "advertising-video.png": "59cb3123fbe650f6c7a953e5d4e137838ef1d73a7d73a2bce3896225ab83cf63",
+    "cashless-pos.png": "60d627e6b864550dcbe5f33ed7cf7c7924373dda26e72366c9b932c0797b41c8",
+    "qr-scan.png": "819079f9dd9ad21a394285d7f82fdeaf3d2924ef1eb506ac67e750c3ba8033cc",
+    "biometric.png": "78020ecf86d982bf2fbe6b1b2f72ddb1fcb61c5d28430eec300f3cf11e1dd24d",
+    "interface-settings.png": "c22636b59e03a40107393b80e4acddcafaaaf31122ab55ff89ec6f8067d72489",
+    "remote-console.png": "f7e6e0f7348144fbb4f08e586ab457c950f7ace43ca0a7db914f81e2a84bfc91",
+    "goods-sales.png": "fe94b66297a348c56b8419291adc520318cca547c7273785e6ae63c1b73f3f01"
+  },
+  "partnerPdfs": 6,
+  "categories": 10,
+  "entries": 2600,
+  "report": {
+    "page": {
+      "id": 67,
+      "beforeHash": "54281d067b0ef4bdf101e50d5b42fa1f155b1c0acc2b498904c4afcae4639256",
+      "afterHash": "fb3fc5ed07ea5bf93ba910de8a7c6d743b1f7cf8020be4f4ddbb2636014ee965",
+      "blocks": 250
+    }
+  }
+}

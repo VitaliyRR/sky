@@ -137,6 +137,13 @@ if (process.argv.includes('--revision-20260925c')) {
   dom.window.close();
   process.exit(0);
 }
+if (process.argv.includes('--revision-20260925d')) {
+  const index = process.argv.indexOf('--revision-20260925d');
+  const { revision20260925d } = await import('./revision-20260925d.mjs');
+  await revision20260925d(w, origin, process.argv[index + 1], process.argv[index + 2]);
+  dom.window.close();
+  process.exit(0);
+}
 if (process.argv.includes('--revision-20260924f')) {
   const index = process.argv.indexOf('--revision-20260924f');
   const { revision20260924f } = await import('./revision-20260924f.mjs');
