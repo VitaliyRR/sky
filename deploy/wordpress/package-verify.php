@@ -163,7 +163,8 @@ $posId = (int) ($posImage['attrs']['id'] ?? 0);
 $gearId = (int) ($gearImage['attrs']['id'] ?? 0);
 $check('ALLVEND POS and gear icons replaced', $posId > 0 && $gearId > 0 && $posId !== 113 && $gearId !== 116
     && get_post_type($posId) === 'attachment' && get_post_type($gearId) === 'attachment');
-$headerLogo = $findBlock(parse_blocks(get_post_field('post_content', 68)), 'core/image');
+$headerBlocks = parse_blocks(get_post_field('post_content', 68));
+$headerLogo = $findBlock($headerBlocks, 'core/image');
 $footerLogo = $findBlock(parse_blocks(get_post_field('post_content', 69)), 'core/image');
 $headerLogoId = (int) ($headerLogo['attrs']['id'] ?? 0);
 $footerLogoId = (int) ($footerLogo['attrs']['id'] ?? 0);
@@ -172,6 +173,10 @@ $siteIconMeta = $siteIconId ? wp_get_attachment_metadata($siteIconId) : [];
 $check('New header and footer logo assets', $headerLogoId > 0 && $footerLogoId > 0
     && $headerLogoId !== 8 && $footerLogoId !== 8 && $headerLogoId !== $footerLogoId
     && is_file((string) get_attached_file($headerLogoId)) && is_file((string) get_attached_file($footerLogoId)));
+$check('Compact editable header', $headerLogoId === 400
+    && ($headerLogo['attrs']['width'] ?? '') === '96px'
+    && ($headerBlocks[0]['attrs']['style']['spacing']['padding']['top'] ?? '') === '6px'
+    && ($headerBlocks[0]['attrs']['style']['spacing']['padding']['bottom'] ?? '') === '6px');
 $check('New square favicon', $siteIconId > 0 && $siteIconId !== 105
     && is_file((string) get_attached_file($siteIconId))
     && ($siteIconMeta['width'] ?? 0) === ($siteIconMeta['height'] ?? -1)
